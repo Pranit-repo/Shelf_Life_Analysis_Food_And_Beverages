@@ -38,5 +38,17 @@ To run the full end-to-end flow, the system expects CSV datasets matching the fo
 
 ### 1. Clone the repository
 ```bash
+
+
+
+## Environment Variables:
+# AI Integration
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+# Traccar GPS Integration
+TRACCAR_API_KEY=your_traccar_api_key_here
+TRACCAR_URL=http://localhost:8082
+TRACCAR_USER=your_traccar_username
+TRACCAR_PASS=your_traccar_password
 git clone [https://github.com/yourusername/shelf-life-analytics.git](https://github.com/yourusername/shelf-life-analytics.git)
 cd shelf-life-analytics
