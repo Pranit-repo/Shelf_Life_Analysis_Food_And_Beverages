@@ -18,8 +18,8 @@ An end-to-end, AI-powered supply chain management and shelf-life tracking system
 * **Backend & API:** Python 3, Flask, Flask-SocketIO
 * **Data Processing & Analytics:** Pandas, NumPy
 * **Machine Learning (Forecasting):** Scikit-Learn, Statsmodels (Time-Series Analysis)
-* **AI Integration:** OpenAI Python SDK (routing to `google/gemini-2.0-flash-001` via OpenRouter)
-* **IoT / Tracking:** MQTT, Traccar API Webhooks
+* **AI Integration:** OpenAI Python SDK (Via OpenRouter)
+* **Tracking:** Traccar API Webhooks
 * **Database:** SQLite (for local anomaly logging and telemetry storage)
 
 ## 📦 Required Datasets
@@ -50,5 +50,5 @@ TRACCAR_API_KEY=your_traccar_api_key_here
 TRACCAR_URL=http://localhost:8082
 TRACCAR_USER=your_traccar_username
 TRACCAR_PASS=your_traccar_password
-git clone [https://github.com/yourusername/shelf-life-analytics.git](https://github.com/yourusername/shelf-life-analytics.git)
+git clone [https://github.com/Pranit-repo/shelf-life-analytics.git](https://github.com/yourusername/shelf-life-analytics.git)
 cd shelf-life-analytics
