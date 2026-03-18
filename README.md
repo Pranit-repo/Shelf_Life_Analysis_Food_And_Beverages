@@ -11,7 +11,7 @@ An end-to-end, AI-powered supply chain management and shelf-life tracking system
 * **AI-Powered Insights (Gemini 2.0):** Generates strategic recommendations for transit bottlenecks, inventory holding costs, and anomaly resolutions. Includes an interactive Supply Chain Chatbot for custom queries.
 * **Advanced Demand Forecasting:** Uses **Holt-Winters Exponential Smoothing** and **Linear Regression** to predict future dealer and retailer demand, analyzing seasonality and historical sales trends.
 * **Automated Anomaly Detection:** Identifies transit-time delays, expired/stagnant stock (e.g., shelf life > 30 days), and data consistencies across the pipeline.
-* **IoT & Live Tracking:** Integrates with **Traccar** for live GPS telemetry of shipments and **MQTT** for real-time sensor updates via WebSockets.
+* **Live Tracking:** Integrates with **Traccar** for live telemetry of shipments via WebSockets.
 
 ## 🛠️ Tech Stack
 
