@@ -1,1 +1,42 @@
 # Shelf_Life_Analysis_Food_And_Beverages
+
+# 🥫 Food & Beverage Supply Chain & Shelf-Life Analytics Platform
+
+An end-to-end, AI-powered supply chain management and shelf-life tracking system. This platform provides real-time visibility into the lifecycle of perishable goods (Food & Beverage), tracking batches from factory manufacturing to retailer stock. It leverages Machine Learning for demand forecasting and LLMs (Google Gemini 2.0) for strategic anomaly resolution and supply chain insights.
+
+## ✨ Key Features
+
+* **End-to-End Batch Traceability:** Tracks product batches across 6 critical stages: `Factory Manufacturing` ➡️ `Factory Dispatch` ➡️ `Dealer Receipt` ➡️ `Dealer Dispatch` ➡️ `Retailer Receipt` ➡️ `Retailer Stock`.
+* **Dynamic Shelf-Life Monitoring:** Automatically calculates product expiration based on product categories (e.g., milk, biscuits, chocolates). Flags inventory statuses as *Fresh*, *Moderate*, *Critical*, or *Expired*.
+* **AI-Powered Insights (Gemini 2.0):** Generates strategic recommendations for transit bottlenecks, inventory holding costs, and anomaly resolutions. Includes an interactive Supply Chain Chatbot for custom queries.
+* **Advanced Demand Forecasting:** Uses **Holt-Winters Exponential Smoothing** and **Linear Regression** to predict future dealer and retailer demand, analyzing seasonality and historical sales trends.
+* **Automated Anomaly Detection:** Identifies transit-time delays, expired/stagnant stock (e.g., shelf life > 30 days), and data consistencies across the pipeline.
+* **IoT & Live Tracking:** Integrates with **Traccar** for live GPS telemetry of shipments and **MQTT** for real-time sensor updates via WebSockets.
+
+## 🛠️ Tech Stack
+
+* **Backend & API:** Python 3, Flask, Flask-SocketIO
+* **Data Processing & Analytics:** Pandas, NumPy
+* **Machine Learning (Forecasting):** Scikit-Learn, Statsmodels (Time-Series Analysis)
+* **AI Integration:** OpenAI Python SDK (routing to `google/gemini-2.0-flash-001` via OpenRouter)
+* **IoT / Tracking:** MQTT, Traccar API Webhooks
+* **Database:** SQLite (for local anomaly logging and telemetry storage)
+
+## 📦 Required Datasets
+
+To run the full end-to-end flow, the system expects CSV datasets matching the following supply chain stages:
+1. `Factory_Manufacturing.csv`
+2. `Factory_Dispatch.csv`
+3. `Dealer_Receipt.csv`
+4. `Dealer_Dispatch.csv`
+5. `Retailer_Receipt.csv`
+6. `Retailer_Stock.csv`
+
+*(Note: Data should contain identifiers like `Batch_ID`, `Dealer_Name`, `Retailer_Name`, dates, and quantities).*
+
+## 🚀 Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/yourusername/shelf-life-analytics.git](https://github.com/yourusername/shelf-life-analytics.git)
+cd shelf-life-analytics
