@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supply Chain AI Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Select2 for Searchable Dropdowns -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    
+    <style>
+        body { background-color: #f3f4f6; font-family: 'Inter', sans-serif; }
+        .sidebar { width: 250px; height: 100vh; position: fixed; background: #111827; color: white; padding: 20px; z-index: 100; overflow-y: auto; }
+        .main-content { margin-left: 250px; padding: 30px; }
+        .nav-link { color: #9ca3af; padding: 12px; margin-bottom: 5px; border-radius: 8px; display: block; text-decoration: none; transition: 0.2s; }
+        .nav-link:hover, .nav-link.active { background: #374151; color: white; }
+        .nav-link i { width: 25px; }
+        
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background: white; margin-bottom: 24px; transition: 0.3s; }
+        .card-custom:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        
+        .timeline-container { position: relative; padding: 20px 0; }
+        .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #e5e7eb; z-index: 0; }
+        
+        .step-card { position: relative; z-index: 1; display: flex; align-items: center; background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 15px; margin-bottom: 15px; transition: 0.2s; }
+        .step-card:hover { border-color: #4f46e5; background: #f9fafb; }
+        
+        .step-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; font-size: 1.2rem; }
+        
+        .step-content { flex-grow: 1; }
+        .step-time { min-width: 100px; text-align: right; font-weight: 600; }
+        
+        .bg-indigo-100 { background-color: #e0e7ff; color: #4338ca; }
+        .bg-green-100 { background-color: #d1fae5; color: #065f46; }
+        .bg-red-100 { background-color: #fee2e2; color: #991b1b; }
+        
+        /* Table Styles */
+        .raw-data-table { font-size: 0.95rem; }
+        .raw-data-table th { background-color: #f8fafc; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; }
+        .raw-data-table td { vertical-align: middle; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="fw-bold mb-4 px-2"><i class="fas fa-cubes me-2"></i>SC Analytics</h4>
+        <nav>
+            <a href="{{ url_for('results') }}" class="nav-link active"><i class="fas fa-search-location"></i> Batch Trace</a>
+              <a href="{{ url_for('procurement_view') }}" class="nav-link"><i class="fas fa-dolly me-3"></i>Procurement</a>
+            <a href="{{ url_for('map_view') }}" class="nav-link"><i class="fas fa-map-marked-alt"></i> Geo Map</a>
+            <a href="{{ url_for('anomalies_view') }}" class="nav-link"><i class="fas fa-exclamation-triangle"></i> Anomalies</a>
+            <a href="{{ url_for('forecasting_view') }}" class="nav-link"><i class="fas fa-chart-line"></i> Forecasting</a>
+            <a href="{{ url_for('tracking_view') }}" class="nav-link"><i class="fas fa-satellite-dish"></i> Live Fleet</a>
+            <div class="border-top border-secondary my-3"></div>
+            <a href="{{ url_for('index') }}" class="nav-link"><i class="fas fa-cog"></i> Config</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fw-bold text-dark">Trace & Audit</h2>
+                <p class="text-muted">End-to-end batch tracking with AI insights</p>
+            </div>
+            <div class="d-flex gap-2">
+                <span class="badge bg-success p-2">System Online</span>
+                <span class="badge bg-primary p-2">AI Ready</span>
+            </div>
+        </div>
+
+        <!-- 3-Dropdown Search Section -->
+        <div class="card-custom p-4 border-top border-4 border-primary">
+            <h5 class="fw-bold mb-3"><i class="fas fa-search me-2 text-primary"></i>Locate Batch / Entity</h5>
+            <div class="row g-3">
+                
+                <!-- 1. Dataset Selection -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-muted">1. DATASET</label>
+                    <select class="form-select" id="datasetSelect">
+                        <option value="" selected disabled>Select Stage...</option>
+                        {% for key, info in results.items() %}
+                            <option value="{{ key }}">{{ info.dataset_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- 2. Column Selection -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-muted">2. COLUMN</label>
+                    <select class="form-select" id="columnSelect" disabled>
+                        <option value="" selected disabled>Select Dataset First</option>
+                    </select>
+                </div>
+
+                <!-- 3. Value Selection (Searchable) -->
+                <div class="col-md-4">
+                    <label class="form-label small fw-bold text-muted">3. VALUE / ID</label>
+                    <select class="form-select" id="valueSelect" disabled>
+                        <option value="" selected disabled>Select Column First</option>
+                    </select>
+                </div>
+
+                <!-- Trace Button -->
+                <div class="col-md-2 d-flex align-items-end">
+                    <button class="btn btn-primary w-100" id="analyzeBtn" disabled>
+                        <span class="spinner-border spinner-border-sm me-2" id="btnLoader" style="display:none"></span>
+                        <i class="fas fa-bolt me-1"></i>Trace
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section (Hidden by Default) -->
+        <div id="analysisResults" style="display: none;">
+            
+            <!-- 1. RAW DATA INSPECTOR (Priority Display - Single Row) -->
+            <div class="card-custom p-4" id="rawDataContainer">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold text-dark"><i class="fas fa-database me-2 text-primary"></i>Selected Record Details</h5>
+                    <span class="badge bg-primary" id="datasetBadge">Dataset</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered raw-data-table mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Batch ID</th>
+                                <th>Stage</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rawTableBody">
+                            <!-- Single Row injected here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="noDataMsg" class="text-center text-muted mt-2 small" style="display:none;">
+                    No detailed record found for this specific stage.
+                </div>
+            </div>
+
+            <!-- 2. PERFORMANCE METRICS (Fastest/Slowest) -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card-custom p-4 border-start border-4 border-success d-flex align-items-center justify-content-between h-100">
+                        <div>
+                            <h6 class="fw-bold text-muted mb-2 text-uppercase">Fastest Stage</h6>
+                            <h3 class="text-success mb-0" id="fastestStage">-</h3>
+                        </div>
+                        <div class="bg-success bg-opacity-10 p-3 rounded-circle text-success">
+                            <i class="fas fa-bolt fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-custom p-4 border-start border-4 border-danger d-flex align-items-center justify-content-between h-100">
+                        <div>
+                            <h6 class="fw-bold text-muted mb-2 text-uppercase">Slowest Stage</h6>
+                            <h3 class="text-danger mb-0" id="slowestStage">-</h3>
+                        </div>
+                        <div class="bg-danger bg-opacity-10 p-3 rounded-circle text-danger">
+                            <i class="fas fa-hourglass-half fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Timeline & AI Analysis -->
+            <div class="row">
+                <!-- Timeline Column -->
+                <div class="col-lg-7">
+                    <div class="card-custom p-4">
+                        <h5 class="fw-bold mb-4 border-bottom pb-2">Full Supply Chain Journey</h5>
+                        <div class="timeline-container">
+                            <div class="timeline-line"></div>
+                            <div id="flowContainer">
+                                <!-- Steps injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights Column -->
+                <div class="col-lg-5">
+                    <div class="card-custom p-4 bg-white" style="border: 2px solid #818cf8;">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-robot text-primary fa-2x me-3"></i>
+                            <h5 class="fw-bold mb-0">Gemini AI Analysis</h5>
+                        </div>
+                        <div id="recommendationContainer">
+                            <div class="text-muted text-center py-4">Run a trace to generate AI insights.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="analyzerLoader" class="text-center py-5" style="display:none;">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+            <p class="mt-2 text-muted fw-bold">Tracing Entity across datasets...</p>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+            // Initialize Select2 for the Value Dropdown
+            $('#valueSelect').select2({
+                theme: "bootstrap-5",
+                placeholder: "Select Value",
+                width: '100%'
+            });
+
+            // --- 1. Dataset Selection Change ---
+            $('#datasetSelect').change(function() {
+                const dataset = $(this).val();
+                if(!dataset) return;
+
+                // Reset subsequent fields
+                $('#columnSelect').html('<option value="" selected disabled>Loading...</option>').prop('disabled', true);
+                $('#valueSelect').empty().prop('disabled', true);
+                $('#analyzeBtn').prop('disabled', true);
+
+                // Fetch Columns
+                $.get(`/get_columns/${dataset}`, function(data) {
+                    let opts = '<option value="" selected disabled>Select Column</option>';
+                    if(data.columns) {
+                        data.columns.forEach(col => {
+                            // Pre-select 'Batch_ID' if available for UX
+                            let selected = (col.toLowerCase() === 'batch_id') ? 'selected' : ''; 
+                            opts += `<option value="${col}" ${selected}>${col}</option>`;
+                        });
+                    }
+                    $('#columnSelect').html(opts).prop('disabled', false);
+                    if($('#columnSelect').val()) $('#columnSelect').trigger('change');
+                });
+            });
+
+            // --- 2. Column Selection Change ---
+            $('#columnSelect').change(function() {
+                const dataset = $('#datasetSelect').val();
+                const column = $(this).val();
+                if(!dataset || !column) return;
+
+                $('#valueSelect').empty().prop('disabled', true);
+                $('#analyzeBtn').prop('disabled', true);
+
+                // Fetch Values
+                $.get(`/get_column_values/${dataset}/${column}`, function(data) {
+                    if(data.values) {
+                        data.values.forEach(val => {
+                            const newOption = new Option(val, val, false, false);
+                            $('#valueSelect').append(newOption);
+                        });
+                        $('#valueSelect').prop('disabled', false).trigger('change');
+                        $('#analyzeBtn').prop('disabled', false);
+                    }
+                });
+            });
+
+            // --- 3. Run Trace Analysis ---
+            $('#analyzeBtn').click(function() {
+                const dataset = $('#datasetSelect').val();
+                const col = $('#columnSelect').val();
+                const val = $('#valueSelect').val();
+                const datasetName = $("#datasetSelect option:selected").text();
+                
+                if(!col || !val) { alert("Please select a value"); return; }
+
+                $('#analysisResults').hide();
+                $('#analyzerLoader').show();
+                $('#btnLoader').show();
+                
+                // Parallel Request: Get Chain Analysis (Timeline) + Map Details (Raw Data)
+                const traceRequest = $.ajax({
+                    url: '/api/analyze/chain',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ column: col, value: val })
+                });
+
+                const detailsRequest = $.ajax({
+                    url: '/api/map/movements',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ column: col, value: val })
+                });
+
+                $.when(traceRequest, detailsRequest).done(function(traceRes, mapRes) {
+                    const res = traceRes[0]; // Trace Result
+                    const mapData = mapRes[0]; // Map/Details Result
+
+                    // --- 1. POPULATE RAW DATA TABLE (Single Row) ---
+                    const rawTbody = $('#rawTableBody');
+                    $('#datasetBadge').text(datasetName);
+                    rawTbody.empty();
+                    $('#noDataMsg').hide();
+                    
+                    let rowFound = false;
+
+                    if (mapData.locations) {
+                         // Filter to find the EXACT match for the selected dataset
+                         const targetLoc = mapData.locations.find(loc => loc.stage_key === dataset);
+                         
+                         if (targetLoc) {
+                             const row = `
+                                <tr>
+                                    <td class="fw-bold text-primary">${val}</td>
+                                    <td>${targetLoc.stage_label}</td>
+                                    <td><i class="fas fa-map-marker-alt text-danger me-1"></i>${targetLoc.city}</td>
+                                    <td>${targetLoc.raw_date}</td>
+                                    <td>${targetLoc.quantity}</td>
+                                </tr>
+                             `;
+                             rawTbody.append(row);
+                             rowFound = true;
+                         }
+                    }
+
+                    if (!rowFound) {
+                         rawTbody.append(`
+                            <tr>
+                                <td class="fw-bold text-primary">${val}</td>
+                                <td>${datasetName}</td>
+                                <td colspan="3" class="text-center text-muted">Raw detail not found (Geocoding/Data missing)</td>
+                            </tr>
+                         `);
+                    }
+                    
+                    // --- 2. PERFORMANCE METRICS ---
+                    $('#fastestStage').text(res.fastest.stage + ` (${res.fastest.days}d)`);
+                    $('#slowestStage').text(res.slowest.stage + ` (${res.slowest.days}d)`);
+
+                    // --- 3. TIMELINE ---
+                    const flowContainer = $('#flowContainer');
+                    flowContainer.empty();
+                    
+                    if(res.breakdown) {
+                        res.breakdown.forEach((step, index) => {
+                            let iconClass = 'fa-circle';
+                            let bgClass = 'bg-light';
+                            let textClass = 'text-dark';
+                            
+                            const sName = step.stage.toLowerCase();
+                            if(sName.includes('factory')) iconClass = 'fa-industry';
+                            else if(sName.includes('dispatch')) iconClass = 'fa-truck-loading';
+                            else if(sName.includes('dealer')) iconClass = 'fa-store-alt';
+                            else if(sName.includes('receipt')) iconClass = 'fa-file-invoice';
+                            else if(sName.includes('stock') || sName.includes('shelf')) iconClass = 'fa-boxes-stacked';
+                            else if(sName.includes('transit')) iconClass = 'fa-shipping-fast';
+
+                            if(step.is_anomaly) {
+                                bgClass = 'bg-red-100';
+                                textClass = 'text-danger';
+                                if(sName.includes('shelf')) iconClass = 'fa-hourglass-end';
+                            } else {
+                                bgClass = 'bg-indigo-100';
+                                textClass = 'text-primary';
+                            }
+
+                            const html = `
+                                <div class="step-card">
+                                    <div class="step-icon ${bgClass} ${textClass}">
+                                        <i class="fas ${iconClass}"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <div class="fw-bold text-dark">${step.stage}</div>
+                                        <small class="text-muted">
+                                            ${index === 0 ? 'Start Point' : (step.is_anomaly ? 'Delayed / Issues' : 'Completed')}
+                                        </small>
+                                    </div>
+                                    <div class="step-time text-end">
+                                        <span class="badge ${step.is_anomaly ? 'bg-danger' : 'bg-success'}">
+                                            ${step.days} Days
+                                        </span>
+                                    </div>
+                                </div>
+                            `;
+                            flowContainer.append(html);
+                        });
+                    }
+
+                    // --- AI INSIGHTS ---
+                    const recContainer = $('#recommendationContainer');
+                    recContainer.empty();
+                    
+                    if (res.ai_insights && res.ai_insights.length > 0) {
+                        res.ai_insights.forEach(insight => {
+                            let isSystem = insight.stage === 'System';
+                            let color = isSystem ? 'warning' : (insight.stage.includes('Stock') ? 'danger' : 'primary');
+                            
+                            const html = `
+                                <div class="mb-3 p-3 rounded" style="background-color: ${isSystem ? '#fffbeb' : '#f5f3ff'}; border-left: 4px solid var(--${color});">
+                                    <div class="d-flex">
+                                        <div class="me-3 mt-1"><i class="fas fa-lightbulb text-${color}"></i></div>
+                                        <div>
+                                            <h6 class="fw-bold text-${color} mb-1">${insight.stage}</h6>
+                                            <p class="mb-1 small fw-bold text-dark">Root Cause: ${insight.root_cause}</p>
+                                            <p class="mb-0 small text-muted"><i class="fas fa-check me-1"></i>Fix: ${insight.recommendation}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            recContainer.append(html);
+                        });
+                    } else {
+                        recContainer.html('<div class="text-muted p-3 text-center">No anomalies requiring AI analysis. Chain is efficient.</div>');
+                    }
+                    
+                    $('#analyzerLoader').hide();
+                    $('#btnLoader').hide();
+                    $('#analysisResults').slideDown();
+
+                }).fail(function() {
+                    $('#analyzerLoader').hide();
+                    $('#btnLoader').hide();
+                    alert("Analysis failed. Please check connection.");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<entry key='web.origin'>*</entry>
+<entry key='web.sameSite'>None</entry> <!-- Important for iframe embedding -->
+<entry key='web.samesite'>None</entry> <!-- Lowercase backup -->
+
+<entry key='forward.url'>http://localhost:5000/api/traccar/webhook</entry>
+<entry key='forward.json'>true</entry>
+
+### **How to Verify**
+1.  **Run `app.py`**.
+2.  **Send MQTT Data:** Use an MQTT client to publish `{"id": "Truck-1", "temp": 20, "humidity": 50}` to `supply_chain/truck1/telemetry`.
+3.  **Check Database:** The `tracking_data.db` file will be created and populated with this data.
+4.  **Check Frontend:** The `tracking.html` page (if open) will update with this sensor data.

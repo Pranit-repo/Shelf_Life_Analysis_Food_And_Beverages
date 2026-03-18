@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Configuration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8fafc; font-family: 'Segoe UI', sans-serif; }
+        .stage-card {
+            border: none;
+            border-left: 4px solid #4f46e5;
+            background: white;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .stage-card:hover { transform: translateX(5px); }
+        .arrow-connector { text-align: center; color: #cbd5e1; margin: 10px 0; }
+        .dataset-tag { font-size: 0.8rem; background: #eef2ff; color: #4338ca; padding: 2px 8px; border-radius: 4px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h2><i class="fas fa-project-diagram me-3 text-primary"></i>Supply Chain Pipeline</h2>
+            <p class="text-muted">Visual map of the 6-dataset integration architecture.</p>
+        </div>
+        <a href="/" class="btn btn-outline-primary"><i class="fas fa-cog me-2"></i>Configure Data</a>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            
+            <!-- Stage 1 -->
+            <div class="stage-card p-4 rounded" style="border-left-color: #4f46e5;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="badge bg-primary mb-2">Phase 1: Production</span>
+                        <h5 class="fw-bold mb-1">Factory Operations</h5>
+                        <div class="mt-2">
+                            <span class="dataset-tag"><i class="fas fa-database me-1"></i>Factory_Manufacturing.csv</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-industry text-muted fa-2x opacity-50"></i>
+                </div>
+            </div>
+
+            <div class="arrow-connector"><i class="fas fa-arrow-down fa-lg"></i></div>
+
+            <!-- Stage 2 -->
+            <div class="stage-card p-4 rounded" style="border-left-color: #3b82f6;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="badge bg-info text-dark mb-2">Phase 2: Primary Logistics</span>
+                        <h5 class="fw-bold mb-1">Factory Dispatch</h5>
+                        <div class="mt-2">
+                            <span class="dataset-tag"><i class="fas fa-database me-1"></i>Factory_Dispatch.csv</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-truck-loading text-muted fa-2x opacity-50"></i>
+                </div>
+            </div>
+
+            <div class="arrow-connector"><i class="fas fa-arrow-down fa-lg"></i></div>
+
+            <!-- Stage 3 -->
+            <div class="stage-card p-4 rounded" style="border-left-color: #f59e0b;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="badge bg-warning text-dark mb-2">Phase 3: Distribution</span>
+                        <h5 class="fw-bold mb-1">Dealer Ecosystem</h5>
+                        <div class="mt-2">
+                            <span class="dataset-tag"><i class="fas fa-database me-1"></i>Dealer_Receipt.csv</span>
+                            <span class="dataset-tag"><i class="fas fa-database me-1"></i>Dealer_Dispatch.csv</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-store-alt text-muted fa-2x opacity-50"></i>
+                </div>
+            </div>
+            
+             <div class="arrow-connector"><i class="fas fa-arrow-down fa-lg"></i></div>
+
+            <!-- Stage 4 -->
+            <div class="stage-card p-4 rounded" style="border-left-color: #10b981;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="badge bg-success mb-2">Phase 4: Retail & Consumption</span>
+                        <h5 class="fw-bold mb-1">Retailer Fulfillment</h5>
+                        <div class="mt-2">
+                            <span class="dataset-tag"><i class="fas fa-database me-1"></i>Retailer_Receipt.csv</span>
+                            <span class="dataset-tag fw-bold border border-success"><i class="fas fa-box-open me-1"></i>Retailer_Stock.csv</span>
+                        </div>
+                        <small class="text-success d-block mt-2"><i class="fas fa-check-circle me-1"></i>Shelf Life Analysis Enabled</small>
+                    </div>
+                    <i class="fas fa-shopping-cart text-muted fa-2x opacity-50"></i>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 p-3 bg-light rounded">
+                <p class="text-muted small mb-0"><i class="fas fa-server me-2"></i>Pipeline Configuration Locked for High Performance Mode (Chunking Enabled)</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

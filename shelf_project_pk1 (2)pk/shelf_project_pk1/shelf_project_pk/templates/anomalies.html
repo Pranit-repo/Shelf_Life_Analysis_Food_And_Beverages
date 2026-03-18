@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Anomalies Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8fafc; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        /* The vertical line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 3px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        /* The circle icon */
+        .timeline-icon {
+            position: absolute;
+            left: 26px;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        .timeline-step.anomaly .timeline-icon {
+            border-color: #ef4444;
+            color: #ef4444;
+            background: #fef2f2;
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+        }
+
+        .timeline-step.normal .timeline-icon {
+            border-color: #10b981;
+            color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-step.anomaly .step-card {
+            border-left: 5px solid #ef4444;
+        }
+        
+        .timeline-step.normal .step-card {
+            border-left: 5px solid #10b981;
+        }
+
+        /* AI Recommendation Box inside the card */
+        .ai-insight-box {
+            margin-top: 15px;
+            background: #fdfbf7; /* Slight yellow/warm tint */
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .ai-header {
+            display: flex;
+            align-items: center;
+            color: #d97706; /* Amber 600 */
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Anomaly Badges */
+        .issue-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .issue-badge.transit { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+        .issue-badge.quantity { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+        .issue-badge.behavior { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+        .issue-badge.route { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+        .issue-badge.data { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+        .issue-badge.process { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+        .issue-badge.correlated { background: #fce7f3; color: #9d174d; border: 1px solid #fbcfe8; }
+
+        .select2-container { width: 100% !important; }
+        
+        .nav-fixed-bottom {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+        }
+        .nav-btn:hover {
+            background: #f1f5f9;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="text-center">
+            <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;"></div>
+            <h5 class="fw-bold text-dark">Analyzing Supply Chain...</h5>
+            <p class="text-muted">Running anomaly detection algorithms & AI diagnostics</p>
+        </div>
+    </div>
+
+    <div class="container-fluid py-4" style="max-width: 1400px;">
+        
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold text-dark mb-1">
+                    <i class="fas fa-network-wired me-2 text-primary"></i>
+                    Supply Chain Anomaly Inspector
+                </h2>
+                <p class="text-muted mb-0">Unified Batch Tracking & Bulk Anomaly Detection System</p>
+            </div>
+            <div class="d-flex gap-2">
+                <span class="badge bg-white text-dark border p-2"><i class="fas fa-circle text-success me-1"></i> Normal</span>
+                <span class="badge bg-white text-dark border p-2"><i class="fas fa-circle text-danger me-1"></i> Anomaly</span>
+                <span class="badge bg-white text-dark border p-2"><i class="fas fa-robot text-warning me-1"></i> AI Insight</span>
+            </div>
+        </div>
+
+        <!-- 1. Unified Control Panel -->
+        <div class="card shadow-sm mb-4 border-0">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-search me-2"></i>Analysis Controls</h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small text-uppercase text-muted">1. Select Scope / Dataset</label>
+                        <select class="form-select form-select-lg" id="entityDatasetSelect">
+                            <option value="">Select Option...</option>
+                            <option value="merged" class="fw-bold">⚡ All Linked Data (Full Trace)</option>
+                            <option disabled>--- Individual Datasets ---</option>
+                            {% for key, config in dataset_config.items() %}
+                            <option value="{{ key }}">{{ config.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small text-uppercase text-muted">2. Analyze By (Column)</label>
+                        <select class="form-select form-select-lg" id="entityColumnSelect" disabled>
+                            <option value="">Select Column...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small text-uppercase text-muted">3. Specific Entity (Batch ID)</label>
+                        <select class="form-select form-select-lg" id="entityValueSelect" disabled>
+                            <option value="">Select Value or 'All'...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button class="btn btn-primary btn-lg w-100 fw-bold" id="viewEntityAnomaliesBtn" disabled>
+                            <i class="fas fa-bolt me-2"></i> Run Detection
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-2 text-muted small">
+                    <i class="fas fa-info-circle me-1"></i> Select a specific <strong>Batch ID</strong> for detailed trace, or select <strong>Full Dataset</strong> for bulk report.
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Results Container -->
+        <div id="resultsContainer" style="display: none;">
+            
+            <!-- Context Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-white rounded shadow-sm border">
+                <div>
+                    <h5 class="mb-0 fw-bold">Analysis Results: <span class="text-primary" id="traceContext">--</span></h5>
+                    <small class="text-muted" id="timestampLbl">Analyzed just now</small>
+                </div>
+                <div class="text-end">
+                    <h2 class="mb-0 fw-bold" id="totalDurationLbl">-- Days</h2>
+                    <small class="text-muted">Total End-to-End Time</small>
+                </div>
+            </div>
+
+            <!-- Anomaly Categories Reference -->
+            <div class="card shadow-sm mb-4 border-0 bg-light">
+                <div class="card-body">
+                    <h6 class="fw-bold text-dark mb-3"><i class="fas fa-shield-alt me-2 text-info"></i>Anomaly Detection Categories</h6>
+                    <div class="row g-2">
+                        <div class="col-md-3">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-clock text-danger me-2"></i> 1. Transit-Time</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-cubes text-warning me-2"></i> 2. Quantity Mismatch</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-chart-line text-primary me-2"></i> 3. Behavioral Pattern</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-route text-info me-2"></i> 4. Route / Flow</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-database text-secondary me-2"></i> 5. Data Consistency</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-cogs text-dark me-2"></i> 6. Process</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="badge bg-white text-dark border w-100 py-2 text-start"><i class="fas fa-project-diagram text-purple me-2"></i> 7. Multi-Stage Correlated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Vertical Timeline (Merged Journey) -->
+            <div class="timeline-container" id="timelineContainer">
+                <!-- Dynamic Steps will be injected here -->
+            </div>
+
+        </div>
+        
+        <!-- Bulk Analysis Table (Hidden by default, shown if no specific batch selected) -->
+        <div id="bulkResultsContainer" style="display: none;">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-list me-2"></i>Bulk Anomaly Report</h5>
+                    <button class="btn btn-sm btn-outline-light"><i class="fas fa-download me-1"></i> Export CSV</button>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="anomaliesTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Batch ID</th>
+                                    <th>Dataset/Stage</th>
+                                    <th>Category</th>
+                                    <th>Issue Description</th>
+                                    <th>Severity</th>
+                                    <th>AI Recommendation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="anomaliesTableBody">
+                                <!-- Bulk rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Nav -->
+    <div class="nav-fixed-bottom">
+        <a href="{{ url_for('index') }}" class="nav-btn" title="Upload"><i class="fas fa-upload"></i></a>
+        <a href="{{ url_for('results') }}" class="nav-btn" title="Dashboard"><i class="fas fa-chart-bar"></i></a>
+        <a href="{{ url_for('map_view') }}" class="nav-btn" title="Map"><i class="fas fa-map"></i></a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // 1. Dataset Change
+            $('#entityDatasetSelect').change(function() {
+                const ds = $(this).val();
+                if(!ds) return;
+                
+                $('#entityColumnSelect').prop('disabled', true).html('<option>Loading...</option>');
+                
+                if (ds === 'merged') {
+                    // Pre-populate with standard keys if "Merged" is selected
+                    setTimeout(() => {
+                        let opts = '<option value="">Select Column...</option>';
+                        opts += '<option value="Batch_ID">Batch_ID</option>';
+                        opts += '<option value="Product_Name">Product_Name</option>';
+                        $('#entityColumnSelect').html(opts).prop('disabled', false);
+                    }, 500);
+                } else {
+                    // Regular Dataset
+                    $.get(`/get_columns/${ds}`, function(data) {
+                        let opts = '<option value="">Select Column (e.g., Batch_ID)</option>';
+                        data.columns.forEach(c => opts += `<option value="${c}">${c}</option>`);
+                        $('#entityColumnSelect').html(opts).prop('disabled', false);
+                    }).fail(function() {
+                        alert("Could not load columns. Ensure backend is running.");
+                    });
+                }
+            });
+
+            // 2. Column Change
+            $('#entityColumnSelect').change(function() {
+                const ds = $('#entityDatasetSelect').val();
+                const col = $(this).val();
+                if(!col) return;
+
+                $('#entityValueSelect').prop('disabled', true).html('<option>Scanning...</option>');
+                
+                // If DS is merged, we can fallback to 'factory_dispatch' to get Batch IDs.
+                let queryDs = ds === 'merged' ? 'factory_dispatch' : ds; 
+                
+                $.get(`/get_column_values/${queryDs}/${col}`, function(data) {
+                    let opts = '<option value="">Select Batch ID...</option>';
+                    // opts += '<option value="ALL">-- Run Bulk Detection --</option>'; // Option for bulk
+                    data.values.forEach(v => opts += `<option value="${v}">${v}</option>`);
+                    $('#entityValueSelect').html(opts).prop('disabled', false);
+                });
+            });
+
+            // 3. Value Change
+            $('#entityValueSelect').change(function() {
+                $('#viewEntityAnomaliesBtn').prop('disabled', !$(this).val());
+                const val = $(this).val();
+                if (val === 'ALL') {
+                    $('#viewEntityAnomaliesBtn').html('<i class="fas fa-layer-group me-2"></i> Run Bulk Analysis');
+                } else {
+                    $('#viewEntityAnomaliesBtn').html('<i class="fas fa-search-location me-2"></i> Trace Journey');
+                }
+            });
+
+            // 4. MAIN ACTION
+            $('#viewEntityAnomaliesBtn').click(function() {
+                const payload = {
+                    dataset: $('#entityDatasetSelect').val(),
+                    column: $('#entityColumnSelect').val(),
+                    value: $('#entityValueSelect').val()
+                };
+
+                $('#loadingOverlay').css('display', 'flex');
+                
+                if (payload.value === 'ALL') {
+                    // Logic for Bulk detection
+                    $('#resultsContainer').hide();
+                    $('#bulkResultsContainer').fadeIn();
+                    // trigger bulk API...
+                    $('#loadingOverlay').hide();
+                } else {
+                    // Logic for Single Entity Trace
+                    $('#bulkResultsContainer').hide();
+                    $('#resultsContainer').hide();
+                    $('#traceContext').text(`${payload.column}: ${payload.value}`);
+                    $('#timestampLbl').text(new Date().toLocaleString());
+
+                    // Call Backend
+                    $.ajax({
+                        url: '/api/analyze/chain',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(payload),
+                        success: function(res) {
+                            // Add console log to debug the response
+                            console.log("Backend Response:", res);
+                            renderJourney(res);
+                            $('#loadingOverlay').hide();
+                            $('#resultsContainer').fadeIn();
+                        },
+                        error: function(err) {
+                            $('#loadingOverlay').hide();
+                            alert("Analysis Failed. Ensure data is linked.");
+                        }
+                    });
+                }
+            });
+        });
+
+        function renderJourney(data) {
+            const container = $('#timelineContainer');
+            container.empty();
+
+            $('#totalDurationLbl').text((data.total_days || 0) + " Days");
+
+            // Robust check for breakdown data
+            if (!data || !data.breakdown || data.breakdown.length === 0) {
+                container.html(`
+                    <div class="alert alert-warning text-center">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        No sequential stages found for this entity. 
+                        <br><small class="text-muted">Tip: If you are analyzing a specific batch, ensure the Batch ID exists across multiple linked datasets (e.g., Factory to Dealer).</small>
+                    </div>
+                `);
+                return;
+            }
+
+            // Loop through each stage (e.g., Factory -> Dealer)
+            data.breakdown.forEach((step, index) => {
+                const isAnomaly = step.is_anomaly;
+                const statusClass = isAnomaly ? 'anomaly' : 'normal';
+                const icon = isAnomaly ? 'fa-exclamation-triangle' : 'fa-check';
+                
+                // --- DYNAMIC BADGE GENERATION ---
+                let badgeHtml = '';
+                
+                // Check for specific anomaly types in step data
+                if (step.anomalies && step.anomalies.length > 0) {
+                    step.anomalies.forEach(type => {
+                        let typeClass = 'data';
+                        const t = type.toLowerCase();
+                        if (t.includes('transit')) typeClass = 'transit';
+                        else if (t.includes('quantity')) typeClass = 'quantity';
+                        else if (t.includes('behavior')) typeClass = 'behavior';
+                        else if (t.includes('route')) typeClass = 'route';
+                        else if (t.includes('process')) typeClass = 'process';
+                        
+                        badgeHtml += `<span class="issue-badge ${typeClass}">${type}</span>`;
+                    });
+                } else if (isAnomaly) {
+                    // Fallback if generic anomaly flag is true
+                    badgeHtml += `<span class="issue-badge transit">High Latency</span>`;
+                } else {
+                    badgeHtml = `<span class="badge bg-success text-white">Normal Flow</span>`;
+                }
+
+                // Find matching AI insight for THIS specific stage
+                let aiHtml = '';
+                if (data.ai_insights && data.ai_insights.length > 0) {
+                    // Match insight by stage name substring
+                    const insight = data.ai_insights.find(i => step.stage.includes(i.stage.split(' → ')[0]) || i.stage === step.stage);
+                    
+                    if (insight && isAnomaly) {
+                        aiHtml = `
+                            <div class="ai-insight-box">
+                                <div class="ai-header">
+                                    <i class="fas fa-robot me-2"></i> Gemini Recommendation
+                                </div>
+                                <p class="mb-0 text-dark small" style="white-space: pre-line;">${insight.recommendation}</p>
+                            </div>
+                        `;
+                    }
+                }
+
+                // Construct Card HTML
+                const html = `
+                    <div class="timeline-step ${statusClass}">
+                        <div class="timeline-icon">
+                            <i class="fas ${icon}"></i>
+                        </div>
+                        <div class="step-card">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h5 class="fw-bold text-dark mb-1">${step.stage}</h5>
+                                    <div class="mt-2">${badgeHtml}</div>
+                                </div>
+                                <div class="text-end">
+                                    <h3 class="fw-bold mb-0 ${isAnomaly ? 'text-danger' : 'text-dark'}">${step.days} Days</h3>
+                                    <small class="text-muted">Transit Time</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row g-2 mt-2">
+                                <div class="col-md-6">
+                                    <small class="text-muted d-block fw-bold">STATUS</small>
+                                    <span>${isAnomaly ? 'Attention Required' : 'On Track'}</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <small class="text-muted d-block fw-bold">THRESHOLD</small>
+                                    <span>Expected < ${step.threshold || 5} Days</span>
+                                </div>
+                            </div>
+
+                            ${aiHtml}
+                        </div>
+                    </div>
+                `;
+                
+                container.append(html);
+            });
+        }
+    </script>
+</body>
+</html>

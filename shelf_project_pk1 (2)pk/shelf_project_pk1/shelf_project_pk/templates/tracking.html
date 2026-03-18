@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Fleet & Sensor Tracking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Socket.IO Client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        body { background-color: #f8fafc; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; height: 100vh; overflow: hidden; }
+        .sidebar { width: 250px; height: 100vh; position: fixed; top: 0; left: 0; background: #111827; color: white; padding: 20px; z-index: 100; display: flex; flex-direction: column; }
+        .main-content { margin-left: 250px; height: 100vh; display: flex; flex-direction: column; background: white; }
+        .nav-link { color: #9ca3af; padding: 12px; margin-bottom: 5px; border-radius: 8px; display: block; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { background: #374151; color: white; }
+        
+        .sensor-panel { background: #1e293b; color: white; padding: 10px 20px; display: flex; gap: 20px; align-items: center; border-bottom: 1px solid #334155; height: auto; min-height: 80px; flex-shrink: 0; flex-wrap: wrap; }
+        .sensor-item { display: flex; align-items: center; gap: 10px; padding-right: 20px; border-right: 1px solid #334155; }
+        .sensor-item:last-child { border-right: none; }
+        .sensor-val { font-size: 1.1rem; font-weight: bold; color: #38bdf8; line-height: 1.2; }
+        .sensor-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; }
+        
+        .iframe-container { flex-grow: 1; position: relative; background: #f1f5f9; overflow: hidden; }
+        .traccar-frame { width: 100%; height: 100%; border: none; display: block; }
+        .live-dot { width: 10px; height: 10px; background: #22c55e; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        .modal-content { border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h4 class="mb-4 ps-2"><i class="fas fa-cubes me-2"></i>SC Nexus</h4>
+    <a href="{{ url_for('results') }}" class="nav-link"><i class="fas fa-chart-pie me-3"></i>Dashboard</a>
+    <a href="{{ url_for('map_view') }}" class="nav-link"><i class="fas fa-map me-3"></i>Map</a>
+    <a href="{{ url_for('anomalies_view') }}" class="nav-link"><i class="fas fa-exclamation-triangle me-3"></i>Anomalies</a>
+    <a href="{{ url_for('forecasting_view') }}" class="nav-link"><i class="fas fa-chart-line me-3"></i>Forecasting</a>
+    <a href="#" class="nav-link active text-warning"><i class="fas fa-satellite-dish me-3"></i>Live Tracking</a>
+    <a href="{{ url_for('index') }}" class="nav-link mt-auto"><i class="fas fa-database me-3"></i>Data</a>
+</div>
+
+<div class="main-content">
+    <div class="sensor-panel">
+        <div class="d-flex align-items-center me-3">
+            <span class="live-dot me-2"></span>
+            <strong>LIVE</strong>
+        </div>
+        <div class="sensor-item">
+            <i class="fas fa-thermometer-half fa-2x text-secondary"></i>
+            <div>
+                <div class="sensor-val" id="tempVal">-- °C</div>
+                <div class="sensor-label">Temperature</div>
+            </div>
+        </div>
+        <div class="sensor-item">
+            <i class="fas fa-tint fa-2x text-secondary"></i>
+            <div>
+                <div class="sensor-val" id="humVal">-- %</div>
+                <div class="sensor-label">Humidity</div>
+            </div>
+        </div>
+        <div class="sensor-item flex-grow-1">
+            <div class="text-start">
+                <div class="fw-bold text-white" id="deviceId">Scanning...</div>
+                <div class="sensor-label">Last Update: <span id="lastUpdate">--</span></div>
+            </div>
+        </div>
+        <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#configModal">
+            <i class="fas fa-cog me-1"></i> Config GPS
+        </button>
+        <a id="extLink" href="#" target="_blank" class="btn btn-primary btn-sm ms-2">
+            <i class="fas fa-external-link-alt"></i> Login / Full
+        </a>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="traccarFrame" src="" class="traccar-frame" title="Traccar GPS"></iframe>
+        <div class="position-absolute top-50 start-50 translate-middle text-center" id="framePlaceholder">
+            <div class="spinner-border text-primary mb-3"></div>
+            <h5 class="text-muted">Loading GPS Interface...</h5>
+            <p class="small text-muted" id="currentUrlDisplay">Using: localhost:8082</p>
+            <div class="alert alert-light border d-inline-block mt-2">
+                <small><i class="fas fa-key me-1"></i> Authentication Token Applied</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="configModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Configure GPS Server</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Traccar Server URL</label>
+                    <input type="text" class="form-control" id="serverUrlInput" placeholder="http://localhost:8082">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">API Token (Fixes 401 Error)</label>
+                    <input type="text" class="form-control" id="tokenInput" placeholder="Paste your Token here...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveConfigBtn">Save & Connect</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const defaultUrl = "http://localhost:8082";
+    const serverToken = "{{ traccar_token }}";
+    
+    let currentUrl = localStorage.getItem('traccar_url') || defaultUrl;
+    let currentToken = localStorage.getItem('traccar_token') || serverToken || "";
+
+    function setFrameUrl(url, token) {
+        if (!url.startsWith('http')) url = 'http://' + url;
+        let fullUrl = url;
+        if (token && token !== "None" && token.trim() !== "") {
+            const separator = url.includes('?') ? '&' : '?';
+            fullUrl = `${url}${separator}token=${token}`;
+        }
+        console.log("Loading Map URL:", fullUrl);
+        $('#traccarFrame').attr('src', fullUrl);
+        $('#extLink').attr('href', fullUrl);
+        $('#currentUrlDisplay').text(`Connecting to: ${url}`);
+        $('#serverUrlInput').val(url);
+        $('#tokenInput').val(token);
+        setTimeout(() => { $('#framePlaceholder').fadeOut(); }, 2500);
+    }
+
+    $(document).ready(function() {
+        setFrameUrl(currentUrl, currentToken);
+
+        // WebSocket Connection
+        var socket = io();
+        
+        socket.on('connect', function() {
+            console.log("WebSocket Connected");
+        });
+
+        // Listen for sensor updates
+        socket.on('sensor_update', function(data) {
+            $('#tempVal').text((data.temperature || '--') + ' °C');
+            $('#humVal').text((data.humidity || '--') + ' %');
+            
+            if (data.device_id) $('#deviceId').text(data.device_id);
+            else $('#deviceId').text("Scanning...");
+            
+            $('#lastUpdate').text(data.last_updated || '--');
+            
+            if(data.temperature > 30) $('#tempVal').css('color', '#ef4444');
+            else $('#tempVal').css('color', '#38bdf8');
+        });
+    });
+
+    $('#saveConfigBtn').click(function() {
+        const newUrl = $('#serverUrlInput').val().trim();
+        const newToken = $('#tokenInput').val().trim();
+        if(newUrl) {
+            localStorage.setItem('traccar_url', newUrl);
+            localStorage.setItem('traccar_token', newToken);
+            setFrameUrl(newUrl, newToken);
+            $('#configModal').modal('hide');
+        }
+    });
+</script>
+</body>
+</html>

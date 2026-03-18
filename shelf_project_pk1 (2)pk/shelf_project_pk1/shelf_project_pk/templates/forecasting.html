@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>End-to-End Supply Chain Forecasting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background-color: #f8fafc; font-family: 'Segoe UI', sans-serif; }
+        .sidebar { width: 250px; height: 100vh; position: fixed; background: #111827; color: white; padding: 20px; z-index: 100; overflow-y: auto; }
+        .main-content { margin-left: 250px; padding: 30px; }
+        .card-custom { border: none; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); background: white; margin-bottom: 24px; transition: transform 0.2s; }
+        .card-custom:hover { transform: translateY(-2px); }
+        .nav-pills .nav-link.active { background-color: #4f46e5; }
+        .nav-pills .nav-link { color: #4b5563; font-weight: 600; }
+        .scrollable-table-container { max-height: 300px; overflow-y: auto; }
+        .stat-card { background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #4f46e5; height: 100%; }
+        .stat-label { font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700; }
+        .stat-value { font-size: 1.1rem; font-weight: 700; color: #1e293b; margin-top: 5px; }
+        .qa-section { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .qa-header { font-weight: bold; color: #0284c7; font-size: 1rem; margin-bottom: 10px; border-bottom: 1px solid #e0f2fe; padding-bottom: 5px; }
+        .qa-q { font-weight: 600; color: #0369a1; font-size: 0.9rem; }
+        .qa-a { color: #334155; font-size: 0.9rem; margin-left: 10px; border-left: 3px solid #7dd3fc; padding-left: 8px; margin-top: 4px; }
+        .chat-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background: #4f46e5; color: white; border: none; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4); z-index: 1000; font-size: 24px; }
+        .chat-window { position: fixed; bottom: 100px; right: 30px; width: 400px; height: 600px; background: white; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); z-index: 1000; display: none; flex-direction: column; overflow: hidden; border: 1px solid #e5e7eb; }
+        .chat-body { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9fafb; font-size: 0.9rem; }
+        .chat-msg { margin-bottom: 10px; padding: 10px 14px; border-radius: 12px; line-height: 1.4; max-width: 85%; }
+        .chat-user { background: #e0e7ff; color: #3730a3; margin-left: auto; }
+        .chat-ai { background: white; border: 1px solid #e2e8f0; color: #1f2937; margin-right: auto; }
+        .search-bar { padding: 10px; border-bottom: 1px solid #e5e7eb; background: #fff; }
+        tr.clickable-row { cursor: pointer; transition: background 0.1s; }
+        tr.clickable-row:hover { background: #f1f5f9; }
+        #drillDownPanel { display: none; border-left: 5px solid #6366f1; background: #f8fafc; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h4 class="fw-bold mb-4 px-2 text-white"><i class="fas fa-cubes me-2"></i>SC Analytics</h4>
+        <nav class="nav flex-column">
+            <a href="/results" class="nav-link text-white-50 p-2"><i class="fas fa-search-location me-2"></i>Batch Trace</a>
+            <a href="/forecasting" class="nav-link text-white active p-2"><i class="fas fa-chart-line me-2"></i>Forecasting</a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div><h3 class="fw-bold text-dark">Forecasting Suite</h3><p class="text-muted">Demand Planning & Supply Chain Intelligence</p></div>
+            <ul class="nav nav-pills" id="forecastTabs" role="tablist">
+                <li class="nav-item"><button class="nav-link active" id="batch-tab" data-bs-toggle="pill" data-bs-target="#batch-view" type="button">Batch-Wise Flow</button></li>
+                <li class="nav-item"><button class="nav-link" id="advanced-tab" data-bs-toggle="pill" data-bs-target="#advanced-view" type="button">Advanced Forecasting</button></li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="forecastTabsContent">
+            <!-- BATCH VIEW (Existing) -->
+            <div class="tab-pane fade show active" id="batch-view" role="tabpanel">
+                <div class="card-custom p-4 border-top border-4 border-primary">
+                    <h5 class="fw-bold mb-3 text-primary"><i class="fas fa-industry me-2"></i>1. Factory Manufacturing</h5>
+                    <div class="row g-3"><div class="col-md-4"><select class="form-select" id="mfgBatchSelect"><option value="">Loading Batches...</option></select></div><div class="col-md-8"><div class="row g-3" id="mfgDetails" style="opacity: 0.5;"><div class="col-md-3"><div class="stat-card"><div class="stat-label">Product</div><div class="stat-value text-truncate" id="lblProduct">-</div></div></div><div class="col-md-3"><div class="stat-card"><div class="stat-label">Category</div><div class="stat-value" id="lblCategory">-</div></div></div><div class="col-md-3"><div class="stat-card"><div class="stat-label">Date</div><div class="stat-value" id="lblDate">-</div></div></div><div class="col-md-3"><div class="stat-card"><div class="stat-label">Qty</div><div class="stat-value" id="lblQty">-</div></div></div></div></div></div>
+                </div>
+                <div id="analysisContainer" style="display:none;">
+                    <div class="card-custom p-4 border-top border-4 border-success mt-4"><h5 class="fw-bold mb-3 text-success">2. Factory Dispatch</h5><div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead class="table-light"><tr><th>Dealer</th><th>Location</th><th>Dispatch Date</th><th>Qty</th><th>Days Held (Inv)</th></tr></thead><tbody id="dispatchTableBody"></tbody></table></div></div>
+                    <div class="mt-4"><div class="qa-section border-warning"><div class="qa-header text-warning">AI Insight: Transit Conditions</div><div id="qaTransitContainer" class="row"></div></div><div class="card-custom p-4 border-top border-4 border-warning"><h5 class="fw-bold mb-3 text-warning">3. Dealer Receipt</h5><div class="table-responsive"><table class="table table-hover align-middle"><thead class="table-light"><tr><th>Dealer</th><th>Receipt Date</th><th>Qty</th><th>Transit Days</th><th>Status</th></tr></thead><tbody id="receiptTableBody"></tbody></table></div></div></div>
+                    <div class="mt-4"><div class="qa-section border-info"><div class="qa-header text-info">AI Insight: Warehouse Storage</div><div id="qaStorageContainer" class="row"></div></div><div class="card-custom p-4 border-top border-4 border-info"><h5 class="fw-bold mb-3 text-info">4. Dealer Dispatch</h5><div class="table-responsive"><table class="table table-hover align-middle"><thead class="table-light"><tr><th>Dealer</th><th>Retailer</th><th>Location</th><th>Date</th><th>Qty</th></tr></thead><tbody id="dealerDispatchTableBody"></tbody></table></div></div></div>
+                    <div class="mt-4"><div class="qa-section border-primary"><div class="qa-header text-primary">AI Insight: Retailer Transit</div><div id="qaRetailTransitContainer" class="row"></div></div><div class="card-custom p-4 border-top border-4 border-primary"><h5 class="fw-bold mb-3 text-primary">5. Retailer Receipt</h5><div class="table-responsive"><table class="table table-hover align-middle"><thead class="table-light"><tr><th>Retailer</th><th>Location</th><th>Receipt Date</th><th>Qty</th><th>Transit Days</th><th>Status</th></tr></thead><tbody id="retailerReceiptTableBody"></tbody></table></div></div></div>
+                    <div class="mt-5 pt-4 border-top"><h4 class="fw-bold text-dark mb-4">Stage 6: Final Dealer Profile & Shelf Life</h4><div class="row"><div class="col-md-4"><div class="card-custom p-4 bg-white h-100"><label class="form-label small fw-bold text-muted">SELECT DEALER</label><select class="form-select mb-3" id="finalDealerSelect"><option value="">Select Dealer...</option></select><div id="dealerProfileBox" style="display:none;"><div class="mb-3 p-2 bg-light rounded border"><small class="text-muted d-block fw-bold">TAKEN FROM</small><div class="d-flex justify-content-between"><span class="text-primary fw-bold" id="dpSource">-</span><span class="text-dark" id="dpDate">-</span></div><div class="mt-1"><small class="text-muted">Quantity Taken: </small><span class="fw-bold text-dark" id="dpQty">0</span></div></div><div class="mb-3"><small class="text-muted d-block fw-bold">SEASON CONTEXT</small><span class="badge bg-warning text-dark" id="dpSeason">-</span></div></div></div></div><div class="col-md-8"><div class="card-custom p-4 bg-white h-100 border-start border-4 border-dark"><h5 class="fw-bold mb-3 text-dark">City-Wise Sales & Transit Performance</h5><div class="table-responsive mb-4"><table class="table table-sm table-hover"><thead class="table-light"><tr><th>City</th><th>Sales Qty</th><th>Avg Transit (Days)</th><th>Performance Insight</th></tr></thead><tbody id="citySalesBody"></tbody></table></div><div class="d-flex align-items-center mt-auto p-3 bg-light rounded"><div class="me-4 text-center"><h1 class="display-4 fw-bold text-dark mb-0" id="dpShelfLife">0</h1><small class="text-muted fw-bold">DAYS REMAINING</small></div><div class="flex-grow-1"><div class="mb-1 d-flex justify-content-between"><span class="badge bg-dark" id="dpShelfStatus">Status</span><small class="text-muted">Total Life: <span id="dpTotalLife">180</span> days</small></div><div class="progress" style="height: 10px;"><div id="shelfBar" class="progress-bar bg-success" style="width: 100%"></div></div><small class="text-muted d-block mt-2">Transit Days Used: <span id="dpTransitUsed" class="fw-bold text-dark">-</span></small></div></div></div></div></div></div>
+                </div>
+            </div>
+
+            <!-- ADVANCED VIEW -->
+            <div class="tab-pane fade" id="advanced-view" role="tabpanel">
+                <div class="card-custom p-4">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-3"><label class="form-label fw-bold small text-muted">ENTITY TYPE</label><select class="form-select" id="entityType"><option value="" selected disabled>Select Type...</option><option value="dealer">Dealer</option><option value="retailer">Retailer</option></select></div>
+                        <div class="col-md-4"><label class="form-label fw-bold small text-muted">ENTITY NAME</label><select class="form-select" id="entityName" disabled><option value="">Select Type First</option></select></div>
+                        <div class="col-md-2"><button class="btn btn-primary w-100" id="btnAdvancedAnalyze" disabled><i class="fas fa-magic me-2"></i>Analyze</button></div>
+                    </div>
+                </div>
+                
+                <div id="dealerDashboard" style="display:none;">
+                    <div class="row">
+                        <div class="col-lg-7"><div class="card-custom p-4 border-top border-4 border-info"><h5 class="fw-bold mb-3 text-info">Supply Chain Data History</h5><h6 class="text-muted small fw-bold mt-3">FACTORY DISPATCH</h6><div class="scrollable-table-container border rounded mb-3"><table class="table table-sm table-hover mb-0"><thead class="table-light sticky-top"><tr><th>Date</th><th>Category</th><th>Qty</th></tr></thead><tbody id="tblFactoryDispatch"></tbody></table></div><h6 class="text-muted small fw-bold mt-3">CITY-WISE SALES</h6><div class="scrollable-table-container border rounded"><table class="table table-sm table-hover mb-0"><thead class="table-light sticky-top"><tr><th>City</th><th>Sales</th><th>Performance</th></tr></thead><tbody id="tblCitySales"></tbody></table></div></div></div>
+                        <div class="col-lg-5"><div class="card-custom p-4 border-top border-4 border-warning h-100"><div class="d-flex justify-content-between align-items-center mb-3"><h5 class="fw-bold text-warning">Demand Forecast</h5><span class="badge bg-warning text-dark">AI Model</span></div><div class="text-center p-4 bg-light rounded border mb-4"><small class="text-muted text-uppercase fw-bold">Predicted Next Order</small><h1 class="display-4 fw-bold text-dark mb-0" id="valPredQty">0</h1><p class="text-muted mb-0">Expected Date: <span class="fw-bold text-primary" id="valPredDate">-</span></p></div><div class="qa-section border-0 bg-white p-0"><div class="qa-header text-dark">AI Strategic Insights</div><div id="dealerAIContainer"></div></div></div></div>
+                    </div>
+                </div>
+                
+                <div id="retailerDashboard" style="display:none;">
+                    <div class="row">
+                        <div class="col-md-6"><div class="card-custom p-4 border-top border-4 border-success"><h5 class="fw-bold mb-3 text-success">Future Stock Forecast</h5><div style="height: 300px;"><canvas id="retailerChart"></canvas></div></div></div>
+                        <div class="col-md-6"><div class="card-custom p-4 border-top border-4 border-primary"><h5 class="fw-bold mb-3 text-primary">Future Demand Forecast</h5><div style="height: 300px;"><canvas id="retailerDemandChart"></canvas></div></div></div>
+                        
+                        <!-- NEW: Interactive Product Drill Down -->
+                        <div class="col-12 mt-4"><h5 class="fw-bold text-dark border-bottom pb-2">Product-Level Intelligence (Click Rows to Drill Down)</h5></div>
+                        <div class="col-md-6 mt-3">
+                            <div class="card-custom p-4 h-100 border-start border-4 border-danger">
+                                <h6 class="fw-bold text-muted mb-3">HIGH DEMAND PRODUCTS</h6>
+                                <div class="table-responsive"><table class="table table-sm table-hover mb-0"><thead class="table-light"><tr><th>Product</th><th class="text-end">Total Qty</th></tr></thead><tbody id="tblHighProd"></tbody></table></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="card-custom p-4 h-100 border-start border-4 border-warning">
+                                <h6 class="fw-bold text-muted mb-3">LOW DEMAND PRODUCTS</h6>
+                                <div class="table-responsive"><table class="table table-sm table-hover mb-0"><thead class="table-light"><tr><th>Product</th><th class="text-end">Total Qty</th></tr></thead><tbody id="tblLowProd"></tbody></table></div>
+                            </div>
+                        </div>
+                        
+                        <!-- DRILL DOWN PANEL -->
+                        <div class="col-12 mt-4" id="drillDownPanel">
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold text-primary" id="ddTitle">Product Analysis</h5>
+                                    <button class="btn btn-sm btn-outline-secondary" onclick="$('#drillDownPanel').slideUp()">Close</button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h6 class="small fw-bold text-muted">NEXT 3 MONTHS FORECAST</h6>
+                                        <div class="scrollable-table-container border rounded mb-3 bg-white">
+                                            <table class="table table-sm table-striped mb-0">
+                                                <thead class="sticky-top bg-light text-primary"><tr><th>Predicted Date</th><th class="text-end">Est. Demand</th></tr></thead>
+                                                <tbody id="ddForecastBody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="row h-100">
+                                            <div class="col-12 mb-3">
+                                                <div class="stat-card bg-white border border-primary">
+                                                    <div class="stat-label">Total Predicted Demand (90 Days)</div>
+                                                    <div class="stat-value text-primary display-6" id="ddTotalQty">0</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <h6 class="small fw-bold text-muted">STRATEGIC INSIGHTS</h6>
+                                                <div class="p-3 bg-white rounded border border-secondary" id="ddInsightsBox">
+                                                    <ul class="mb-0 ps-3 text-muted" id="ddInsightsList"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 mt-3"><div class="card-custom p-4 h-100 bg-light"><h6 class="fw-bold text-muted mb-3">SMART ALERTS</h6><div id="retailerAIContainer"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loader" class="text-center py-5" style="display:none;"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted fw-bold">Analyzing...</p></div>
+    </div>
+    
+    <!-- Chat Window -->
+    <div class="chat-window"><div class="bg-primary text-white p-3 fw-bold d-flex justify-content-between"><span><i class="fas fa-robot me-2"></i>AI Assistant</span><button type="button" class="btn-close btn-close-white" onclick="$('.chat-window').fadeOut()"></button></div><div class="search-bar"><input type="text" id="chatSearch" class="form-control form-control-sm" placeholder="Search chat history..."></div><div class="chat-body" id="chatBody"><div class="chat-msg chat-ai">Hi! I'm ready for custom queries about this batch.</div></div><div class="p-3 bg-white border-top"><div class="input-group"><input type="text" id="chatInput" class="form-control" placeholder="Ask custom question..."><button class="btn btn-primary" onclick="askAI()"><i class="fas fa-paper-plane"></i></button></div></div></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        let dealerProfiles = {}; let retChart = null; let demandChart = null;
+        let currentMarketSummary = "";
+
+        $(document).ready(function() {
+            $('#mfgBatchSelect').select2({ theme: "bootstrap-5", placeholder: "Select Batch ID" });
+            $('#finalDealerSelect').select2({ theme: "bootstrap-5", placeholder: "Select Dealer" });
+            $('#entityName').select2({ theme: "bootstrap-5", placeholder: "Select Entity" });
+
+            // BATCH TAB
+            $.get('/get_column_values/factory_manufacturing/Batch_ID', function(data) {
+                let opts = '<option value="">Select Batch ID</option>';
+                if(data.values) data.values.filter(v => v.toString().toUpperCase().startsWith('BF')).sort().reverse().forEach(v => opts += `<option value="${v}">${v}</option>`);
+                $('#mfgBatchSelect').html(opts);
+            });
+            $('#mfgBatchSelect').change(function() {
+                const batchId = $(this).val(); if(!batchId) return;
+                $('#analysisContainer').hide(); $('#loader').fadeIn(); $('#mfgDetails').css('opacity', 0.5);
+                $.ajax({
+                    url: '/api/batch/analyze', type: 'POST', contentType: 'application/json', data: JSON.stringify({ batch_id: batchId }),
+                    success: function(res) {
+                        $('#loader').hide(); dealerProfiles = res.dealer_profiles || {};
+                        $('#lblProduct').text(res.mfg_details.product); $('#lblCategory').text(res.mfg_details.category); $('#lblDate').text(res.mfg_details.date); $('#lblQty').text(res.mfg_details.produced_qty); $('#mfgDetails').css('opacity', 1);
+                        
+                        const dispBody = $('#dispatchTableBody'); dispBody.empty();
+                        if(res.dispatch_list.length) res.dispatch_list.forEach(d => dispBody.append(`<tr><td class="fw-bold text-primary">${d.dealer}</td><td>${d.location}</td><td>${d.date}</td><td>${d.qty}</td><td>${d.days_held} Days</td></tr>`));
+                        else dispBody.append('<tr><td colspan="5" class="text-center text-muted">No dispatch records found.</td></tr>');
+                        
+                        const recBody = $('#receiptTableBody'); recBody.empty();
+                        if(res.receipt_list.length) res.receipt_list.forEach(r => recBody.append(`<tr><td class="fw-bold">${r.dealer}</td><td>${r.date}</td><td>${r.qty}</td><td class="fw-bold">${r.transit_days} Days</td><td><span class="badge ${r.status === 'Delayed' ? 'bg-danger' : 'bg-success'}">${r.status}</span></td></tr>`));
+                        else recBody.append('<tr><td colspan="5" class="text-center text-muted">No receipt records found.</td></tr>');
+                        renderQA('#qaTransitContainer', res.ai_qa_transit);
+                        
+                        const ddBody = $('#dealerDispatchTableBody'); ddBody.empty();
+                        if(res.dealer_dispatch_list.length) res.dealer_dispatch_list.forEach(d => ddBody.append(`<tr><td class="fw-bold text-info">${d.dealer}</td><td>${d.retailer}</td><td>${d.location}</td><td>${d.date}</td><td>${d.qty}</td></tr>`));
+                        else ddBody.append('<tr><td colspan="5" class="text-center text-muted">No dealer dispatch records found.</td></tr>');
+                        renderQA('#qaStorageContainer', res.ai_qa_storage);
+
+                        const rrBody = $('#retailerReceiptTableBody'); rrBody.empty();
+                        if(res.retailer_receipt_list.length) res.retailer_receipt_list.forEach(r => rrBody.append(`<tr><td class="fw-bold">${r.retailer}</td><td>${r.location}</td><td>${r.date}</td><td>${r.qty}</td><td class="fw-bold">${r.transit_days} Days</td><td><span class="badge ${r.status === 'Delayed' ? 'bg-danger' : 'bg-success'}">${r.status}</span></td></tr>`));
+                        else rrBody.append('<tr><td colspan="6" class="text-center text-muted">No retailer receipt records found.</td></tr>');
+                        renderQA('#qaRetailTransitContainer', res.ai_qa_retail_transit);
+
+                        let dOpts = '<option value="">Select Dealer...</option>';
+                        if(Object.keys(dealerProfiles).length > 0) Object.keys(dealerProfiles).forEach(d => dOpts += `<option value="${d}">${d}</option>`);
+                        $('#finalDealerSelect').html(dOpts); $('#dealerProfileBox').hide(); $('#analysisContainer').fadeIn();
+                    }
+                });
+            });
+            $('#finalDealerSelect').change(function() {
+                const dealer = $(this).val(); if(!dealer || !dealerProfiles[dealer]) return;
+                const p = dealerProfiles[dealer];
+                $('#dpSource').text(p.source_location); $('#dpQty').text(p.taken_qty); $('#dpDate').text(p.taken_date); $('#dpSeason').text(p.season_context);
+                $('#dpShelfLife').text(p.remaining_shelf_life); $('#dpTotalLife').text(p.total_shelf_life);
+                $('#shelfBar').css('width', Math.max(0, Math.min(100, (p.remaining_shelf_life / p.total_shelf_life) * 100)) + '%');
+                $('#dpShelfStatus').text(p.shelf_status).removeClass('bg-danger bg-warning bg-success bg-dark');
+                if(p.shelf_status.includes('Critical')) { $('#dpShelfStatus').addClass('bg-danger'); $('#shelfBar').addClass('bg-danger'); }
+                else if(p.shelf_status.includes('Moderate')) { $('#dpShelfStatus').addClass('bg-warning text-dark'); $('#shelfBar').addClass('bg-warning'); }
+                else { $('#dpShelfStatus').addClass('bg-success'); $('#shelfBar').addClass('bg-success'); }
+                $('#dpTransitUsed').text(`${p.transit_days_used.factory_to_dealer} (Inbound) + ${p.transit_days_used.dealer_holding} (Hold) + ${p.transit_days_used.last_mile_avg} (Last Mile)`);
+                const cityBody = $('#citySalesBody'); cityBody.empty();
+                if(p.city_performance && p.city_performance.length > 0) p.city_performance.forEach(c => cityBody.append(`<tr><td>${c.city}</td><td>${c.sales}</td><td>${c.avg_transit}</td><td class="small text-muted">${c.insight}</td></tr>`));
+                else cityBody.append('<tr><td colspan="4" class="text-center text-muted">No sales data.</td></tr>');
+                $('#dealerProfileBox').fadeIn();
+            });
+
+            // ADVANCED TAB
+            $('#entityType').change(function() {
+                const type = $(this).val();
+                $('#entityName').empty().prop('disabled', true); $('#btnAdvancedAnalyze').prop('disabled', true);
+                let datasetKey = type === 'dealer' ? 'factory_dispatch' : 'retailer_stock';
+                let colName = type === 'dealer' ? 'FD_Dealer_Name' : 'RS_Retailer_Name';
+                $.get(`/get_column_values/${datasetKey}/${colName}`, function(data) {
+                    let opts = '<option value="">Select Name</option>';
+                    if(data.values) data.values.filter(v => !v.toString().toUpperCase().startsWith('BF')).forEach(v => opts += `<option value="${v}">${v}</option>`);
+                    $('#entityName').html(opts).prop('disabled', false);
+                });
+            });
+            $('#entityName').change(function() { $('#btnAdvancedAnalyze').prop('disabled', !$(this).val()); });
+            $('#btnAdvancedAnalyze').click(function() {
+                const type = $('#entityType').val();
+                const name = $('#entityName').val();
+                if (type === 'dealer') {
+                    $('#dealerDashboard').hide(); $('#retailerDashboard').hide();
+                    $.ajax({
+                        url: '/api/advanced/dealer', type: 'POST', contentType: 'application/json', data: JSON.stringify({ dealer: name }),
+                        success: function(res) {
+                            const tbody = $('#tblFactoryDispatch'); tbody.empty();
+                            if(res.raw_dispatch_rows) res.raw_dispatch_rows.forEach(r => tbody.append(`<tr><td>${r.date}</td><td>${r.category}</td><td class="fw-bold">${r.qty}</td></tr>`));
+                            $('#valPredQty').text(res.forecast.predicted_qty); $('#valPredDate').text(res.forecast.expected_date);
+                            const cityBody = $('#tblCitySales'); cityBody.empty();
+                            if(res.city_performance) res.city_performance.forEach(c => cityBody.append(`<tr><td>${c.city}</td><td>${c.total_sales}</td><td><span class="badge bg-info text-dark">${c.performance}</span></td></tr>`));
+                            const aiDiv = $('#dealerAIContainer'); aiDiv.empty();
+                            if(res.ai_insights) res.ai_insights.forEach(i => aiDiv.append(`<div class="mb-3"><div class="fw-bold text-primary small">${i.title}</div><div class="small text-muted">${i.text}</div></div>`));
+                            $('#dealerDashboard').fadeIn();
+                        },
+                        error: function() { alert("Dealer analysis failed."); }
+                    });
+                } else {
+                    $('#dealerDashboard').hide(); $('#retailerDashboard').hide(); $('#drillDownPanel').hide();
+                    $.ajax({
+                        url: '/api/advanced/retailer', type: 'POST', contentType: 'application/json', data: JSON.stringify({ retailer: name }),
+                        success: function(res) {
+                            currentMarketSummary = res.market_summary || "No market context available.";
+                            // Stock Chart
+                            const ctx = document.getElementById('retailerChart').getContext('2d');
+                            if(retChart) retChart.destroy();
+                            retChart = new Chart(ctx, { 
+                                type: 'bar', data: { labels: res.forecast.map(f => f.period), datasets: [{ label: 'Predicted Stock', data: res.forecast.map(f => f.qty), backgroundColor: '#10b981' }] } 
+                            });
+
+                            // Demand Chart
+                            const ctxD = document.getElementById('retailerDemandChart').getContext('2d');
+                            if(demandChart) demandChart.destroy();
+                            demandChart = new Chart(ctxD, {
+                                type: 'line', data: { labels: res.demand_forecast.map(f => f.period), datasets: [{ label: 'Predicted Demand', data: res.demand_forecast.map(f => f.qty), borderColor: '#4f46e5', backgroundColor: 'rgba(79, 70, 229, 0.2)', fill: true, tension: 0.4 }] }
+                            });
+
+                            // High Products
+                            const highBody = $('#tblHighProd'); highBody.empty();
+                            if(res.top_products.length > 0) {
+                                res.top_products.forEach((p, idx) => {
+                                    const row = $(`<tr class="clickable-row"><td><span class="fw-bold text-dark">${p.product}</span></td><td class="text-end fw-bold text-success">${p.total_qty}</td></tr>`);
+                                    row.click(() => showProductDetails(p, false));
+                                    highBody.append(row);
+                                });
+                            } else highBody.append('<tr><td colspan="2" class="text-center text-muted">No data</td></tr>');
+
+                            // Low Products
+                            const lowBody = $('#tblLowProd'); lowBody.empty();
+                            if(res.low_products.length > 0) {
+                                res.low_products.forEach((p, idx) => {
+                                    const row = $(`<tr class="clickable-row"><td><span class="fw-bold text-secondary">${p.product}</span></td><td class="text-end fw-bold text-warning">${p.total_qty}</td></tr>`);
+                                    row.click(() => showProductDetails(p, true));
+                                    lowBody.append(row);
+                                });
+                            } else lowBody.append('<tr><td colspan="2" class="text-center text-muted">No data</td></tr>');
+
+                            // AI
+                            const aiDiv = $('#retailerAIContainer'); aiDiv.empty();
+                            if(res.ai_qa) for(let k in res.ai_qa) if(k.startsWith('q')) aiDiv.append(`<div class="mb-2"><small class="d-block fw-bold text-dark">${res.ai_qa[k]}</small><small class="text-muted">${res.ai_qa['a'+k.substring(1)]}</small></div>`);
+                            $('#retailerDashboard').fadeIn();
+                        },
+                        error: function() { alert("Retailer analysis failed."); }
+                    });
+                }
+            });
+
+            $("#chatSearch").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#chatBody .chat-msg").filter(function() { $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) });
+            });
+        });
+
+        function showProductDetails(prodData, isLowDemand) {
+            $('#ddTitle').text(`Demand Breakdown: ${prodData.product}`);
+            
+            // 1. Fill Forecast Table (Next 3 Months)
+            const fBody = $('#ddForecastBody'); fBody.empty();
+            if(prodData.forecast && prodData.forecast.length > 0) {
+                prodData.forecast.forEach(f => {
+                    fBody.append(`<tr><td>${f.period}</td><td class="text-end fw-bold">${f.qty}</td></tr>`);
+                });
+            } else fBody.append('<tr><td colspan="2" class="text-center text-muted">No forecast generated</td></tr>');
+
+            // 2. Set Total Qty
+            $('#ddTotalQty').text(prodData.total_forecast_qty);
+
+            // 3. Fill Insights List
+            const iList = $('#ddInsightsList'); iList.empty();
+            if(prodData.insights && prodData.insights.length > 0) {
+                prodData.insights.forEach(insight => {
+                    iList.append(`<li class="mb-2">${insight}</li>`);
+                });
+            } else {
+                iList.append('<li>No strategic insights available.</li>');
+            }
+
+            // Styling adjustments for Low/High context
+            if(isLowDemand) {
+                $('#ddTotalQty').removeClass('text-primary').addClass('text-warning');
+                $('#ddInsightsBox').removeClass('border-secondary').addClass('border-warning');
+            } else {
+                $('#ddTotalQty').removeClass('text-warning').addClass('text-primary');
+                $('#ddInsightsBox').removeClass('border-warning').addClass('border-secondary');
+            }
+            
+            $('#drillDownPanel').slideDown();
+            $('html, body').animate({ scrollTop: $("#drillDownPanel").offset().top - 100 }, 500);
+        }
+
+        function renderQA(containerId, qaObj) {
+            const container = $(containerId); container.empty();
+            if(!qaObj || Object.keys(qaObj).length === 0) { container.html('<div class="col-12 text-muted">AI Insights unavailable.</div>'); return; }
+            for(let i=1; i<=5; i++) {
+                const q = qaObj[`q${i}`]; const a = qaObj[`a${i}`];
+                if(q && a) container.append(`<div class="col-md-6 mb-3"><div class="qa-q"><i class="fas fa-question-circle me-1"></i>${q}</div><div class="qa-a">${a}</div></div>`);
+            }
+        }
+        function askAI() {
+            const msg = $('#chatInput').val(); if(!msg) return;
+            $('#chatInput').val(''); $('#chatBody').append(`<div class="chat-msg chat-user">${msg}</div>`).scrollTop($('#chatBody')[0].scrollHeight);
+            const ctx = { batch: $('#mfgBatchSelect').val(), product: $('#lblProduct').text() };
+            $.ajax({
+                url: '/api/chat', type: 'POST', contentType: 'application/json', data: JSON.stringify({ message: msg, context: ctx }),
+                success: function(res) { $('#chatBody').append(`<div class="chat-msg chat-ai">${res.response}</div>`).scrollTop($('#chatBody')[0].scrollHeight); }
+            });
+        }
+    </script>
+</body>
+</html>

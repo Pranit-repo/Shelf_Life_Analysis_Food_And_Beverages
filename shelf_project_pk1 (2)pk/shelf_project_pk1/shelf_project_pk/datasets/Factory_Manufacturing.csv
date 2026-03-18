@@ -1,0 +1,1709 @@
+Batch_ID,FM_Product_Name,FM_Product_Category,FM_Manufacturing_Date,FM_Factory_Location,FM_Manufacturing_Quantity,FM_Unit
+BF2025010001,Marie Gold,Biscuit,04-01-2025,Kolhapur,12123,packages
+BF2025010002,Krackjack,Biscuit,06-01-2025,Kolhapur,5053,packages
+BF2025010003,Marie Gold,Biscuit,24-01-2025,Kolhapur,13201,packages
+BF2025010004,Hide & Seek,Biscuit,25-01-2025,Kolhapur,13317,packages
+BF2025010005,Marie Gold,Biscuit,04-01-2025,Kolhapur,18789,packages
+BF2025010006,Good Day,Biscuit,21-01-2025,Kolhapur,7504,packages
+BF2025010007,Perk,Chocolate,25-01-2025,Kolhapur,13837,packages
+BF2025010008,Dairy Milk,Chocolate,25-01-2025,Kolhapur,14813,packages
+BF2025010009,Mars,Chocolate,11-01-2025,Kolhapur,5319,packages
+BF2025010010,Snickers,Chocolate,04-01-2025,Kolhapur,19396,packages
+BF2025010011,Kit Kat,Chocolate,27-01-2025,Kolhapur,8923,packages
+BF2025010012,Munch,Chocolate,02-01-2025,Kolhapur,19385,packages
+BF2025010013,Rice Flour,Flour,03-01-2025,Kolhapur,16991,packages
+BF2025010014,Rice Flour,Flour,16-01-2025,Kolhapur,17461,packages
+BF2025010015,Besan,Flour,18-01-2025,Kolhapur,7103,packages
+BF2025010016,Multigrain Flour,Flour,22-01-2025,Kolhapur,14007,packages
+BF2025010017,Ragi Flour,Flour,06-01-2025,Kolhapur,13645,packages
+BF2025010018,Jowar Flour,Flour,28-01-2025,Kolhapur,8470,packages
+BF2025010019,Maida,Flour,18-01-2025,Kolhapur,16680,packages
+BF2025010020,Jowar Flour,Flour,10-01-2025,Kolhapur,16004,packages
+BF2025010021,Uncle Chips,Chips,15-01-2025,Pune,6982,packages
+BF2025010022,Pringles,Chips,08-01-2025,Pune,6049,packages
+BF2025010023,Lays,Chips,11-01-2025,Pune,14638,packages
+BF2025010024,Pringles,Chips,18-01-2025,Pune,14641,packages
+BF2025010025,Lays,Chips,08-01-2025,Pune,6163,packages
+BF2025010026,Lays,Chips,23-01-2025,Pune,8750,packages
+BF2025010027,Mirinda,Beverage,02-01-2025,Pune,6160,packages
+BF2025010028,Fanta,Beverage,17-01-2025,Pune,9562,packages
+BF2025010029,Limca,Beverage,22-01-2025,Pune,8510,packages
+BF2025010030,Sprite,Beverage,18-01-2025,Pune,16851,packages
+BF2025010031,Palm Oil,Oil,19-01-2025,Pune,8981,packages
+BF2025010032,Palm Oil,Oil,26-01-2025,Pune,18230,packages
+BF2025010033,Coconut Oil,Oil,14-01-2025,Pune,6545,packages
+BF2025010034,Rice Bran Oil,Oil,04-01-2025,Pune,10804,packages
+BF2025010035,Rice Bran Oil,Oil,14-01-2025,Pune,12651,packages
+BF2025010036,Sunflower Oil,Oil,28-01-2025,Pune,16032,packages
+BF2025010037,Olive Oil,Oil,21-01-2025,Pune,5993,packages
+BF2025010038,Soybean Oil,Oil,13-01-2025,Pune,18116,packages
+BF2025010039,Pears,Soap,08-01-2025,Mumbai,8116,packages
+BF2025010040,Godrej,Soap,18-01-2025,Mumbai,7296,packages
+BF2025010041,Lifebuoy,Soap,14-01-2025,Mumbai,9563,packages
+BF2025010042,Pears,Soap,15-01-2025,Mumbai,19327,packages
+BF2025010043,Pepsi,Beverage,15-01-2025,Mumbai,5828,packages
+BF2025010044,Coca Cola,Beverage,21-01-2025,Mumbai,6528,packages
+BF2025010045,Fanta,Beverage,25-01-2025,Mumbai,7724,packages
+BF2025010046,Limca,Beverage,14-01-2025,Mumbai,12886,packages
+BF2025010047,Tresemme,Shampoo,28-01-2025,Mumbai,19785,packages
+BF2025010048,Head & Shoulders,Shampoo,02-01-2025,Mumbai,11209,packages
+BF2025010049,Tresemme,Shampoo,01-01-2025,Mumbai,9345,packages
+BF2025010050,Garnier,Shampoo,26-01-2025,Mumbai,9673,packages
+BF2025010051,Garnier,Shampoo,14-01-2025,Mumbai,7536,packages
+BF2025010052,Munch,Chocolate,10-01-2025,Delhi,5958,packages
+BF2025010053,Dairy Milk,Chocolate,19-01-2025,Delhi,17254,packages
+BF2025010054,Dairy Milk,Chocolate,11-01-2025,Delhi,5821,packages
+BF2025010055,Mars,Chocolate,19-01-2025,Delhi,13238,packages
+BF2025010056,Perk,Chocolate,28-01-2025,Delhi,5931,packages
+BF2025010057,Bingo,Chips,03-01-2025,Delhi,6122,packages
+BF2025010058,Kurkure,Chips,20-01-2025,Delhi,16062,packages
+BF2025010059,Pringles,Chips,28-01-2025,Delhi,11615,packages
+BF2025010060,Pringles,Chips,04-01-2025,Delhi,14485,packages
+BF2025010061,Lays,Chips,20-01-2025,Delhi,15147,packages
+BF2025010062,Cheetos,Chips,03-01-2025,Delhi,15770,packages
+BF2025010063,Haldirams,Chips,19-01-2025,Delhi,9272,packages
+BF2025010064,Haldirams,Chips,07-01-2025,Delhi,8910,packages
+BF2025010065,Close Up,Toothpaste,13-01-2025,Delhi,16004,packages
+BF2025010066,Dabur Red,Toothpaste,21-01-2025,Delhi,12491,packages
+BF2025010067,Pepsodent,Toothpaste,11-01-2025,Delhi,5152,packages
+BF2025010068,Pepsodent,Toothpaste,15-01-2025,Delhi,6200,packages
+BF2025010069,Sensodyne,Toothpaste,18-01-2025,Delhi,13288,packages
+BF2025010070,Close Up,Toothpaste,09-01-2025,Delhi,10718,packages
+BF2025010071,Hamam,Soap,08-01-2025,Chennai,9669,packages
+BF2025010072,Godrej,Soap,06-01-2025,Chennai,18660,packages
+BF2025010073,Santoor,Soap,18-01-2025,Chennai,15021,packages
+BF2025010074,Lux,Soap,26-01-2025,Chennai,15942,packages
+BF2025010075,Monaco,Biscuit,10-01-2025,Chennai,19387,packages
+BF2025010076,Marie Gold,Biscuit,05-01-2025,Chennai,6891,packages
+BF2025010077,Hide & Seek,Biscuit,04-01-2025,Chennai,9462,packages
+BF2025010078,Good Day,Biscuit,10-01-2025,Chennai,16757,packages
+BF2025010079,Good Day,Biscuit,11-01-2025,Chennai,16263,packages
+BF2025010080,Marie Gold,Biscuit,21-01-2025,Chennai,13280,packages
+BF2025010081,Marie Gold,Biscuit,16-01-2025,Chennai,19833,packages
+BF2025010082,Parle-G,Biscuit,28-01-2025,Chennai,6512,packages
+BF2025010083,Ponni Rice,Rice,27-01-2025,Chennai,5722,packages
+BF2025010084,Matt Rice,Rice,01-01-2025,Chennai,17634,packages
+BF2025010085,Ponni Rice,Rice,05-01-2025,Chennai,7647,packages
+BF2025010086,Black Rice,Rice,24-01-2025,Chennai,14038,packages
+BF2025010087,Red Rice,Rice,23-01-2025,Chennai,14189,packages
+BF2025010088,Sona Masoori,Rice,01-01-2025,Chennai,6232,packages
+BF2025010089,Brown Rice,Rice,23-01-2025,Chennai,13938,packages
+BF2025010090,Sunsilk,Shampoo,27-01-2025,Bangalore,14543,packages
+BF2025010091,Head & Shoulders,Shampoo,18-01-2025,Bangalore,12041,packages
+BF2025010092,Clinic Plus,Shampoo,05-01-2025,Bangalore,10050,packages
+BF2025010093,Clinic Plus,Shampoo,12-01-2025,Bangalore,19727,packages
+BF2025010094,Sensodyne,Toothpaste,07-01-2025,Bangalore,15927,packages
+BF2025010095,Meswak,Toothpaste,04-01-2025,Bangalore,17781,packages
+BF2025010096,Anchor,Toothpaste,18-01-2025,Bangalore,15168,packages
+BF2025010097,Close Up,Toothpaste,24-01-2025,Bangalore,8878,packages
+BF2025010098,Close Up,Toothpaste,28-01-2025,Bangalore,18105,packages
+BF2025010099,Close Up,Toothpaste,26-01-2025,Bangalore,19441,packages
+BF2025010100,Mustard Oil,Oil,01-01-2025,Bangalore,17067,packages
+BF2025010101,Rice Bran Oil,Oil,11-01-2025,Bangalore,18143,packages
+BF2025010102,Coconut Oil,Oil,22-01-2025,Bangalore,9371,packages
+BF2025010103,Olive Oil,Oil,06-01-2025,Bangalore,11267,packages
+BF2025010104,Sunflower Oil,Oil,28-01-2025,Bangalore,19067,packages
+BF2025010105,Coconut Oil,Oil,16-01-2025,Bangalore,8269,packages
+BF2025010106,Palm Oil,Oil,27-01-2025,Bangalore,10728,packages
+BF2025010107,Jasmine Rice,Rice,27-01-2025,Hyderabad,8652,packages
+BF2025010108,Jasmine Rice,Rice,01-01-2025,Hyderabad,11528,packages
+BF2025010109,Ponni Rice,Rice,11-01-2025,Hyderabad,19161,packages
+BF2025010110,Ponni Rice,Rice,03-01-2025,Hyderabad,10753,packages
+BF2025010111,Red Rice,Rice,21-01-2025,Hyderabad,16133,packages
+BF2025010112,Matt Rice,Rice,27-01-2025,Hyderabad,5452,packages
+BF2025010113,Besan,Flour,09-01-2025,Hyderabad,14512,packages
+BF2025010114,Wheat Flour,Flour,09-01-2025,Hyderabad,6776,packages
+BF2025010115,Jowar Flour,Flour,20-01-2025,Hyderabad,10663,packages
+BF2025010116,Bajra Flour,Flour,24-01-2025,Hyderabad,12149,packages
+BF2025010117,Monaco,Biscuit,17-01-2025,Hyderabad,11311,packages
+BF2025010118,Good Day,Biscuit,19-01-2025,Hyderabad,9173,packages
+BF2025010119,Crack Jack,Biscuit,02-01-2025,Hyderabad,5027,packages
+BF2025010120,Good Day,Biscuit,17-01-2025,Hyderabad,10967,packages
+BF2025010121,Monaco,Biscuit,14-01-2025,Hyderabad,15882,packages
+BF2025010122,Bourbon,Biscuit,11-01-2025,Hyderabad,15868,packages
+BF2025010123,Monaco,Biscuit,28-01-2025,Hyderabad,16792,packages
+BF2025010124,Marie Gold,Biscuit,10-01-2025,Hyderabad,15926,packages
+BF2025010125,Anchor,Toothpaste,11-01-2025,Kolkata,16423,packages
+BF2025010126,Close Up,Toothpaste,10-01-2025,Kolkata,8143,packages
+BF2025010127,Anchor,Toothpaste,14-01-2025,Kolkata,16097,packages
+BF2025010128,Close Up,Toothpaste,24-01-2025,Kolkata,15084,packages
+BF2025010129,Dabur Red,Toothpaste,19-01-2025,Kolkata,11653,packages
+BF2025010130,Colgate,Toothpaste,18-01-2025,Kolkata,9978,packages
+BF2025010131,Sensodyne,Toothpaste,10-01-2025,Kolkata,12043,packages
+BF2025010132,Hamam,Soap,20-01-2025,Kolkata,12618,packages
+BF2025010133,Godrej,Soap,15-01-2025,Kolkata,16069,packages
+BF2025010134,Godrej,Soap,07-01-2025,Kolkata,18004,packages
+BF2025010135,Lifebuoy,Soap,26-01-2025,Kolkata,15794,packages
+BF2025010136,Santoor,Soap,03-01-2025,Kolkata,13445,packages
+BF2025010137,Hamam,Soap,22-01-2025,Kolkata,6530,packages
+BF2025010138,Pears,Soap,27-01-2025,Kolkata,16023,packages
+BF2025010139,Pears,Soap,10-01-2025,Kolkata,18214,packages
+BF2025010140,Sunflower Oil,Oil,05-01-2025,Kolkata,5757,packages
+BF2025010141,Palm Oil,Oil,08-01-2025,Kolkata,15015,packages
+BF2025010142,Olive Oil,Oil,28-01-2025,Kolkata,12461,packages
+BF2025010143,Coconut Oil,Oil,14-01-2025,Kolkata,16769,packages
+BF2025010144,Rice Bran Oil,Oil,23-01-2025,Kolkata,13099,packages
+BF2025020145,Hide & Seek,Biscuit,08-02-2025,Kolhapur,15748,packages
+BF2025020146,Parle-G,Biscuit,23-02-2025,Kolhapur,19625,packages
+BF2025020147,Monaco,Biscuit,25-02-2025,Kolhapur,17753,packages
+BF2025020148,Good Day,Biscuit,14-02-2025,Kolhapur,7881,packages
+BF2025020149,Krackjack,Biscuit,26-02-2025,Kolhapur,5822,packages
+BF2025020150,Good Day,Biscuit,18-02-2025,Kolhapur,18899,packages
+BF2025020151,Krackjack,Biscuit,04-02-2025,Kolhapur,7184,packages
+BF2025020152,Snickers,Chocolate,22-02-2025,Kolhapur,17374,packages
+BF2025020153,Twix,Chocolate,15-02-2025,Kolhapur,18608,packages
+BF2025020154,Mars,Chocolate,18-02-2025,Kolhapur,19699,packages
+BF2025020155,Mars,Chocolate,06-02-2025,Kolhapur,12373,packages
+BF2025020156,Munch,Chocolate,09-02-2025,Kolhapur,18760,packages
+BF2025020157,Kit Kat,Chocolate,21-02-2025,Kolhapur,17547,packages
+BF2025020158,Mars,Chocolate,25-02-2025,Kolhapur,15268,packages
+BF2025020159,Multigrain Flour,Flour,09-02-2025,Kolhapur,6269,packages
+BF2025020160,Ragi Flour,Flour,23-02-2025,Kolhapur,8841,packages
+BF2025020161,Bajra Flour,Flour,09-02-2025,Kolhapur,10238,packages
+BF2025020162,Rice Flour,Flour,18-02-2025,Kolhapur,7267,packages
+BF2025020163,Maida,Flour,05-02-2025,Kolhapur,11275,packages
+BF2025020164,Pringles,Chips,23-02-2025,Pune,6052,packages
+BF2025020165,Cheetos,Chips,14-02-2025,Pune,10421,packages
+BF2025020166,Uncle Chips,Chips,18-02-2025,Pune,11812,packages
+BF2025020167,Pringles,Chips,02-02-2025,Pune,18646,packages
+BF2025020168,Cheetos,Chips,14-02-2025,Pune,19824,packages
+BF2025020169,Coca Cola,Beverage,23-02-2025,Pune,19036,packages
+BF2025020170,Mountain Dew,Beverage,25-02-2025,Pune,12814,packages
+BF2025020171,Mirinda,Beverage,01-02-2025,Pune,9892,packages
+BF2025020172,Mountain Dew,Beverage,25-02-2025,Pune,18982,packages
+BF2025020173,Mountain Dew,Beverage,27-02-2025,Pune,13818,packages
+BF2025020174,Fanta,Beverage,24-02-2025,Pune,12999,packages
+BF2025020175,Thums Up,Beverage,08-02-2025,Pune,12140,packages
+BF2025020176,Coca Cola,Beverage,16-02-2025,Pune,11371,packages
+BF2025020177,Rice Bran Oil,Oil,22-02-2025,Pune,16864,packages
+BF2025020178,Palm Oil,Oil,06-02-2025,Pune,7091,packages
+BF2025020179,Sunflower Oil,Oil,20-02-2025,Pune,19859,packages
+BF2025020180,Sunflower Oil,Oil,13-02-2025,Pune,6375,packages
+BF2025020181,Rice Bran Oil,Oil,21-02-2025,Pune,7223,packages
+BF2025020182,Palm Oil,Oil,28-02-2025,Pune,7977,packages
+BF2025020183,Medimix,Soap,09-02-2025,Mumbai,10363,packages
+BF2025020184,Godrej,Soap,07-02-2025,Mumbai,10355,packages
+BF2025020185,Medimix,Soap,11-02-2025,Mumbai,9558,packages
+BF2025020186,Medimix,Soap,25-02-2025,Mumbai,9133,packages
+BF2025020187,Coca Cola,Beverage,16-02-2025,Mumbai,17272,packages
+BF2025020188,Coca Cola,Beverage,18-02-2025,Mumbai,10733,packages
+BF2025020189,Pepsi,Beverage,08-02-2025,Mumbai,17799,packages
+BF2025020190,Coca Cola,Beverage,21-02-2025,Mumbai,17357,packages
+BF2025020191,Pantene,Shampoo,08-02-2025,Mumbai,18749,packages
+BF2025020192,Head & Shoulders,Shampoo,01-02-2025,Mumbai,8908,packages
+BF2025020193,Garnier,Shampoo,05-02-2025,Mumbai,15968,packages
+BF2025020194,Pantene,Shampoo,04-02-2025,Mumbai,12619,packages
+BF2025020195,Snickers,Chocolate,25-02-2025,Delhi,7749,packages
+BF2025020196,5 Star,Chocolate,20-02-2025,Delhi,17743,packages
+BF2025020197,Perk,Chocolate,27-02-2025,Delhi,10096,packages
+BF2025020198,Dairy Milk,Chocolate,04-02-2025,Delhi,10111,packages
+BF2025020199,Twix,Chocolate,19-02-2025,Delhi,11498,packages
+BF2025020200,Munch,Chocolate,23-02-2025,Delhi,6245,packages
+BF2025020201,Pringles,Chips,23-02-2025,Delhi,6669,packages
+BF2025020202,Balaji,Chips,23-02-2025,Delhi,18931,packages
+BF2025020203,Kurkure,Chips,22-02-2025,Delhi,18045,packages
+BF2025020204,Lays,Chips,19-02-2025,Delhi,10688,packages
+BF2025020205,Cheetos,Chips,18-02-2025,Delhi,15838,packages
+BF2025020206,Kurkure,Chips,12-02-2025,Delhi,13289,packages
+BF2025020207,Haldirams,Chips,21-02-2025,Delhi,5207,packages
+BF2025020208,Cheetos,Chips,28-02-2025,Delhi,18473,packages
+BF2025020209,Anchor,Toothpaste,04-02-2025,Delhi,10934,packages
+BF2025020210,Promise,Toothpaste,21-02-2025,Delhi,16588,packages
+BF2025020211,Anchor,Toothpaste,05-02-2025,Delhi,7885,packages
+BF2025020212,Dabur Red,Toothpaste,24-02-2025,Delhi,15091,packages
+BF2025020213,Promise,Toothpaste,26-02-2025,Delhi,12616,packages
+BF2025020214,Dabur Red,Toothpaste,14-02-2025,Delhi,10280,packages
+BF2025020215,Sensodyne,Toothpaste,28-02-2025,Delhi,18610,packages
+BF2025020216,Godrej,Soap,09-02-2025,Chennai,8995,packages
+BF2025020217,Godrej,Soap,25-02-2025,Chennai,14336,packages
+BF2025020218,Medimix,Soap,20-02-2025,Chennai,10511,packages
+BF2025020219,Godrej,Soap,01-02-2025,Chennai,18942,packages
+BF2025020220,Krackjack,Biscuit,06-02-2025,Chennai,8475,packages
+BF2025020221,Marie Gold,Biscuit,12-02-2025,Chennai,10576,packages
+BF2025020222,Marie Gold,Biscuit,09-02-2025,Chennai,14106,packages
+BF2025020223,Good Day,Biscuit,01-02-2025,Chennai,6402,packages
+BF2025020224,Crack Jack,Biscuit,08-02-2025,Chennai,13004,packages
+BF2025020225,Good Day,Biscuit,18-02-2025,Chennai,16314,packages
+BF2025020226,Black Rice,Rice,21-02-2025,Chennai,12342,packages
+BF2025020227,Basmati,Rice,26-02-2025,Chennai,6524,packages
+BF2025020228,Jasmine Rice,Rice,10-02-2025,Chennai,11625,packages
+BF2025020229,Jasmine Rice,Rice,23-02-2025,Chennai,10016,packages
+BF2025020230,Matt Rice,Rice,22-02-2025,Chennai,12753,packages
+BF2025020231,Matt Rice,Rice,18-02-2025,Chennai,11971,packages
+BF2025020232,Matt Rice,Rice,24-02-2025,Chennai,10764,packages
+BF2025020233,Loreal,Shampoo,09-02-2025,Bangalore,9118,packages
+BF2025020234,Dove,Shampoo,08-02-2025,Bangalore,16817,packages
+BF2025020235,Sunsilk,Shampoo,07-02-2025,Bangalore,6958,packages
+BF2025020236,Head & Shoulders,Shampoo,24-02-2025,Bangalore,8138,packages
+BF2025020237,Garnier,Shampoo,07-02-2025,Bangalore,9530,packages
+BF2025020238,Loreal,Shampoo,24-02-2025,Bangalore,6647,packages
+BF2025020239,Pantene,Shampoo,27-02-2025,Bangalore,9853,packages
+BF2025020240,Close Up,Toothpaste,12-02-2025,Bangalore,9952,packages
+BF2025020241,Close Up,Toothpaste,01-02-2025,Bangalore,9494,packages
+BF2025020242,Colgate,Toothpaste,02-02-2025,Bangalore,14066,packages
+BF2025020243,Close Up,Toothpaste,10-02-2025,Bangalore,15450,packages
+BF2025020244,Promise,Toothpaste,28-02-2025,Bangalore,6680,packages
+BF2025020245,Groundnut Oil,Oil,19-02-2025,Bangalore,12690,packages
+BF2025020246,Palm Oil,Oil,16-02-2025,Bangalore,10582,packages
+BF2025020247,Sunflower Oil,Oil,06-02-2025,Bangalore,9136,packages
+BF2025020248,Palm Oil,Oil,28-02-2025,Bangalore,6869,packages
+BF2025020249,Black Rice,Rice,13-02-2025,Hyderabad,6213,packages
+BF2025020250,Basmati,Rice,19-02-2025,Hyderabad,7485,packages
+BF2025020251,Ponni Rice,Rice,05-02-2025,Hyderabad,6395,packages
+BF2025020252,Sona Masoori,Rice,08-02-2025,Hyderabad,14143,packages
+BF2025020253,Maida,Flour,20-02-2025,Hyderabad,17708,packages
+BF2025020254,Jowar Flour,Flour,17-02-2025,Hyderabad,12381,packages
+BF2025020255,Ragi Flour,Flour,15-02-2025,Hyderabad,19092,packages
+BF2025020256,Jowar Flour,Flour,19-02-2025,Hyderabad,10003,packages
+BF2025020257,Wheat Flour,Flour,19-02-2025,Hyderabad,14988,packages
+BF2025020258,Rice Flour,Flour,24-02-2025,Hyderabad,17496,packages
+BF2025020259,Maida,Flour,07-02-2025,Hyderabad,9335,packages
+BF2025020260,Good Day,Biscuit,06-02-2025,Hyderabad,7847,packages
+BF2025020261,Monaco,Biscuit,18-02-2025,Hyderabad,7564,packages
+BF2025020262,Crack Jack,Biscuit,01-02-2025,Hyderabad,12381,packages
+BF2025020263,Krackjack,Biscuit,23-02-2025,Hyderabad,9771,packages
+BF2025020264,Dabur Red,Toothpaste,08-02-2025,Kolkata,16582,packages
+BF2025020265,Promise,Toothpaste,10-02-2025,Kolkata,6166,packages
+BF2025020266,Sensodyne,Toothpaste,22-02-2025,Kolkata,9334,packages
+BF2025020267,Sensodyne,Toothpaste,26-02-2025,Kolkata,11965,packages
+BF2025020268,Pears,Soap,18-02-2025,Kolkata,15610,packages
+BF2025020269,Santoor,Soap,05-02-2025,Kolkata,18543,packages
+BF2025020270,Dettol,Soap,05-02-2025,Kolkata,5977,packages
+BF2025020271,Santoor,Soap,06-02-2025,Kolkata,14749,packages
+BF2025020272,Palm Oil,Oil,10-02-2025,Kolkata,7037,packages
+BF2025020273,Groundnut Oil,Oil,15-02-2025,Kolkata,16464,packages
+BF2025020274,Groundnut Oil,Oil,13-02-2025,Kolkata,13199,packages
+BF2025020275,Palm Oil,Oil,18-02-2025,Kolkata,12172,packages
+BF2025020276,Sunflower Oil,Oil,03-02-2025,Kolkata,19572,packages
+BF2025020277,Soybean Oil,Oil,14-02-2025,Kolkata,14891,packages
+BF2025020278,Sunflower Oil,Oil,09-02-2025,Kolkata,6496,packages
+BF2025020279,Sunflower Oil,Oil,08-02-2025,Kolkata,17529,packages
+BF2025030280,Parle-G,Biscuit,19-03-2025,Kolhapur,17502,packages
+BF2025030281,Hide & Seek,Biscuit,25-03-2025,Kolhapur,12708,packages
+BF2025030282,Krackjack,Biscuit,17-03-2025,Kolhapur,9557,packages
+BF2025030283,Crack Jack,Biscuit,06-03-2025,Kolhapur,15400,packages
+BF2025030284,Krackjack,Biscuit,27-03-2025,Kolhapur,6494,packages
+BF2025030285,Bourbon,Biscuit,16-03-2025,Kolhapur,11690,packages
+BF2025030286,5 Star,Chocolate,11-03-2025,Kolhapur,19053,packages
+BF2025030287,Snickers,Chocolate,06-03-2025,Kolhapur,11744,packages
+BF2025030288,Mars,Chocolate,23-03-2025,Kolhapur,9722,packages
+BF2025030289,Twix,Chocolate,22-03-2025,Kolhapur,18329,packages
+BF2025030290,Dairy Milk,Chocolate,25-03-2025,Kolhapur,12451,packages
+BF2025030291,Snickers,Chocolate,03-03-2025,Kolhapur,9135,packages
+BF2025030292,Jowar Flour,Flour,04-03-2025,Kolhapur,19170,packages
+BF2025030293,Wheat Flour,Flour,17-03-2025,Kolhapur,15775,packages
+BF2025030294,Multigrain Flour,Flour,28-03-2025,Kolhapur,11770,packages
+BF2025030295,Maida,Flour,02-03-2025,Kolhapur,13494,packages
+BF2025030296,Multigrain Flour,Flour,12-03-2025,Kolhapur,15246,packages
+BF2025030297,Wheat Flour,Flour,15-03-2025,Kolhapur,8335,packages
+BF2025030298,Bingo,Chips,18-03-2025,Pune,9719,packages
+BF2025030299,Uncle Chips,Chips,15-03-2025,Pune,6989,packages
+BF2025030300,Pringles,Chips,01-03-2025,Pune,16629,packages
+BF2025030301,Balaji,Chips,06-03-2025,Pune,14024,packages
+BF2025030302,Cheetos,Chips,01-03-2025,Pune,6527,packages
+BF2025030303,Kurkure,Chips,08-03-2025,Pune,12560,packages
+BF2025030304,Sprite,Beverage,21-03-2025,Pune,13165,packages
+BF2025030305,Thums Up,Beverage,23-03-2025,Pune,13337,packages
+BF2025030306,Thums Up,Beverage,23-03-2025,Pune,11807,packages
+BF2025030307,Limca,Beverage,27-03-2025,Pune,12736,packages
+BF2025030308,Mustard Oil,Oil,15-03-2025,Pune,11284,packages
+BF2025030309,Mustard Oil,Oil,07-03-2025,Pune,19156,packages
+BF2025030310,Groundnut Oil,Oil,03-03-2025,Pune,17659,packages
+BF2025030311,Rice Bran Oil,Oil,26-03-2025,Pune,10568,packages
+BF2025030312,Groundnut Oil,Oil,26-03-2025,Pune,18443,packages
+BF2025030313,Santoor,Soap,10-03-2025,Mumbai,18721,packages
+BF2025030314,Godrej,Soap,19-03-2025,Mumbai,19176,packages
+BF2025030315,Godrej,Soap,05-03-2025,Mumbai,13824,packages
+BF2025030316,Hamam,Soap,16-03-2025,Mumbai,10446,packages
+BF2025030317,Mountain Dew,Beverage,25-03-2025,Mumbai,12460,packages
+BF2025030318,Fanta,Beverage,11-03-2025,Mumbai,16427,packages
+BF2025030319,Mountain Dew,Beverage,08-03-2025,Mumbai,8826,packages
+BF2025030320,Mountain Dew,Beverage,28-03-2025,Mumbai,5715,packages
+BF2025030321,Limca,Beverage,11-03-2025,Mumbai,16554,packages
+BF2025030322,Mountain Dew,Beverage,26-03-2025,Mumbai,11325,packages
+BF2025030323,Sprite,Beverage,22-03-2025,Mumbai,13115,packages
+BF2025030324,Sprite,Beverage,02-03-2025,Mumbai,13229,packages
+BF2025030325,Dove,Shampoo,11-03-2025,Mumbai,19322,packages
+BF2025030326,Garnier,Shampoo,28-03-2025,Mumbai,6633,packages
+BF2025030327,Garnier,Shampoo,17-03-2025,Mumbai,5251,packages
+BF2025030328,Head & Shoulders,Shampoo,24-03-2025,Mumbai,11717,packages
+BF2025030329,Head & Shoulders,Shampoo,28-03-2025,Mumbai,6225,packages
+BF2025030330,Loreal,Shampoo,16-03-2025,Mumbai,10546,packages
+BF2025030331,Tresemme,Shampoo,20-03-2025,Mumbai,15646,packages
+BF2025030332,Sunsilk,Shampoo,03-03-2025,Mumbai,18964,packages
+BF2025030333,Snickers,Chocolate,13-03-2025,Delhi,15269,packages
+BF2025030334,Mars,Chocolate,23-03-2025,Delhi,19293,packages
+BF2025030335,Dairy Milk,Chocolate,18-03-2025,Delhi,15116,packages
+BF2025030336,Munch,Chocolate,03-03-2025,Delhi,15340,packages
+BF2025030337,Kit Kat,Chocolate,22-03-2025,Delhi,8727,packages
+BF2025030338,5 Star,Chocolate,24-03-2025,Delhi,12110,packages
+BF2025030339,5 Star,Chocolate,04-03-2025,Delhi,12269,packages
+BF2025030340,Kit Kat,Chocolate,06-03-2025,Delhi,19801,packages
+BF2025030341,Haldirams,Chips,02-03-2025,Delhi,18044,packages
+BF2025030342,Balaji,Chips,02-03-2025,Delhi,10873,packages
+BF2025030343,Cheetos,Chips,12-03-2025,Delhi,7385,packages
+BF2025030344,Cheetos,Chips,08-03-2025,Delhi,14272,packages
+BF2025030345,Close Up,Toothpaste,06-03-2025,Delhi,6293,packages
+BF2025030346,Anchor,Toothpaste,20-03-2025,Delhi,15153,packages
+BF2025030347,Sensodyne,Toothpaste,22-03-2025,Delhi,13153,packages
+BF2025030348,Close Up,Toothpaste,19-03-2025,Delhi,8804,packages
+BF2025030349,Dabur Red,Toothpaste,15-03-2025,Delhi,12529,packages
+BF2025030350,Lux,Soap,22-03-2025,Chennai,19727,packages
+BF2025030351,Godrej,Soap,26-03-2025,Chennai,19765,packages
+BF2025030352,Lifebuoy,Soap,10-03-2025,Chennai,6210,packages
+BF2025030353,Hamam,Soap,15-03-2025,Chennai,14626,packages
+BF2025030354,Medimix,Soap,10-03-2025,Chennai,16310,packages
+BF2025030355,Godrej,Soap,09-03-2025,Chennai,18849,packages
+BF2025030356,Crack Jack,Biscuit,07-03-2025,Chennai,18981,packages
+BF2025030357,Monaco,Biscuit,16-03-2025,Chennai,8886,packages
+BF2025030358,Bourbon,Biscuit,13-03-2025,Chennai,14417,packages
+BF2025030359,Marie Gold,Biscuit,10-03-2025,Chennai,5359,packages
+BF2025030360,Crack Jack,Biscuit,27-03-2025,Chennai,9497,packages
+BF2025030361,Parle-G,Biscuit,01-03-2025,Chennai,19919,packages
+BF2025030362,Black Rice,Rice,24-03-2025,Chennai,18645,packages
+BF2025030363,Jasmine Rice,Rice,10-03-2025,Chennai,14946,packages
+BF2025030364,Matt Rice,Rice,26-03-2025,Chennai,8588,packages
+BF2025030365,Jasmine Rice,Rice,21-03-2025,Chennai,15172,packages
+BF2025030366,Brown Rice,Rice,09-03-2025,Chennai,15293,packages
+BF2025030367,Basmati,Rice,04-03-2025,Chennai,10061,packages
+BF2025030368,Black Rice,Rice,26-03-2025,Chennai,5546,packages
+BF2025030369,Matt Rice,Rice,19-03-2025,Chennai,16998,packages
+BF2025030370,Loreal,Shampoo,03-03-2025,Bangalore,10352,packages
+BF2025030371,Tresemme,Shampoo,24-03-2025,Bangalore,7877,packages
+BF2025030372,Head & Shoulders,Shampoo,07-03-2025,Bangalore,17886,packages
+BF2025030373,Sunsilk,Shampoo,18-03-2025,Bangalore,13697,packages
+BF2025030374,Loreal,Shampoo,17-03-2025,Bangalore,18606,packages
+BF2025030375,Promise,Toothpaste,09-03-2025,Bangalore,18213,packages
+BF2025030376,Meswak,Toothpaste,10-03-2025,Bangalore,18176,packages
+BF2025030377,Promise,Toothpaste,04-03-2025,Bangalore,6233,packages
+BF2025030378,Sensodyne,Toothpaste,05-03-2025,Bangalore,19092,packages
+BF2025030379,Anchor,Toothpaste,22-03-2025,Bangalore,18856,packages
+BF2025030380,Olive Oil,Oil,12-03-2025,Bangalore,17954,packages
+BF2025030381,Sunflower Oil,Oil,13-03-2025,Bangalore,9332,packages
+BF2025030382,Olive Oil,Oil,18-03-2025,Bangalore,12451,packages
+BF2025030383,Groundnut Oil,Oil,12-03-2025,Bangalore,14577,packages
+BF2025030384,Soybean Oil,Oil,13-03-2025,Bangalore,6775,packages
+BF2025030385,Coconut Oil,Oil,22-03-2025,Bangalore,12724,packages
+BF2025030386,Soybean Oil,Oil,01-03-2025,Bangalore,19995,packages
+BF2025030387,Coconut Oil,Oil,20-03-2025,Bangalore,15611,packages
+BF2025030388,Black Rice,Rice,21-03-2025,Hyderabad,19899,packages
+BF2025030389,Ponni Rice,Rice,23-03-2025,Hyderabad,15637,packages
+BF2025030390,Sona Masoori,Rice,14-03-2025,Hyderabad,7290,packages
+BF2025030391,Basmati,Rice,02-03-2025,Hyderabad,9986,packages
+BF2025030392,Rice Flour,Flour,04-03-2025,Hyderabad,8846,packages
+BF2025030393,Besan,Flour,18-03-2025,Hyderabad,11367,packages
+BF2025030394,Bajra Flour,Flour,15-03-2025,Hyderabad,15985,packages
+BF2025030395,Jowar Flour,Flour,24-03-2025,Hyderabad,14622,packages
+BF2025030396,Besan,Flour,24-03-2025,Hyderabad,19506,packages
+BF2025030397,Rice Flour,Flour,14-03-2025,Hyderabad,18659,packages
+BF2025030398,Jowar Flour,Flour,16-03-2025,Hyderabad,9583,packages
+BF2025030399,Bourbon,Biscuit,23-03-2025,Hyderabad,8559,packages
+BF2025030400,Krackjack,Biscuit,15-03-2025,Hyderabad,8868,packages
+BF2025030401,Bourbon,Biscuit,28-03-2025,Hyderabad,6627,packages
+BF2025030402,Bourbon,Biscuit,22-03-2025,Hyderabad,13920,packages
+BF2025030403,Anchor,Toothpaste,02-03-2025,Kolkata,9520,packages
+BF2025030404,Pepsodent,Toothpaste,07-03-2025,Kolkata,18894,packages
+BF2025030405,Promise,Toothpaste,27-03-2025,Kolkata,6501,packages
+BF2025030406,Sensodyne,Toothpaste,22-03-2025,Kolkata,15513,packages
+BF2025030407,Colgate,Toothpaste,21-03-2025,Kolkata,5828,packages
+BF2025030408,Meswak,Toothpaste,26-03-2025,Kolkata,8990,packages
+BF2025030409,Pears,Soap,26-03-2025,Kolkata,6124,packages
+BF2025030410,Pears,Soap,27-03-2025,Kolkata,14607,packages
+BF2025030411,Pears,Soap,07-03-2025,Kolkata,10383,packages
+BF2025030412,Lifebuoy,Soap,25-03-2025,Kolkata,17921,packages
+BF2025030413,Lux,Soap,20-03-2025,Kolkata,9542,packages
+BF2025030414,Groundnut Oil,Oil,05-03-2025,Kolkata,18082,packages
+BF2025030415,Olive Oil,Oil,06-03-2025,Kolkata,15830,packages
+BF2025030416,Sunflower Oil,Oil,28-03-2025,Kolkata,7159,packages
+BF2025030417,Soybean Oil,Oil,01-03-2025,Kolkata,17943,packages
+BF2025030418,Coconut Oil,Oil,26-03-2025,Kolkata,14647,packages
+BF2025040419,Hide & Seek,Biscuit,01-04-2025,Kolhapur,9347,packages
+BF2025040420,Hide & Seek,Biscuit,02-04-2025,Kolhapur,17152,packages
+BF2025040421,Monaco,Biscuit,14-04-2025,Kolhapur,17216,packages
+BF2025040422,Krackjack,Biscuit,03-04-2025,Kolhapur,12344,packages
+BF2025040423,Bourbon,Biscuit,25-04-2025,Kolhapur,13408,packages
+BF2025040424,Monaco,Biscuit,19-04-2025,Kolhapur,12405,packages
+BF2025040425,Dairy Milk,Chocolate,08-04-2025,Kolhapur,16915,packages
+BF2025040426,Kit Kat,Chocolate,26-04-2025,Kolhapur,12504,packages
+BF2025040427,Dairy Milk,Chocolate,21-04-2025,Kolhapur,5996,packages
+BF2025040428,Twix,Chocolate,16-04-2025,Kolhapur,11984,packages
+BF2025040429,5 Star,Chocolate,22-04-2025,Kolhapur,13032,packages
+BF2025040430,Mars,Chocolate,23-04-2025,Kolhapur,6204,packages
+BF2025040431,Snickers,Chocolate,03-04-2025,Kolhapur,14966,packages
+BF2025040432,5 Star,Chocolate,05-04-2025,Kolhapur,7067,packages
+BF2025040433,Bajra Flour,Flour,20-04-2025,Kolhapur,11240,packages
+BF2025040434,Ragi Flour,Flour,20-04-2025,Kolhapur,12433,packages
+BF2025040435,Jowar Flour,Flour,17-04-2025,Kolhapur,6624,packages
+BF2025040436,Rice Flour,Flour,26-04-2025,Kolhapur,18972,packages
+BF2025040437,Maida,Flour,21-04-2025,Kolhapur,12046,packages
+BF2025040438,Maida,Flour,15-04-2025,Kolhapur,11779,packages
+BF2025040439,Uncle Chips,Chips,27-04-2025,Pune,11532,packages
+BF2025040440,Kurkure,Chips,14-04-2025,Pune,10120,packages
+BF2025040441,Haldirams,Chips,14-04-2025,Pune,15897,packages
+BF2025040442,Haldirams,Chips,09-04-2025,Pune,7500,packages
+BF2025040443,Uncle Chips,Chips,22-04-2025,Pune,6099,packages
+BF2025040444,Kurkure,Chips,03-04-2025,Pune,6527,packages
+BF2025040445,Mirinda,Beverage,04-04-2025,Pune,18300,packages
+BF2025040446,Coca Cola,Beverage,05-04-2025,Pune,14608,packages
+BF2025040447,Mirinda,Beverage,18-04-2025,Pune,15977,packages
+BF2025040448,Mountain Dew,Beverage,04-04-2025,Pune,10793,packages
+BF2025040449,Mountain Dew,Beverage,28-04-2025,Pune,19222,packages
+BF2025040450,Coca Cola,Beverage,24-04-2025,Pune,9712,packages
+BF2025040451,Thums Up,Beverage,20-04-2025,Pune,10761,packages
+BF2025040452,Coconut Oil,Oil,19-04-2025,Pune,7535,packages
+BF2025040453,Palm Oil,Oil,22-04-2025,Pune,8674,packages
+BF2025040454,Olive Oil,Oil,28-04-2025,Pune,10736,packages
+BF2025040455,Soybean Oil,Oil,28-04-2025,Pune,6882,packages
+BF2025040456,Pears,Soap,19-04-2025,Mumbai,18225,packages
+BF2025040457,Lux,Soap,14-04-2025,Mumbai,14977,packages
+BF2025040458,Santoor,Soap,22-04-2025,Mumbai,5474,packages
+BF2025040459,Santoor,Soap,06-04-2025,Mumbai,16513,packages
+BF2025040460,Santoor,Soap,25-04-2025,Mumbai,10567,packages
+BF2025040461,Lux,Soap,12-04-2025,Mumbai,7972,packages
+BF2025040462,Mountain Dew,Beverage,19-04-2025,Mumbai,6140,packages
+BF2025040463,Coca Cola,Beverage,05-04-2025,Mumbai,6503,packages
+BF2025040464,Fanta,Beverage,24-04-2025,Mumbai,11163,packages
+BF2025040465,Limca,Beverage,14-04-2025,Mumbai,10585,packages
+BF2025040466,Mirinda,Beverage,06-04-2025,Mumbai,10105,packages
+BF2025040467,Dove,Shampoo,25-04-2025,Mumbai,19472,packages
+BF2025040468,Head & Shoulders,Shampoo,02-04-2025,Mumbai,7579,packages
+BF2025040469,Clinic Plus,Shampoo,25-04-2025,Mumbai,16042,packages
+BF2025040470,Loreal,Shampoo,03-04-2025,Mumbai,12259,packages
+BF2025040471,Tresemme,Shampoo,22-04-2025,Mumbai,12957,packages
+BF2025040472,Garnier,Shampoo,20-04-2025,Mumbai,11785,packages
+BF2025040473,5 Star,Chocolate,07-04-2025,Delhi,10655,packages
+BF2025040474,5 Star,Chocolate,14-04-2025,Delhi,9640,packages
+BF2025040475,Mars,Chocolate,22-04-2025,Delhi,13633,packages
+BF2025040476,Kit Kat,Chocolate,22-04-2025,Delhi,5744,packages
+BF2025040477,Twix,Chocolate,08-04-2025,Delhi,14819,packages
+BF2025040478,Dairy Milk,Chocolate,02-04-2025,Delhi,8349,packages
+BF2025040479,Bingo,Chips,07-04-2025,Delhi,17520,packages
+BF2025040480,Balaji,Chips,09-04-2025,Delhi,10375,packages
+BF2025040481,Lays,Chips,04-04-2025,Delhi,13149,packages
+BF2025040482,Cheetos,Chips,24-04-2025,Delhi,7878,packages
+BF2025040483,Cheetos,Chips,05-04-2025,Delhi,13725,packages
+BF2025040484,Pringles,Chips,23-04-2025,Delhi,13196,packages
+BF2025040485,Meswak,Toothpaste,27-04-2025,Delhi,6180,packages
+BF2025040486,Colgate,Toothpaste,13-04-2025,Delhi,12147,packages
+BF2025040487,Promise,Toothpaste,01-04-2025,Delhi,6275,packages
+BF2025040488,Meswak,Toothpaste,28-04-2025,Delhi,14433,packages
+BF2025040489,Anchor,Toothpaste,14-04-2025,Delhi,16624,packages
+BF2025040490,Anchor,Toothpaste,21-04-2025,Delhi,9743,packages
+BF2025040491,Anchor,Toothpaste,04-04-2025,Delhi,5341,packages
+BF2025040492,Close Up,Toothpaste,11-04-2025,Delhi,18128,packages
+BF2025040493,Hamam,Soap,15-04-2025,Chennai,6443,packages
+BF2025040494,Dettol,Soap,14-04-2025,Chennai,8986,packages
+BF2025040495,Medimix,Soap,14-04-2025,Chennai,13584,packages
+BF2025040496,Medimix,Soap,03-04-2025,Chennai,19262,packages
+BF2025040497,Hamam,Soap,10-04-2025,Chennai,8630,packages
+BF2025040498,Lifebuoy,Soap,11-04-2025,Chennai,6251,packages
+BF2025040499,Dettol,Soap,17-04-2025,Chennai,13693,packages
+BF2025040500,Pears,Soap,17-04-2025,Chennai,19842,packages
+BF2025040501,Hide & Seek,Biscuit,12-04-2025,Chennai,8871,packages
+BF2025040502,Hide & Seek,Biscuit,04-04-2025,Chennai,9193,packages
+BF2025040503,Hide & Seek,Biscuit,07-04-2025,Chennai,14869,packages
+BF2025040504,Monaco,Biscuit,05-04-2025,Chennai,7902,packages
+BF2025040505,Krackjack,Biscuit,25-04-2025,Chennai,12601,packages
+BF2025040506,Krackjack,Biscuit,25-04-2025,Chennai,16159,packages
+BF2025040507,Matt Rice,Rice,21-04-2025,Chennai,19159,packages
+BF2025040508,Matt Rice,Rice,21-04-2025,Chennai,7473,packages
+BF2025040509,Sona Masoori,Rice,15-04-2025,Chennai,12682,packages
+BF2025040510,Ponni Rice,Rice,15-04-2025,Chennai,18047,packages
+BF2025040511,Basmati,Rice,09-04-2025,Chennai,10766,packages
+BF2025040512,Sona Masoori,Rice,17-04-2025,Chennai,10085,packages
+BF2025040513,Black Rice,Rice,15-04-2025,Chennai,5616,packages
+BF2025040514,Matt Rice,Rice,02-04-2025,Chennai,18626,packages
+BF2025040515,Dove,Shampoo,03-04-2025,Bangalore,15076,packages
+BF2025040516,Tresemme,Shampoo,20-04-2025,Bangalore,12581,packages
+BF2025040517,Clinic Plus,Shampoo,19-04-2025,Bangalore,12368,packages
+BF2025040518,Pantene,Shampoo,26-04-2025,Bangalore,10267,packages
+BF2025040519,Garnier,Shampoo,20-04-2025,Bangalore,13214,packages
+BF2025040520,Clinic Plus,Shampoo,05-04-2025,Bangalore,12381,packages
+BF2025040521,Meswak,Toothpaste,26-04-2025,Bangalore,16703,packages
+BF2025040522,Close Up,Toothpaste,03-04-2025,Bangalore,5641,packages
+BF2025040523,Promise,Toothpaste,08-04-2025,Bangalore,12199,packages
+BF2025040524,Close Up,Toothpaste,17-04-2025,Bangalore,10962,packages
+BF2025040525,Rice Bran Oil,Oil,10-04-2025,Bangalore,11697,packages
+BF2025040526,Soybean Oil,Oil,25-04-2025,Bangalore,16123,packages
+BF2025040527,Sunflower Oil,Oil,20-04-2025,Bangalore,17930,packages
+BF2025040528,Soybean Oil,Oil,21-04-2025,Bangalore,6079,packages
+BF2025040529,Olive Oil,Oil,11-04-2025,Bangalore,14141,packages
+BF2025040530,Rice Bran Oil,Oil,22-04-2025,Bangalore,9655,packages
+BF2025040531,Brown Rice,Rice,24-04-2025,Hyderabad,10461,packages
+BF2025040532,Brown Rice,Rice,03-04-2025,Hyderabad,10731,packages
+BF2025040533,Red Rice,Rice,10-04-2025,Hyderabad,7112,packages
+BF2025040534,Sona Masoori,Rice,20-04-2025,Hyderabad,10072,packages
+BF2025040535,Red Rice,Rice,18-04-2025,Hyderabad,15542,packages
+BF2025040536,Matt Rice,Rice,26-04-2025,Hyderabad,18323,packages
+BF2025040537,Rice Flour,Flour,22-04-2025,Hyderabad,15584,packages
+BF2025040538,Jowar Flour,Flour,22-04-2025,Hyderabad,13331,packages
+BF2025040539,Wheat Flour,Flour,12-04-2025,Hyderabad,10940,packages
+BF2025040540,Besan,Flour,10-04-2025,Hyderabad,8509,packages
+BF2025040541,Multigrain Flour,Flour,11-04-2025,Hyderabad,8145,packages
+BF2025040542,Hide & Seek,Biscuit,05-04-2025,Hyderabad,6264,packages
+BF2025040543,Monaco,Biscuit,10-04-2025,Hyderabad,13317,packages
+BF2025040544,Parle-G,Biscuit,25-04-2025,Hyderabad,15845,packages
+BF2025040545,Hide & Seek,Biscuit,11-04-2025,Hyderabad,14785,packages
+BF2025040546,Hide & Seek,Biscuit,13-04-2025,Hyderabad,7658,packages
+BF2025040547,Close Up,Toothpaste,27-04-2025,Kolkata,16815,packages
+BF2025040548,Colgate,Toothpaste,15-04-2025,Kolkata,11731,packages
+BF2025040549,Sensodyne,Toothpaste,12-04-2025,Kolkata,12277,packages
+BF2025040550,Dabur Red,Toothpaste,20-04-2025,Kolkata,17327,packages
+BF2025040551,Promise,Toothpaste,24-04-2025,Kolkata,8833,packages
+BF2025040552,Santoor,Soap,08-04-2025,Kolkata,18248,packages
+BF2025040553,Godrej,Soap,26-04-2025,Kolkata,19810,packages
+BF2025040554,Pears,Soap,27-04-2025,Kolkata,11026,packages
+BF2025040555,Godrej,Soap,22-04-2025,Kolkata,12564,packages
+BF2025040556,Santoor,Soap,25-04-2025,Kolkata,17748,packages
+BF2025040557,Medimix,Soap,13-04-2025,Kolkata,7655,packages
+BF2025040558,Pears,Soap,27-04-2025,Kolkata,18127,packages
+BF2025040559,Lifebuoy,Soap,20-04-2025,Kolkata,19303,packages
+BF2025040560,Palm Oil,Oil,02-04-2025,Kolkata,19321,packages
+BF2025040561,Olive Oil,Oil,12-04-2025,Kolkata,16655,packages
+BF2025040562,Olive Oil,Oil,28-04-2025,Kolkata,9670,packages
+BF2025040563,Mustard Oil,Oil,03-04-2025,Kolkata,9469,packages
+BF2025040564,Mustard Oil,Oil,15-04-2025,Kolkata,18615,packages
+BF2025040565,Olive Oil,Oil,14-04-2025,Kolkata,19917,packages
+BF2025050566,Krackjack,Biscuit,27-05-2025,Kolhapur,19493,packages
+BF2025050567,Parle-G,Biscuit,12-05-2025,Kolhapur,11797,packages
+BF2025050568,Crack Jack,Biscuit,02-05-2025,Kolhapur,13224,packages
+BF2025050569,Good Day,Biscuit,12-05-2025,Kolhapur,11326,packages
+BF2025050570,Bourbon,Biscuit,03-05-2025,Kolhapur,8678,packages
+BF2025050571,5 Star,Chocolate,11-05-2025,Kolhapur,18749,packages
+BF2025050572,Snickers,Chocolate,23-05-2025,Kolhapur,17965,packages
+BF2025050573,Perk,Chocolate,05-05-2025,Kolhapur,5627,packages
+BF2025050574,Mars,Chocolate,10-05-2025,Kolhapur,16404,packages
+BF2025050575,Multigrain Flour,Flour,25-05-2025,Kolhapur,12349,packages
+BF2025050576,Wheat Flour,Flour,20-05-2025,Kolhapur,19841,packages
+BF2025050577,Wheat Flour,Flour,03-05-2025,Kolhapur,9193,packages
+BF2025050578,Besan,Flour,07-05-2025,Kolhapur,13991,packages
+BF2025050579,Jowar Flour,Flour,24-05-2025,Kolhapur,6821,packages
+BF2025050580,Balaji,Chips,08-05-2025,Pune,6996,packages
+BF2025050581,Pringles,Chips,02-05-2025,Pune,11878,packages
+BF2025050582,Uncle Chips,Chips,21-05-2025,Pune,6029,packages
+BF2025050583,Uncle Chips,Chips,04-05-2025,Pune,14776,packages
+BF2025050584,Lays,Chips,18-05-2025,Pune,15353,packages
+BF2025050585,Pringles,Chips,17-05-2025,Pune,16772,packages
+BF2025050586,Mountain Dew,Beverage,10-05-2025,Pune,5025,packages
+BF2025050587,Mirinda,Beverage,20-05-2025,Pune,8941,packages
+BF2025050588,Mountain Dew,Beverage,19-05-2025,Pune,8068,packages
+BF2025050589,Pepsi,Beverage,22-05-2025,Pune,13576,packages
+BF2025050590,Pepsi,Beverage,12-05-2025,Pune,13618,packages
+BF2025050591,Sunflower Oil,Oil,17-05-2025,Pune,11397,packages
+BF2025050592,Palm Oil,Oil,28-05-2025,Pune,5713,packages
+BF2025050593,Rice Bran Oil,Oil,21-05-2025,Pune,11116,packages
+BF2025050594,Sunflower Oil,Oil,09-05-2025,Pune,10850,packages
+BF2025050595,Olive Oil,Oil,26-05-2025,Pune,10649,packages
+BF2025050596,Olive Oil,Oil,08-05-2025,Pune,17640,packages
+BF2025050597,Soybean Oil,Oil,19-05-2025,Pune,7185,packages
+BF2025050598,Soybean Oil,Oil,02-05-2025,Pune,13945,packages
+BF2025050599,Lifebuoy,Soap,27-05-2025,Mumbai,18605,packages
+BF2025050600,Godrej,Soap,25-05-2025,Mumbai,16393,packages
+BF2025050601,Lifebuoy,Soap,16-05-2025,Mumbai,18295,packages
+BF2025050602,Dettol,Soap,05-05-2025,Mumbai,16731,packages
+BF2025050603,Godrej,Soap,25-05-2025,Mumbai,5605,packages
+BF2025050604,Pears,Soap,10-05-2025,Mumbai,5717,packages
+BF2025050605,Mirinda,Beverage,02-05-2025,Mumbai,10080,packages
+BF2025050606,Mountain Dew,Beverage,17-05-2025,Mumbai,18359,packages
+BF2025050607,Limca,Beverage,18-05-2025,Mumbai,9150,packages
+BF2025050608,Fanta,Beverage,02-05-2025,Mumbai,9687,packages
+BF2025050609,Coca Cola,Beverage,12-05-2025,Mumbai,19185,packages
+BF2025050610,Dove,Shampoo,09-05-2025,Mumbai,18096,packages
+BF2025050611,Tresemme,Shampoo,12-05-2025,Mumbai,19573,packages
+BF2025050612,Garnier,Shampoo,13-05-2025,Mumbai,19657,packages
+BF2025050613,Sunsilk,Shampoo,13-05-2025,Mumbai,8060,packages
+BF2025050614,Garnier,Shampoo,16-05-2025,Mumbai,11018,packages
+BF2025050615,Loreal,Shampoo,26-05-2025,Mumbai,18126,packages
+BF2025050616,Twix,Chocolate,24-05-2025,Delhi,6293,packages
+BF2025050617,Perk,Chocolate,14-05-2025,Delhi,13937,packages
+BF2025050618,Snickers,Chocolate,10-05-2025,Delhi,6680,packages
+BF2025050619,Snickers,Chocolate,03-05-2025,Delhi,15828,packages
+BF2025050620,Uncle Chips,Chips,10-05-2025,Delhi,14873,packages
+BF2025050621,Cheetos,Chips,23-05-2025,Delhi,7730,packages
+BF2025050622,Uncle Chips,Chips,23-05-2025,Delhi,10759,packages
+BF2025050623,Lays,Chips,15-05-2025,Delhi,16908,packages
+BF2025050624,Haldirams,Chips,28-05-2025,Delhi,15073,packages
+BF2025050625,Balaji,Chips,14-05-2025,Delhi,15477,packages
+BF2025050626,Anchor,Toothpaste,03-05-2025,Delhi,10952,packages
+BF2025050627,Close Up,Toothpaste,17-05-2025,Delhi,5510,packages
+BF2025050628,Promise,Toothpaste,05-05-2025,Delhi,5570,packages
+BF2025050629,Pepsodent,Toothpaste,05-05-2025,Delhi,8866,packages
+BF2025050630,Medimix,Soap,12-05-2025,Chennai,14293,packages
+BF2025050631,Lifebuoy,Soap,02-05-2025,Chennai,16125,packages
+BF2025050632,Hamam,Soap,15-05-2025,Chennai,11095,packages
+BF2025050633,Dettol,Soap,15-05-2025,Chennai,14403,packages
+BF2025050634,Hamam,Soap,05-05-2025,Chennai,11521,packages
+BF2025050635,Santoor,Soap,11-05-2025,Chennai,9089,packages
+BF2025050636,Hide & Seek,Biscuit,01-05-2025,Chennai,13176,packages
+BF2025050637,Crack Jack,Biscuit,17-05-2025,Chennai,19967,packages
+BF2025050638,Monaco,Biscuit,18-05-2025,Chennai,9288,packages
+BF2025050639,Marie Gold,Biscuit,25-05-2025,Chennai,16534,packages
+BF2025050640,Ponni Rice,Rice,07-05-2025,Chennai,16370,packages
+BF2025050641,Jasmine Rice,Rice,16-05-2025,Chennai,7009,packages
+BF2025050642,Sona Masoori,Rice,05-05-2025,Chennai,12406,packages
+BF2025050643,Black Rice,Rice,06-05-2025,Chennai,6438,packages
+BF2025050644,Matt Rice,Rice,26-05-2025,Chennai,15941,packages
+BF2025050645,Sona Masoori,Rice,12-05-2025,Chennai,14011,packages
+BF2025050646,Ponni Rice,Rice,18-05-2025,Chennai,19603,packages
+BF2025050647,Head & Shoulders,Shampoo,28-05-2025,Bangalore,16662,packages
+BF2025050648,Head & Shoulders,Shampoo,23-05-2025,Bangalore,18003,packages
+BF2025050649,Pantene,Shampoo,12-05-2025,Bangalore,6988,packages
+BF2025050650,Head & Shoulders,Shampoo,07-05-2025,Bangalore,8878,packages
+BF2025050651,Garnier,Shampoo,26-05-2025,Bangalore,5430,packages
+BF2025050652,Sunsilk,Shampoo,12-05-2025,Bangalore,12657,packages
+BF2025050653,Pepsodent,Toothpaste,05-05-2025,Bangalore,6077,packages
+BF2025050654,Anchor,Toothpaste,10-05-2025,Bangalore,16746,packages
+BF2025050655,Promise,Toothpaste,24-05-2025,Bangalore,13612,packages
+BF2025050656,Anchor,Toothpaste,14-05-2025,Bangalore,18489,packages
+BF2025050657,Pepsodent,Toothpaste,19-05-2025,Bangalore,7053,packages
+BF2025050658,Pepsodent,Toothpaste,11-05-2025,Bangalore,12372,packages
+BF2025050659,Meswak,Toothpaste,15-05-2025,Bangalore,7102,packages
+BF2025050660,Close Up,Toothpaste,27-05-2025,Bangalore,17579,packages
+BF2025050661,Sunflower Oil,Oil,14-05-2025,Bangalore,18621,packages
+BF2025050662,Mustard Oil,Oil,04-05-2025,Bangalore,9982,packages
+BF2025050663,Mustard Oil,Oil,06-05-2025,Bangalore,10286,packages
+BF2025050664,Coconut Oil,Oil,23-05-2025,Bangalore,10669,packages
+BF2025050665,Groundnut Oil,Oil,17-05-2025,Bangalore,18859,packages
+BF2025050666,Jasmine Rice,Rice,09-05-2025,Hyderabad,15404,packages
+BF2025050667,Ponni Rice,Rice,18-05-2025,Hyderabad,7050,packages
+BF2025050668,Ponni Rice,Rice,21-05-2025,Hyderabad,15066,packages
+BF2025050669,Sona Masoori,Rice,18-05-2025,Hyderabad,13234,packages
+BF2025050670,Besan,Flour,19-05-2025,Hyderabad,7804,packages
+BF2025050671,Bajra Flour,Flour,22-05-2025,Hyderabad,18804,packages
+BF2025050672,Wheat Flour,Flour,19-05-2025,Hyderabad,18520,packages
+BF2025050673,Wheat Flour,Flour,28-05-2025,Hyderabad,6330,packages
+BF2025050674,Ragi Flour,Flour,02-05-2025,Hyderabad,15668,packages
+BF2025050675,Crack Jack,Biscuit,25-05-2025,Hyderabad,15127,packages
+BF2025050676,Parle-G,Biscuit,21-05-2025,Hyderabad,13159,packages
+BF2025050677,Marie Gold,Biscuit,21-05-2025,Hyderabad,15517,packages
+BF2025050678,Krackjack,Biscuit,10-05-2025,Hyderabad,9012,packages
+BF2025050679,Crack Jack,Biscuit,26-05-2025,Hyderabad,9873,packages
+BF2025050680,Colgate,Toothpaste,03-05-2025,Kolkata,7589,packages
+BF2025050681,Anchor,Toothpaste,15-05-2025,Kolkata,12933,packages
+BF2025050682,Sensodyne,Toothpaste,15-05-2025,Kolkata,10573,packages
+BF2025050683,Close Up,Toothpaste,20-05-2025,Kolkata,10121,packages
+BF2025050684,Meswak,Toothpaste,28-05-2025,Kolkata,17029,packages
+BF2025050685,Meswak,Toothpaste,28-05-2025,Kolkata,11532,packages
+BF2025050686,Meswak,Toothpaste,05-05-2025,Kolkata,13437,packages
+BF2025050687,Hamam,Soap,04-05-2025,Kolkata,8960,packages
+BF2025050688,Dettol,Soap,15-05-2025,Kolkata,9382,packages
+BF2025050689,Pears,Soap,15-05-2025,Kolkata,7308,packages
+BF2025050690,Lux,Soap,04-05-2025,Kolkata,9754,packages
+BF2025050691,Medimix,Soap,13-05-2025,Kolkata,9067,packages
+BF2025050692,Lifebuoy,Soap,28-05-2025,Kolkata,18328,packages
+BF2025050693,Hamam,Soap,11-05-2025,Kolkata,8110,packages
+BF2025050694,Lifebuoy,Soap,25-05-2025,Kolkata,13163,packages
+BF2025050695,Palm Oil,Oil,15-05-2025,Kolkata,19402,packages
+BF2025050696,Palm Oil,Oil,10-05-2025,Kolkata,5379,packages
+BF2025050697,Rice Bran Oil,Oil,03-05-2025,Kolkata,13281,packages
+BF2025050698,Coconut Oil,Oil,15-05-2025,Kolkata,8524,packages
+BF2025050699,Soybean Oil,Oil,19-05-2025,Kolkata,5797,packages
+BF2025050700,Groundnut Oil,Oil,02-05-2025,Kolkata,13108,packages
+BF2025050701,Palm Oil,Oil,20-05-2025,Kolkata,9681,packages
+BF2025050702,Sunflower Oil,Oil,18-05-2025,Kolkata,18880,packages
+BF2025060703,Hide & Seek,Biscuit,14-06-2025,Kolhapur,19458,packages
+BF2025060704,Bourbon,Biscuit,09-06-2025,Kolhapur,17515,packages
+BF2025060705,Bourbon,Biscuit,13-06-2025,Kolhapur,5741,packages
+BF2025060706,Parle-G,Biscuit,13-06-2025,Kolhapur,14343,packages
+BF2025060707,Snickers,Chocolate,07-06-2025,Kolhapur,14064,packages
+BF2025060708,5 Star,Chocolate,10-06-2025,Kolhapur,11329,packages
+BF2025060709,Mars,Chocolate,17-06-2025,Kolhapur,17523,packages
+BF2025060710,Kit Kat,Chocolate,18-06-2025,Kolhapur,18521,packages
+BF2025060711,5 Star,Chocolate,20-06-2025,Kolhapur,7108,packages
+BF2025060712,Twix,Chocolate,04-06-2025,Kolhapur,11114,packages
+BF2025060713,Snickers,Chocolate,26-06-2025,Kolhapur,14139,packages
+BF2025060714,Perk,Chocolate,12-06-2025,Kolhapur,8261,packages
+BF2025060715,Jowar Flour,Flour,17-06-2025,Kolhapur,13193,packages
+BF2025060716,Wheat Flour,Flour,02-06-2025,Kolhapur,5637,packages
+BF2025060717,Bajra Flour,Flour,05-06-2025,Kolhapur,18172,packages
+BF2025060718,Multigrain Flour,Flour,16-06-2025,Kolhapur,7440,packages
+BF2025060719,Besan,Flour,20-06-2025,Kolhapur,10373,packages
+BF2025060720,Bajra Flour,Flour,20-06-2025,Kolhapur,7662,packages
+BF2025060721,Ragi Flour,Flour,13-06-2025,Kolhapur,14727,packages
+BF2025060722,Multigrain Flour,Flour,11-06-2025,Kolhapur,16611,packages
+BF2025060723,Uncle Chips,Chips,10-06-2025,Pune,18365,packages
+BF2025060724,Haldirams,Chips,01-06-2025,Pune,10427,packages
+BF2025060725,Kurkure,Chips,22-06-2025,Pune,11824,packages
+BF2025060726,Balaji,Chips,19-06-2025,Pune,18054,packages
+BF2025060727,Lays,Chips,24-06-2025,Pune,14779,packages
+BF2025060728,Balaji,Chips,16-06-2025,Pune,15741,packages
+BF2025060729,Pringles,Chips,26-06-2025,Pune,16819,packages
+BF2025060730,Uncle Chips,Chips,02-06-2025,Pune,7793,packages
+BF2025060731,Mountain Dew,Beverage,21-06-2025,Pune,7421,packages
+BF2025060732,Fanta,Beverage,27-06-2025,Pune,5517,packages
+BF2025060733,Pepsi,Beverage,19-06-2025,Pune,8125,packages
+BF2025060734,Limca,Beverage,01-06-2025,Pune,10139,packages
+BF2025060735,Sprite,Beverage,14-06-2025,Pune,11765,packages
+BF2025060736,Fanta,Beverage,23-06-2025,Pune,11723,packages
+BF2025060737,Limca,Beverage,17-06-2025,Pune,19300,packages
+BF2025060738,Coca Cola,Beverage,28-06-2025,Pune,16563,packages
+BF2025060739,Coconut Oil,Oil,17-06-2025,Pune,14189,packages
+BF2025060740,Palm Oil,Oil,11-06-2025,Pune,13609,packages
+BF2025060741,Soybean Oil,Oil,13-06-2025,Pune,7837,packages
+BF2025060742,Soybean Oil,Oil,15-06-2025,Pune,13950,packages
+BF2025060743,Groundnut Oil,Oil,12-06-2025,Pune,14995,packages
+BF2025060744,Pears,Soap,07-06-2025,Mumbai,9571,packages
+BF2025060745,Santoor,Soap,18-06-2025,Mumbai,8684,packages
+BF2025060746,Santoor,Soap,10-06-2025,Mumbai,16549,packages
+BF2025060747,Godrej,Soap,07-06-2025,Mumbai,10194,packages
+BF2025060748,Hamam,Soap,16-06-2025,Mumbai,14183,packages
+BF2025060749,Santoor,Soap,26-06-2025,Mumbai,9715,packages
+BF2025060750,Medimix,Soap,04-06-2025,Mumbai,19676,packages
+BF2025060751,Mirinda,Beverage,27-06-2025,Mumbai,17665,packages
+BF2025060752,Sprite,Beverage,26-06-2025,Mumbai,9758,packages
+BF2025060753,Thums Up,Beverage,02-06-2025,Mumbai,16700,packages
+BF2025060754,Mirinda,Beverage,03-06-2025,Mumbai,12247,packages
+BF2025060755,Thums Up,Beverage,21-06-2025,Mumbai,17244,packages
+BF2025060756,Fanta,Beverage,16-06-2025,Mumbai,8310,packages
+BF2025060757,Thums Up,Beverage,27-06-2025,Mumbai,14208,packages
+BF2025060758,Dove,Shampoo,05-06-2025,Mumbai,15087,packages
+BF2025060759,Pantene,Shampoo,24-06-2025,Mumbai,8972,packages
+BF2025060760,Pantene,Shampoo,02-06-2025,Mumbai,15452,packages
+BF2025060761,Clinic Plus,Shampoo,08-06-2025,Mumbai,6641,packages
+BF2025060762,Sunsilk,Shampoo,14-06-2025,Mumbai,16753,packages
+BF2025060763,Dove,Shampoo,16-06-2025,Mumbai,16160,packages
+BF2025060764,Perk,Chocolate,01-06-2025,Delhi,11666,packages
+BF2025060765,Mars,Chocolate,21-06-2025,Delhi,12822,packages
+BF2025060766,Munch,Chocolate,21-06-2025,Delhi,17384,packages
+BF2025060767,Snickers,Chocolate,10-06-2025,Delhi,9676,packages
+BF2025060768,Dairy Milk,Chocolate,21-06-2025,Delhi,19875,packages
+BF2025060769,Pringles,Chips,21-06-2025,Delhi,13767,packages
+BF2025060770,Lays,Chips,24-06-2025,Delhi,19962,packages
+BF2025060771,Cheetos,Chips,06-06-2025,Delhi,19454,packages
+BF2025060772,Bingo,Chips,27-06-2025,Delhi,5595,packages
+BF2025060773,Promise,Toothpaste,26-06-2025,Delhi,8052,packages
+BF2025060774,Dabur Red,Toothpaste,24-06-2025,Delhi,19364,packages
+BF2025060775,Colgate,Toothpaste,02-06-2025,Delhi,9888,packages
+BF2025060776,Pepsodent,Toothpaste,19-06-2025,Delhi,10489,packages
+BF2025060777,Promise,Toothpaste,10-06-2025,Delhi,15507,packages
+BF2025060778,Promise,Toothpaste,18-06-2025,Delhi,19569,packages
+BF2025060779,Promise,Toothpaste,05-06-2025,Delhi,9470,packages
+BF2025060780,Dettol,Soap,26-06-2025,Chennai,10417,packages
+BF2025060781,Godrej,Soap,06-06-2025,Chennai,15621,packages
+BF2025060782,Lifebuoy,Soap,09-06-2025,Chennai,5230,packages
+BF2025060783,Hamam,Soap,24-06-2025,Chennai,17955,packages
+BF2025060784,Pears,Soap,10-06-2025,Chennai,7875,packages
+BF2025060785,Crack Jack,Biscuit,28-06-2025,Chennai,18549,packages
+BF2025060786,Bourbon,Biscuit,14-06-2025,Chennai,6421,packages
+BF2025060787,Monaco,Biscuit,13-06-2025,Chennai,8027,packages
+BF2025060788,Krackjack,Biscuit,05-06-2025,Chennai,10301,packages
+BF2025060789,Parle-G,Biscuit,08-06-2025,Chennai,9272,packages
+BF2025060790,Good Day,Biscuit,13-06-2025,Chennai,12319,packages
+BF2025060791,Marie Gold,Biscuit,25-06-2025,Chennai,10400,packages
+BF2025060792,Parle-G,Biscuit,10-06-2025,Chennai,9285,packages
+BF2025060793,Jasmine Rice,Rice,23-06-2025,Chennai,6017,packages
+BF2025060794,Sona Masoori,Rice,22-06-2025,Chennai,12625,packages
+BF2025060795,Brown Rice,Rice,10-06-2025,Chennai,11642,packages
+BF2025060796,Ponni Rice,Rice,22-06-2025,Chennai,16309,packages
+BF2025060797,Ponni Rice,Rice,04-06-2025,Chennai,11021,packages
+BF2025060798,Jasmine Rice,Rice,20-06-2025,Chennai,8590,packages
+BF2025060799,Head & Shoulders,Shampoo,16-06-2025,Bangalore,12454,packages
+BF2025060800,Sunsilk,Shampoo,24-06-2025,Bangalore,11813,packages
+BF2025060801,Garnier,Shampoo,23-06-2025,Bangalore,17408,packages
+BF2025060802,Pantene,Shampoo,18-06-2025,Bangalore,17482,packages
+BF2025060803,Dove,Shampoo,08-06-2025,Bangalore,13609,packages
+BF2025060804,Meswak,Toothpaste,17-06-2025,Bangalore,6279,packages
+BF2025060805,Pepsodent,Toothpaste,19-06-2025,Bangalore,6011,packages
+BF2025060806,Sensodyne,Toothpaste,27-06-2025,Bangalore,14383,packages
+BF2025060807,Close Up,Toothpaste,18-06-2025,Bangalore,7695,packages
+BF2025060808,Promise,Toothpaste,11-06-2025,Bangalore,6904,packages
+BF2025060809,Sensodyne,Toothpaste,22-06-2025,Bangalore,16745,packages
+BF2025060810,Promise,Toothpaste,19-06-2025,Bangalore,6489,packages
+BF2025060811,Sunflower Oil,Oil,15-06-2025,Bangalore,12429,packages
+BF2025060812,Rice Bran Oil,Oil,05-06-2025,Bangalore,12484,packages
+BF2025060813,Sunflower Oil,Oil,19-06-2025,Bangalore,14155,packages
+BF2025060814,Groundnut Oil,Oil,15-06-2025,Bangalore,16850,packages
+BF2025060815,Rice Bran Oil,Oil,01-06-2025,Bangalore,9169,packages
+BF2025060816,Sunflower Oil,Oil,27-06-2025,Bangalore,17219,packages
+BF2025060817,Olive Oil,Oil,07-06-2025,Bangalore,5742,packages
+BF2025060818,Soybean Oil,Oil,14-06-2025,Bangalore,16475,packages
+BF2025060819,Basmati,Rice,18-06-2025,Hyderabad,19650,packages
+BF2025060820,Black Rice,Rice,03-06-2025,Hyderabad,5519,packages
+BF2025060821,Red Rice,Rice,10-06-2025,Hyderabad,7948,packages
+BF2025060822,Brown Rice,Rice,25-06-2025,Hyderabad,17547,packages
+BF2025060823,Jowar Flour,Flour,12-06-2025,Hyderabad,12348,packages
+BF2025060824,Jowar Flour,Flour,28-06-2025,Hyderabad,11154,packages
+BF2025060825,Besan,Flour,03-06-2025,Hyderabad,15707,packages
+BF2025060826,Bajra Flour,Flour,28-06-2025,Hyderabad,6943,packages
+BF2025060827,Jowar Flour,Flour,06-06-2025,Hyderabad,13664,packages
+BF2025060828,Maida,Flour,05-06-2025,Hyderabad,18677,packages
+BF2025060829,Wheat Flour,Flour,01-06-2025,Hyderabad,9888,packages
+BF2025060830,Crack Jack,Biscuit,22-06-2025,Hyderabad,13715,packages
+BF2025060831,Good Day,Biscuit,13-06-2025,Hyderabad,9055,packages
+BF2025060832,Bourbon,Biscuit,15-06-2025,Hyderabad,7541,packages
+BF2025060833,Good Day,Biscuit,09-06-2025,Hyderabad,19339,packages
+BF2025060834,Monaco,Biscuit,24-06-2025,Hyderabad,5527,packages
+BF2025060835,Crack Jack,Biscuit,26-06-2025,Hyderabad,15074,packages
+BF2025060836,Parle-G,Biscuit,25-06-2025,Hyderabad,8943,packages
+BF2025060837,Pepsodent,Toothpaste,03-06-2025,Kolkata,14731,packages
+BF2025060838,Promise,Toothpaste,02-06-2025,Kolkata,14794,packages
+BF2025060839,Colgate,Toothpaste,22-06-2025,Kolkata,9009,packages
+BF2025060840,Colgate,Toothpaste,24-06-2025,Kolkata,11590,packages
+BF2025060841,Sensodyne,Toothpaste,15-06-2025,Kolkata,13843,packages
+BF2025060842,Lux,Soap,25-06-2025,Kolkata,7295,packages
+BF2025060843,Santoor,Soap,17-06-2025,Kolkata,8836,packages
+BF2025060844,Hamam,Soap,27-06-2025,Kolkata,14461,packages
+BF2025060845,Hamam,Soap,20-06-2025,Kolkata,8881,packages
+BF2025060846,Lifebuoy,Soap,10-06-2025,Kolkata,15816,packages
+BF2025060847,Rice Bran Oil,Oil,08-06-2025,Kolkata,9923,packages
+BF2025060848,Sunflower Oil,Oil,09-06-2025,Kolkata,14121,packages
+BF2025060849,Mustard Oil,Oil,19-06-2025,Kolkata,15256,packages
+BF2025060850,Rice Bran Oil,Oil,22-06-2025,Kolkata,14107,packages
+BF2025060851,Sunflower Oil,Oil,16-06-2025,Kolkata,10642,packages
+BF2025060852,Rice Bran Oil,Oil,21-06-2025,Kolkata,17874,packages
+BF2025060853,Soybean Oil,Oil,17-06-2025,Kolkata,16408,packages
+BF2025060854,Rice Bran Oil,Oil,14-06-2025,Kolkata,7444,packages
+BF2025070855,Hide & Seek,Biscuit,13-07-2025,Kolhapur,17360,packages
+BF2025070856,Krackjack,Biscuit,18-07-2025,Kolhapur,8948,packages
+BF2025070857,Good Day,Biscuit,28-07-2025,Kolhapur,9927,packages
+BF2025070858,Hide & Seek,Biscuit,28-07-2025,Kolhapur,18201,packages
+BF2025070859,Parle-G,Biscuit,15-07-2025,Kolhapur,14214,packages
+BF2025070860,Crack Jack,Biscuit,14-07-2025,Kolhapur,14130,packages
+BF2025070861,Twix,Chocolate,05-07-2025,Kolhapur,8978,packages
+BF2025070862,Munch,Chocolate,09-07-2025,Kolhapur,10411,packages
+BF2025070863,5 Star,Chocolate,21-07-2025,Kolhapur,12369,packages
+BF2025070864,Snickers,Chocolate,28-07-2025,Kolhapur,6514,packages
+BF2025070865,Munch,Chocolate,18-07-2025,Kolhapur,5844,packages
+BF2025070866,Twix,Chocolate,09-07-2025,Kolhapur,16037,packages
+BF2025070867,Dairy Milk,Chocolate,20-07-2025,Kolhapur,19313,packages
+BF2025070868,Munch,Chocolate,03-07-2025,Kolhapur,18183,packages
+BF2025070869,Maida,Flour,24-07-2025,Kolhapur,12854,packages
+BF2025070870,Bajra Flour,Flour,07-07-2025,Kolhapur,9967,packages
+BF2025070871,Maida,Flour,01-07-2025,Kolhapur,8113,packages
+BF2025070872,Rice Flour,Flour,24-07-2025,Kolhapur,17236,packages
+BF2025070873,Multigrain Flour,Flour,25-07-2025,Kolhapur,19982,packages
+BF2025070874,Maida,Flour,08-07-2025,Kolhapur,11498,packages
+BF2025070875,Bajra Flour,Flour,08-07-2025,Kolhapur,17706,packages
+BF2025070876,Jowar Flour,Flour,10-07-2025,Kolhapur,12639,packages
+BF2025070877,Haldirams,Chips,21-07-2025,Pune,10053,packages
+BF2025070878,Haldirams,Chips,09-07-2025,Pune,13401,packages
+BF2025070879,Uncle Chips,Chips,16-07-2025,Pune,6615,packages
+BF2025070880,Uncle Chips,Chips,26-07-2025,Pune,17478,packages
+BF2025070881,Haldirams,Chips,27-07-2025,Pune,19980,packages
+BF2025070882,Haldirams,Chips,07-07-2025,Pune,10126,packages
+BF2025070883,Lays,Chips,14-07-2025,Pune,14216,packages
+BF2025070884,Pringles,Chips,28-07-2025,Pune,17144,packages
+BF2025070885,Thums Up,Beverage,01-07-2025,Pune,14065,packages
+BF2025070886,Mountain Dew,Beverage,19-07-2025,Pune,9836,packages
+BF2025070887,Fanta,Beverage,05-07-2025,Pune,10404,packages
+BF2025070888,Mountain Dew,Beverage,08-07-2025,Pune,14335,packages
+BF2025070889,Fanta,Beverage,27-07-2025,Pune,13180,packages
+BF2025070890,Soybean Oil,Oil,21-07-2025,Pune,9216,packages
+BF2025070891,Palm Oil,Oil,25-07-2025,Pune,16854,packages
+BF2025070892,Palm Oil,Oil,21-07-2025,Pune,12550,packages
+BF2025070893,Soybean Oil,Oil,06-07-2025,Pune,7773,packages
+BF2025070894,Palm Oil,Oil,05-07-2025,Pune,8015,packages
+BF2025070895,Sunflower Oil,Oil,18-07-2025,Pune,13584,packages
+BF2025070896,Olive Oil,Oil,02-07-2025,Pune,18402,packages
+BF2025070897,Sunflower Oil,Oil,22-07-2025,Pune,17522,packages
+BF2025070898,Lifebuoy,Soap,14-07-2025,Mumbai,18804,packages
+BF2025070899,Pears,Soap,21-07-2025,Mumbai,6113,packages
+BF2025070900,Lifebuoy,Soap,23-07-2025,Mumbai,5149,packages
+BF2025070901,Godrej,Soap,07-07-2025,Mumbai,11114,packages
+BF2025070902,Limca,Beverage,20-07-2025,Mumbai,15801,packages
+BF2025070903,Coca Cola,Beverage,16-07-2025,Mumbai,5108,packages
+BF2025070904,Mountain Dew,Beverage,18-07-2025,Mumbai,5194,packages
+BF2025070905,Thums Up,Beverage,01-07-2025,Mumbai,13777,packages
+BF2025070906,Tresemme,Shampoo,01-07-2025,Mumbai,18208,packages
+BF2025070907,Dove,Shampoo,06-07-2025,Mumbai,6578,packages
+BF2025070908,Head & Shoulders,Shampoo,17-07-2025,Mumbai,8948,packages
+BF2025070909,Loreal,Shampoo,07-07-2025,Mumbai,18356,packages
+BF2025070910,Loreal,Shampoo,12-07-2025,Mumbai,18024,packages
+BF2025070911,Dove,Shampoo,13-07-2025,Mumbai,11112,packages
+BF2025070912,Munch,Chocolate,15-07-2025,Delhi,16423,packages
+BF2025070913,Kit Kat,Chocolate,08-07-2025,Delhi,16207,packages
+BF2025070914,5 Star,Chocolate,27-07-2025,Delhi,15710,packages
+BF2025070915,Dairy Milk,Chocolate,28-07-2025,Delhi,6531,packages
+BF2025070916,Twix,Chocolate,13-07-2025,Delhi,11179,packages
+BF2025070917,Mars,Chocolate,18-07-2025,Delhi,5919,packages
+BF2025070918,Dairy Milk,Chocolate,21-07-2025,Delhi,16515,packages
+BF2025070919,Uncle Chips,Chips,03-07-2025,Delhi,18849,packages
+BF2025070920,Haldirams,Chips,14-07-2025,Delhi,14270,packages
+BF2025070921,Kurkure,Chips,28-07-2025,Delhi,19660,packages
+BF2025070922,Lays,Chips,17-07-2025,Delhi,8764,packages
+BF2025070923,Uncle Chips,Chips,07-07-2025,Delhi,9441,packages
+BF2025070924,Dabur Red,Toothpaste,03-07-2025,Delhi,19734,packages
+BF2025070925,Colgate,Toothpaste,18-07-2025,Delhi,7938,packages
+BF2025070926,Meswak,Toothpaste,28-07-2025,Delhi,5256,packages
+BF2025070927,Close Up,Toothpaste,07-07-2025,Delhi,17324,packages
+BF2025070928,Santoor,Soap,03-07-2025,Chennai,7661,packages
+BF2025070929,Pears,Soap,19-07-2025,Chennai,14284,packages
+BF2025070930,Medimix,Soap,27-07-2025,Chennai,16092,packages
+BF2025070931,Hamam,Soap,18-07-2025,Chennai,11288,packages
+BF2025070932,Lifebuoy,Soap,25-07-2025,Chennai,17951,packages
+BF2025070933,Dettol,Soap,23-07-2025,Chennai,13204,packages
+BF2025070934,Hamam,Soap,24-07-2025,Chennai,5879,packages
+BF2025070935,Good Day,Biscuit,14-07-2025,Chennai,18740,packages
+BF2025070936,Bourbon,Biscuit,03-07-2025,Chennai,14915,packages
+BF2025070937,Crack Jack,Biscuit,25-07-2025,Chennai,17673,packages
+BF2025070938,Parle-G,Biscuit,11-07-2025,Chennai,15389,packages
+BF2025070939,Black Rice,Rice,26-07-2025,Chennai,13038,packages
+BF2025070940,Matt Rice,Rice,08-07-2025,Chennai,14060,packages
+BF2025070941,Red Rice,Rice,13-07-2025,Chennai,8043,packages
+BF2025070942,Red Rice,Rice,22-07-2025,Chennai,6404,packages
+BF2025070943,Ponni Rice,Rice,25-07-2025,Chennai,18075,packages
+BF2025070944,Sona Masoori,Rice,08-07-2025,Chennai,6344,packages
+BF2025070945,Tresemme,Shampoo,05-07-2025,Bangalore,16660,packages
+BF2025070946,Head & Shoulders,Shampoo,26-07-2025,Bangalore,17118,packages
+BF2025070947,Sunsilk,Shampoo,13-07-2025,Bangalore,10909,packages
+BF2025070948,Dove,Shampoo,04-07-2025,Bangalore,5085,packages
+BF2025070949,Garnier,Shampoo,10-07-2025,Bangalore,10896,packages
+BF2025070950,Loreal,Shampoo,25-07-2025,Bangalore,6674,packages
+BF2025070951,Close Up,Toothpaste,03-07-2025,Bangalore,12061,packages
+BF2025070952,Anchor,Toothpaste,15-07-2025,Bangalore,6692,packages
+BF2025070953,Pepsodent,Toothpaste,01-07-2025,Bangalore,10798,packages
+BF2025070954,Pepsodent,Toothpaste,18-07-2025,Bangalore,14780,packages
+BF2025070955,Meswak,Toothpaste,20-07-2025,Bangalore,19151,packages
+BF2025070956,Groundnut Oil,Oil,01-07-2025,Bangalore,11779,packages
+BF2025070957,Olive Oil,Oil,13-07-2025,Bangalore,16875,packages
+BF2025070958,Coconut Oil,Oil,18-07-2025,Bangalore,14370,packages
+BF2025070959,Mustard Oil,Oil,17-07-2025,Bangalore,16228,packages
+BF2025070960,Mustard Oil,Oil,13-07-2025,Bangalore,7274,packages
+BF2025070961,Groundnut Oil,Oil,09-07-2025,Bangalore,9397,packages
+BF2025070962,Mustard Oil,Oil,16-07-2025,Bangalore,6036,packages
+BF2025070963,Ponni Rice,Rice,14-07-2025,Hyderabad,11899,packages
+BF2025070964,Black Rice,Rice,10-07-2025,Hyderabad,17823,packages
+BF2025070965,Matt Rice,Rice,03-07-2025,Hyderabad,9123,packages
+BF2025070966,Black Rice,Rice,08-07-2025,Hyderabad,14728,packages
+BF2025070967,Jasmine Rice,Rice,20-07-2025,Hyderabad,12501,packages
+BF2025070968,Ragi Flour,Flour,05-07-2025,Hyderabad,5110,packages
+BF2025070969,Bajra Flour,Flour,13-07-2025,Hyderabad,18788,packages
+BF2025070970,Jowar Flour,Flour,20-07-2025,Hyderabad,18173,packages
+BF2025070971,Bajra Flour,Flour,28-07-2025,Hyderabad,12212,packages
+BF2025070972,Hide & Seek,Biscuit,14-07-2025,Hyderabad,9922,packages
+BF2025070973,Good Day,Biscuit,11-07-2025,Hyderabad,12848,packages
+BF2025070974,Hide & Seek,Biscuit,11-07-2025,Hyderabad,11524,packages
+BF2025070975,Marie Gold,Biscuit,11-07-2025,Hyderabad,17040,packages
+BF2025070976,Krackjack,Biscuit,23-07-2025,Hyderabad,14435,packages
+BF2025070977,Good Day,Biscuit,26-07-2025,Hyderabad,10339,packages
+BF2025070978,Anchor,Toothpaste,09-07-2025,Kolkata,10980,packages
+BF2025070979,Sensodyne,Toothpaste,04-07-2025,Kolkata,14703,packages
+BF2025070980,Close Up,Toothpaste,18-07-2025,Kolkata,16169,packages
+BF2025070981,Colgate,Toothpaste,25-07-2025,Kolkata,16914,packages
+BF2025070982,Sensodyne,Toothpaste,15-07-2025,Kolkata,12183,packages
+BF2025070983,Dabur Red,Toothpaste,26-07-2025,Kolkata,18619,packages
+BF2025070984,Pepsodent,Toothpaste,23-07-2025,Kolkata,18417,packages
+BF2025070985,Godrej,Soap,22-07-2025,Kolkata,7280,packages
+BF2025070986,Santoor,Soap,21-07-2025,Kolkata,8965,packages
+BF2025070987,Lifebuoy,Soap,09-07-2025,Kolkata,16718,packages
+BF2025070988,Medimix,Soap,14-07-2025,Kolkata,6211,packages
+BF2025070989,Godrej,Soap,15-07-2025,Kolkata,14539,packages
+BF2025070990,Medimix,Soap,13-07-2025,Kolkata,13907,packages
+BF2025070991,Hamam,Soap,02-07-2025,Kolkata,16495,packages
+BF2025070992,Olive Oil,Oil,20-07-2025,Kolkata,6791,packages
+BF2025070993,Coconut Oil,Oil,25-07-2025,Kolkata,15774,packages
+BF2025070994,Soybean Oil,Oil,22-07-2025,Kolkata,7725,packages
+BF2025070995,Sunflower Oil,Oil,21-07-2025,Kolkata,14227,packages
+BF2025070996,Rice Bran Oil,Oil,21-07-2025,Kolkata,17331,packages
+BF2025070997,Rice Bran Oil,Oil,11-07-2025,Kolkata,6735,packages
+BF2025070998,Olive Oil,Oil,01-07-2025,Kolkata,9239,packages
+BF2025070999,Coconut Oil,Oil,08-07-2025,Kolkata,12303,packages
+BF2025081000,Krackjack,Biscuit,13-08-2025,Kolhapur,17654,packages
+BF2025081001,Hide & Seek,Biscuit,22-08-2025,Kolhapur,10651,packages
+BF2025081002,Krackjack,Biscuit,01-08-2025,Kolhapur,6712,packages
+BF2025081003,Crack Jack,Biscuit,10-08-2025,Kolhapur,6406,packages
+BF2025081004,Hide & Seek,Biscuit,04-08-2025,Kolhapur,10707,packages
+BF2025081005,Bourbon,Biscuit,10-08-2025,Kolhapur,12460,packages
+BF2025081006,Mars,Chocolate,17-08-2025,Kolhapur,10706,packages
+BF2025081007,5 Star,Chocolate,16-08-2025,Kolhapur,12178,packages
+BF2025081008,Mars,Chocolate,24-08-2025,Kolhapur,10225,packages
+BF2025081009,Kit Kat,Chocolate,03-08-2025,Kolhapur,5732,packages
+BF2025081010,5 Star,Chocolate,26-08-2025,Kolhapur,5370,packages
+BF2025081011,Rice Flour,Flour,21-08-2025,Kolhapur,16094,packages
+BF2025081012,Besan,Flour,26-08-2025,Kolhapur,17132,packages
+BF2025081013,Besan,Flour,08-08-2025,Kolhapur,14042,packages
+BF2025081014,Bajra Flour,Flour,06-08-2025,Kolhapur,14172,packages
+BF2025081015,Multigrain Flour,Flour,14-08-2025,Kolhapur,8798,packages
+BF2025081016,Jowar Flour,Flour,26-08-2025,Kolhapur,15317,packages
+BF2025081017,Cheetos,Chips,06-08-2025,Pune,11481,packages
+BF2025081018,Pringles,Chips,01-08-2025,Pune,12365,packages
+BF2025081019,Cheetos,Chips,19-08-2025,Pune,11370,packages
+BF2025081020,Pringles,Chips,01-08-2025,Pune,8371,packages
+BF2025081021,Kurkure,Chips,09-08-2025,Pune,14459,packages
+BF2025081022,Sprite,Beverage,26-08-2025,Pune,10993,packages
+BF2025081023,Fanta,Beverage,11-08-2025,Pune,12496,packages
+BF2025081024,Thums Up,Beverage,04-08-2025,Pune,15988,packages
+BF2025081025,Limca,Beverage,28-08-2025,Pune,13646,packages
+BF2025081026,Rice Bran Oil,Oil,20-08-2025,Pune,15015,packages
+BF2025081027,Olive Oil,Oil,13-08-2025,Pune,10700,packages
+BF2025081028,Palm Oil,Oil,12-08-2025,Pune,15114,packages
+BF2025081029,Groundnut Oil,Oil,06-08-2025,Pune,15067,packages
+BF2025081030,Olive Oil,Oil,19-08-2025,Pune,16011,packages
+BF2025081031,Soybean Oil,Oil,05-08-2025,Pune,6931,packages
+BF2025081032,Dettol,Soap,10-08-2025,Mumbai,7999,packages
+BF2025081033,Lifebuoy,Soap,12-08-2025,Mumbai,13369,packages
+BF2025081034,Medimix,Soap,13-08-2025,Mumbai,14771,packages
+BF2025081035,Medimix,Soap,05-08-2025,Mumbai,11931,packages
+BF2025081036,Godrej,Soap,06-08-2025,Mumbai,15412,packages
+BF2025081037,Sprite,Beverage,23-08-2025,Mumbai,14091,packages
+BF2025081038,Limca,Beverage,06-08-2025,Mumbai,9732,packages
+BF2025081039,Sprite,Beverage,05-08-2025,Mumbai,10154,packages
+BF2025081040,Limca,Beverage,27-08-2025,Mumbai,15148,packages
+BF2025081041,Mirinda,Beverage,02-08-2025,Mumbai,5157,packages
+BF2025081042,Sprite,Beverage,16-08-2025,Mumbai,8196,packages
+BF2025081043,Mountain Dew,Beverage,27-08-2025,Mumbai,14200,packages
+BF2025081044,Limca,Beverage,17-08-2025,Mumbai,11703,packages
+BF2025081045,Garnier,Shampoo,14-08-2025,Mumbai,13006,packages
+BF2025081046,Dove,Shampoo,06-08-2025,Mumbai,14263,packages
+BF2025081047,Pantene,Shampoo,01-08-2025,Mumbai,9785,packages
+BF2025081048,Loreal,Shampoo,02-08-2025,Mumbai,8683,packages
+BF2025081049,Loreal,Shampoo,18-08-2025,Mumbai,7755,packages
+BF2025081050,Garnier,Shampoo,25-08-2025,Mumbai,14267,packages
+BF2025081051,Garnier,Shampoo,24-08-2025,Mumbai,14006,packages
+BF2025081052,5 Star,Chocolate,04-08-2025,Delhi,9389,packages
+BF2025081053,Snickers,Chocolate,25-08-2025,Delhi,13880,packages
+BF2025081054,Dairy Milk,Chocolate,27-08-2025,Delhi,17451,packages
+BF2025081055,Mars,Chocolate,24-08-2025,Delhi,13951,packages
+BF2025081056,Twix,Chocolate,07-08-2025,Delhi,6677,packages
+BF2025081057,Munch,Chocolate,24-08-2025,Delhi,9877,packages
+BF2025081058,Dairy Milk,Chocolate,28-08-2025,Delhi,12368,packages
+BF2025081059,Snickers,Chocolate,09-08-2025,Delhi,19126,packages
+BF2025081060,Kurkure,Chips,15-08-2025,Delhi,17707,packages
+BF2025081061,Pringles,Chips,26-08-2025,Delhi,8438,packages
+BF2025081062,Haldirams,Chips,26-08-2025,Delhi,19107,packages
+BF2025081063,Cheetos,Chips,23-08-2025,Delhi,7719,packages
+BF2025081064,Sensodyne,Toothpaste,05-08-2025,Delhi,18328,packages
+BF2025081065,Colgate,Toothpaste,07-08-2025,Delhi,14340,packages
+BF2025081066,Dabur Red,Toothpaste,12-08-2025,Delhi,14778,packages
+BF2025081067,Close Up,Toothpaste,18-08-2025,Delhi,10302,packages
+BF2025081068,Dabur Red,Toothpaste,23-08-2025,Delhi,9740,packages
+BF2025081069,Dabur Red,Toothpaste,19-08-2025,Delhi,19057,packages
+BF2025081070,Pepsodent,Toothpaste,17-08-2025,Delhi,7221,packages
+BF2025081071,Anchor,Toothpaste,25-08-2025,Delhi,5971,packages
+BF2025081072,Lifebuoy,Soap,28-08-2025,Chennai,16492,packages
+BF2025081073,Lifebuoy,Soap,28-08-2025,Chennai,9090,packages
+BF2025081074,Hamam,Soap,05-08-2025,Chennai,18573,packages
+BF2025081075,Medimix,Soap,08-08-2025,Chennai,13019,packages
+BF2025081076,Santoor,Soap,05-08-2025,Chennai,15286,packages
+BF2025081077,Medimix,Soap,14-08-2025,Chennai,12405,packages
+BF2025081078,Monaco,Biscuit,21-08-2025,Chennai,11600,packages
+BF2025081079,Marie Gold,Biscuit,17-08-2025,Chennai,16382,packages
+BF2025081080,Krackjack,Biscuit,12-08-2025,Chennai,12996,packages
+BF2025081081,Parle-G,Biscuit,11-08-2025,Chennai,19236,packages
+BF2025081082,Black Rice,Rice,24-08-2025,Chennai,15401,packages
+BF2025081083,Matt Rice,Rice,22-08-2025,Chennai,18928,packages
+BF2025081084,Red Rice,Rice,03-08-2025,Chennai,8568,packages
+BF2025081085,Jasmine Rice,Rice,14-08-2025,Chennai,13105,packages
+BF2025081086,Loreal,Shampoo,11-08-2025,Bangalore,10533,packages
+BF2025081087,Head & Shoulders,Shampoo,18-08-2025,Bangalore,14275,packages
+BF2025081088,Garnier,Shampoo,28-08-2025,Bangalore,17915,packages
+BF2025081089,Clinic Plus,Shampoo,11-08-2025,Bangalore,5752,packages
+BF2025081090,Garnier,Shampoo,04-08-2025,Bangalore,5266,packages
+BF2025081091,Head & Shoulders,Shampoo,04-08-2025,Bangalore,12230,packages
+BF2025081092,Anchor,Toothpaste,01-08-2025,Bangalore,8314,packages
+BF2025081093,Close Up,Toothpaste,23-08-2025,Bangalore,19453,packages
+BF2025081094,Dabur Red,Toothpaste,21-08-2025,Bangalore,7604,packages
+BF2025081095,Dabur Red,Toothpaste,28-08-2025,Bangalore,6529,packages
+BF2025081096,Meswak,Toothpaste,21-08-2025,Bangalore,9102,packages
+BF2025081097,Meswak,Toothpaste,03-08-2025,Bangalore,15887,packages
+BF2025081098,Close Up,Toothpaste,21-08-2025,Bangalore,5848,packages
+BF2025081099,Groundnut Oil,Oil,21-08-2025,Bangalore,16894,packages
+BF2025081100,Coconut Oil,Oil,23-08-2025,Bangalore,12032,packages
+BF2025081101,Olive Oil,Oil,21-08-2025,Bangalore,16529,packages
+BF2025081102,Sunflower Oil,Oil,04-08-2025,Bangalore,8496,packages
+BF2025081103,Olive Oil,Oil,16-08-2025,Bangalore,7174,packages
+BF2025081104,Coconut Oil,Oil,19-08-2025,Bangalore,13510,packages
+BF2025081105,Palm Oil,Oil,22-08-2025,Bangalore,5152,packages
+BF2025081106,Matt Rice,Rice,23-08-2025,Hyderabad,18387,packages
+BF2025081107,Red Rice,Rice,04-08-2025,Hyderabad,16371,packages
+BF2025081108,Black Rice,Rice,05-08-2025,Hyderabad,6160,packages
+BF2025081109,Red Rice,Rice,08-08-2025,Hyderabad,6463,packages
+BF2025081110,Bajra Flour,Flour,04-08-2025,Hyderabad,11022,packages
+BF2025081111,Besan,Flour,10-08-2025,Hyderabad,11270,packages
+BF2025081112,Besan,Flour,25-08-2025,Hyderabad,15511,packages
+BF2025081113,Besan,Flour,22-08-2025,Hyderabad,6120,packages
+BF2025081114,Parle-G,Biscuit,19-08-2025,Hyderabad,14999,packages
+BF2025081115,Hide & Seek,Biscuit,21-08-2025,Hyderabad,12210,packages
+BF2025081116,Good Day,Biscuit,12-08-2025,Hyderabad,15290,packages
+BF2025081117,Hide & Seek,Biscuit,24-08-2025,Hyderabad,11745,packages
+BF2025081118,Krackjack,Biscuit,20-08-2025,Hyderabad,19089,packages
+BF2025081119,Monaco,Biscuit,07-08-2025,Hyderabad,19689,packages
+BF2025081120,Hide & Seek,Biscuit,04-08-2025,Hyderabad,17328,packages
+BF2025081121,Crack Jack,Biscuit,04-08-2025,Hyderabad,10759,packages
+BF2025081122,Close Up,Toothpaste,11-08-2025,Kolkata,9059,packages
+BF2025081123,Pepsodent,Toothpaste,09-08-2025,Kolkata,9065,packages
+BF2025081124,Dabur Red,Toothpaste,18-08-2025,Kolkata,17762,packages
+BF2025081125,Colgate,Toothpaste,23-08-2025,Kolkata,18891,packages
+BF2025081126,Dabur Red,Toothpaste,28-08-2025,Kolkata,8366,packages
+BF2025081127,Sensodyne,Toothpaste,17-08-2025,Kolkata,17252,packages
+BF2025081128,Dabur Red,Toothpaste,13-08-2025,Kolkata,15586,packages
+BF2025081129,Pears,Soap,26-08-2025,Kolkata,13108,packages
+BF2025081130,Dettol,Soap,13-08-2025,Kolkata,8949,packages
+BF2025081131,Dettol,Soap,16-08-2025,Kolkata,13655,packages
+BF2025081132,Hamam,Soap,01-08-2025,Kolkata,10185,packages
+BF2025081133,Rice Bran Oil,Oil,13-08-2025,Kolkata,10986,packages
+BF2025081134,Mustard Oil,Oil,18-08-2025,Kolkata,17496,packages
+BF2025081135,Olive Oil,Oil,16-08-2025,Kolkata,5273,packages
+BF2025081136,Olive Oil,Oil,19-08-2025,Kolkata,5225,packages
+BF2025081137,Coconut Oil,Oil,09-08-2025,Kolkata,5652,packages
+BF2025091138,Crack Jack,Biscuit,26-09-2025,Kolhapur,13300,packages
+BF2025091139,Crack Jack,Biscuit,10-09-2025,Kolhapur,11939,packages
+BF2025091140,Crack Jack,Biscuit,23-09-2025,Kolhapur,6350,packages
+BF2025091141,Hide & Seek,Biscuit,21-09-2025,Kolhapur,9546,packages
+BF2025091142,5 Star,Chocolate,10-09-2025,Kolhapur,13377,packages
+BF2025091143,Perk,Chocolate,07-09-2025,Kolhapur,13788,packages
+BF2025091144,Twix,Chocolate,11-09-2025,Kolhapur,14608,packages
+BF2025091145,5 Star,Chocolate,21-09-2025,Kolhapur,10081,packages
+BF2025091146,Maida,Flour,24-09-2025,Kolhapur,5948,packages
+BF2025091147,Rice Flour,Flour,08-09-2025,Kolhapur,12118,packages
+BF2025091148,Multigrain Flour,Flour,04-09-2025,Kolhapur,15031,packages
+BF2025091149,Wheat Flour,Flour,20-09-2025,Kolhapur,10067,packages
+BF2025091150,Besan,Flour,22-09-2025,Kolhapur,6956,packages
+BF2025091151,Besan,Flour,01-09-2025,Kolhapur,16493,packages
+BF2025091152,Besan,Flour,01-09-2025,Kolhapur,13133,packages
+BF2025091153,Balaji,Chips,17-09-2025,Pune,7735,packages
+BF2025091154,Bingo,Chips,12-09-2025,Pune,17284,packages
+BF2025091155,Balaji,Chips,25-09-2025,Pune,17008,packages
+BF2025091156,Lays,Chips,04-09-2025,Pune,10488,packages
+BF2025091157,Cheetos,Chips,26-09-2025,Pune,9456,packages
+BF2025091158,Kurkure,Chips,17-09-2025,Pune,9308,packages
+BF2025091159,Pepsi,Beverage,21-09-2025,Pune,13128,packages
+BF2025091160,Mirinda,Beverage,15-09-2025,Pune,5908,packages
+BF2025091161,Sprite,Beverage,16-09-2025,Pune,11024,packages
+BF2025091162,Thums Up,Beverage,06-09-2025,Pune,17670,packages
+BF2025091163,Pepsi,Beverage,04-09-2025,Pune,8742,packages
+BF2025091164,Coca Cola,Beverage,24-09-2025,Pune,5721,packages
+BF2025091165,Coca Cola,Beverage,28-09-2025,Pune,9006,packages
+BF2025091166,Limca,Beverage,02-09-2025,Pune,10963,packages
+BF2025091167,Mustard Oil,Oil,05-09-2025,Pune,19049,packages
+BF2025091168,Rice Bran Oil,Oil,02-09-2025,Pune,8678,packages
+BF2025091169,Coconut Oil,Oil,11-09-2025,Pune,11819,packages
+BF2025091170,Soybean Oil,Oil,24-09-2025,Pune,9444,packages
+BF2025091171,Olive Oil,Oil,27-09-2025,Pune,14364,packages
+BF2025091172,Olive Oil,Oil,12-09-2025,Pune,13225,packages
+BF2025091173,Sunflower Oil,Oil,22-09-2025,Pune,7938,packages
+BF2025091174,Lux,Soap,26-09-2025,Mumbai,11568,packages
+BF2025091175,Godrej,Soap,03-09-2025,Mumbai,19189,packages
+BF2025091176,Santoor,Soap,10-09-2025,Mumbai,10362,packages
+BF2025091177,Godrej,Soap,03-09-2025,Mumbai,5130,packages
+BF2025091178,Pears,Soap,12-09-2025,Mumbai,9777,packages
+BF2025091179,Thums Up,Beverage,26-09-2025,Mumbai,17117,packages
+BF2025091180,Fanta,Beverage,20-09-2025,Mumbai,12600,packages
+BF2025091181,Limca,Beverage,12-09-2025,Mumbai,17658,packages
+BF2025091182,Fanta,Beverage,25-09-2025,Mumbai,17000,packages
+BF2025091183,Fanta,Beverage,18-09-2025,Mumbai,7466,packages
+BF2025091184,Mountain Dew,Beverage,01-09-2025,Mumbai,5391,packages
+BF2025091185,Mirinda,Beverage,08-09-2025,Mumbai,15419,packages
+BF2025091186,Coca Cola,Beverage,27-09-2025,Mumbai,10488,packages
+BF2025091187,Tresemme,Shampoo,25-09-2025,Mumbai,18910,packages
+BF2025091188,Loreal,Shampoo,24-09-2025,Mumbai,6703,packages
+BF2025091189,Pantene,Shampoo,07-09-2025,Mumbai,11878,packages
+BF2025091190,Clinic Plus,Shampoo,16-09-2025,Mumbai,7332,packages
+BF2025091191,Dairy Milk,Chocolate,03-09-2025,Delhi,8792,packages
+BF2025091192,Twix,Chocolate,28-09-2025,Delhi,16482,packages
+BF2025091193,Mars,Chocolate,12-09-2025,Delhi,17253,packages
+BF2025091194,5 Star,Chocolate,03-09-2025,Delhi,13280,packages
+BF2025091195,Twix,Chocolate,05-09-2025,Delhi,6226,packages
+BF2025091196,Dairy Milk,Chocolate,19-09-2025,Delhi,12126,packages
+BF2025091197,Balaji,Chips,08-09-2025,Delhi,9276,packages
+BF2025091198,Haldirams,Chips,28-09-2025,Delhi,18120,packages
+BF2025091199,Haldirams,Chips,13-09-2025,Delhi,10211,packages
+BF2025091200,Balaji,Chips,15-09-2025,Delhi,8827,packages
+BF2025091201,Pringles,Chips,03-09-2025,Delhi,7230,packages
+BF2025091202,Close Up,Toothpaste,04-09-2025,Delhi,6731,packages
+BF2025091203,Promise,Toothpaste,06-09-2025,Delhi,12635,packages
+BF2025091204,Anchor,Toothpaste,11-09-2025,Delhi,6978,packages
+BF2025091205,Meswak,Toothpaste,18-09-2025,Delhi,17621,packages
+BF2025091206,Promise,Toothpaste,07-09-2025,Delhi,10051,packages
+BF2025091207,Dabur Red,Toothpaste,15-09-2025,Delhi,18967,packages
+BF2025091208,Pepsodent,Toothpaste,04-09-2025,Delhi,7582,packages
+BF2025091209,Dabur Red,Toothpaste,26-09-2025,Delhi,18539,packages
+BF2025091210,Pears,Soap,02-09-2025,Chennai,18695,packages
+BF2025091211,Hamam,Soap,28-09-2025,Chennai,7430,packages
+BF2025091212,Pears,Soap,03-09-2025,Chennai,10828,packages
+BF2025091213,Lux,Soap,13-09-2025,Chennai,16094,packages
+BF2025091214,Santoor,Soap,10-09-2025,Chennai,18436,packages
+BF2025091215,Lux,Soap,06-09-2025,Chennai,11625,packages
+BF2025091216,Godrej,Soap,28-09-2025,Chennai,14108,packages
+BF2025091217,Pears,Soap,24-09-2025,Chennai,6551,packages
+BF2025091218,Hide & Seek,Biscuit,04-09-2025,Chennai,6989,packages
+BF2025091219,Parle-G,Biscuit,01-09-2025,Chennai,18604,packages
+BF2025091220,Good Day,Biscuit,25-09-2025,Chennai,7141,packages
+BF2025091221,Crack Jack,Biscuit,07-09-2025,Chennai,11098,packages
+BF2025091222,Monaco,Biscuit,22-09-2025,Chennai,14540,packages
+BF2025091223,Marie Gold,Biscuit,19-09-2025,Chennai,18316,packages
+BF2025091224,Parle-G,Biscuit,03-09-2025,Chennai,6056,packages
+BF2025091225,Black Rice,Rice,21-09-2025,Chennai,18259,packages
+BF2025091226,Sona Masoori,Rice,05-09-2025,Chennai,19828,packages
+BF2025091227,Matt Rice,Rice,28-09-2025,Chennai,7007,packages
+BF2025091228,Black Rice,Rice,02-09-2025,Chennai,5829,packages
+BF2025091229,Red Rice,Rice,06-09-2025,Chennai,18462,packages
+BF2025091230,Clinic Plus,Shampoo,16-09-2025,Bangalore,11270,packages
+BF2025091231,Tresemme,Shampoo,22-09-2025,Bangalore,7831,packages
+BF2025091232,Pantene,Shampoo,12-09-2025,Bangalore,19881,packages
+BF2025091233,Loreal,Shampoo,06-09-2025,Bangalore,9585,packages
+BF2025091234,Head & Shoulders,Shampoo,15-09-2025,Bangalore,5567,packages
+BF2025091235,Pantene,Shampoo,20-09-2025,Bangalore,15605,packages
+BF2025091236,Garnier,Shampoo,10-09-2025,Bangalore,11750,packages
+BF2025091237,Colgate,Toothpaste,16-09-2025,Bangalore,6437,packages
+BF2025091238,Anchor,Toothpaste,09-09-2025,Bangalore,7248,packages
+BF2025091239,Sensodyne,Toothpaste,14-09-2025,Bangalore,15529,packages
+BF2025091240,Sensodyne,Toothpaste,26-09-2025,Bangalore,15334,packages
+BF2025091241,Colgate,Toothpaste,26-09-2025,Bangalore,11266,packages
+BF2025091242,Meswak,Toothpaste,26-09-2025,Bangalore,12859,packages
+BF2025091243,Promise,Toothpaste,18-09-2025,Bangalore,10636,packages
+BF2025091244,Meswak,Toothpaste,19-09-2025,Bangalore,11363,packages
+BF2025091245,Sunflower Oil,Oil,06-09-2025,Bangalore,10224,packages
+BF2025091246,Coconut Oil,Oil,20-09-2025,Bangalore,5480,packages
+BF2025091247,Groundnut Oil,Oil,26-09-2025,Bangalore,5959,packages
+BF2025091248,Palm Oil,Oil,26-09-2025,Bangalore,13674,packages
+BF2025091249,Coconut Oil,Oil,12-09-2025,Bangalore,7615,packages
+BF2025091250,Coconut Oil,Oil,04-09-2025,Bangalore,15762,packages
+BF2025091251,Basmati,Rice,09-09-2025,Hyderabad,17518,packages
+BF2025091252,Red Rice,Rice,08-09-2025,Hyderabad,10813,packages
+BF2025091253,Brown Rice,Rice,27-09-2025,Hyderabad,7885,packages
+BF2025091254,Matt Rice,Rice,08-09-2025,Hyderabad,18208,packages
+BF2025091255,Matt Rice,Rice,24-09-2025,Hyderabad,19974,packages
+BF2025091256,Bajra Flour,Flour,01-09-2025,Hyderabad,14300,packages
+BF2025091257,Besan,Flour,19-09-2025,Hyderabad,14225,packages
+BF2025091258,Multigrain Flour,Flour,07-09-2025,Hyderabad,13882,packages
+BF2025091259,Besan,Flour,10-09-2025,Hyderabad,13035,packages
+BF2025091260,Rice Flour,Flour,02-09-2025,Hyderabad,5920,packages
+BF2025091261,Maida,Flour,08-09-2025,Hyderabad,5326,packages
+BF2025091262,Multigrain Flour,Flour,17-09-2025,Hyderabad,5011,packages
+BF2025091263,Maida,Flour,11-09-2025,Hyderabad,18212,packages
+BF2025091264,Hide & Seek,Biscuit,11-09-2025,Hyderabad,18146,packages
+BF2025091265,Bourbon,Biscuit,28-09-2025,Hyderabad,5975,packages
+BF2025091266,Hide & Seek,Biscuit,01-09-2025,Hyderabad,14611,packages
+BF2025091267,Hide & Seek,Biscuit,23-09-2025,Hyderabad,17687,packages
+BF2025091268,Bourbon,Biscuit,04-09-2025,Hyderabad,6188,packages
+BF2025091269,Anchor,Toothpaste,23-09-2025,Kolkata,14601,packages
+BF2025091270,Meswak,Toothpaste,04-09-2025,Kolkata,9944,packages
+BF2025091271,Close Up,Toothpaste,11-09-2025,Kolkata,7580,packages
+BF2025091272,Anchor,Toothpaste,24-09-2025,Kolkata,17973,packages
+BF2025091273,Promise,Toothpaste,21-09-2025,Kolkata,15636,packages
+BF2025091274,Close Up,Toothpaste,11-09-2025,Kolkata,16586,packages
+BF2025091275,Hamam,Soap,23-09-2025,Kolkata,8657,packages
+BF2025091276,Lifebuoy,Soap,22-09-2025,Kolkata,11199,packages
+BF2025091277,Santoor,Soap,10-09-2025,Kolkata,7086,packages
+BF2025091278,Lux,Soap,06-09-2025,Kolkata,16501,packages
+BF2025091279,Medimix,Soap,19-09-2025,Kolkata,18938,packages
+BF2025091280,Lux,Soap,25-09-2025,Kolkata,7983,packages
+BF2025091281,Hamam,Soap,20-09-2025,Kolkata,18251,packages
+BF2025091282,Pears,Soap,20-09-2025,Kolkata,15479,packages
+BF2025091283,Palm Oil,Oil,04-09-2025,Kolkata,7304,packages
+BF2025091284,Olive Oil,Oil,11-09-2025,Kolkata,8899,packages
+BF2025091285,Soybean Oil,Oil,12-09-2025,Kolkata,7750,packages
+BF2025091286,Olive Oil,Oil,21-09-2025,Kolkata,18462,packages
+BF2025091287,Soybean Oil,Oil,23-09-2025,Kolkata,12317,packages
+BF2025091288,Groundnut Oil,Oil,01-09-2025,Kolkata,8435,packages
+BF2025091289,Olive Oil,Oil,08-09-2025,Kolkata,10742,packages
+BF2025091290,Olive Oil,Oil,09-09-2025,Kolkata,16803,packages
+BF2025101291,Crack Jack,Biscuit,02-10-2025,Kolhapur,12179,packages
+BF2025101292,Crack Jack,Biscuit,24-10-2025,Kolhapur,7725,packages
+BF2025101293,Krackjack,Biscuit,14-10-2025,Kolhapur,19446,packages
+BF2025101294,Bourbon,Biscuit,13-10-2025,Kolhapur,13946,packages
+BF2025101295,Mars,Chocolate,04-10-2025,Kolhapur,17922,packages
+BF2025101296,Munch,Chocolate,28-10-2025,Kolhapur,7664,packages
+BF2025101297,5 Star,Chocolate,15-10-2025,Kolhapur,18094,packages
+BF2025101298,Dairy Milk,Chocolate,28-10-2025,Kolhapur,9831,packages
+BF2025101299,Snickers,Chocolate,01-10-2025,Kolhapur,9278,packages
+BF2025101300,5 Star,Chocolate,04-10-2025,Kolhapur,10600,packages
+BF2025101301,Twix,Chocolate,06-10-2025,Kolhapur,7636,packages
+BF2025101302,Rice Flour,Flour,18-10-2025,Kolhapur,10536,packages
+BF2025101303,Multigrain Flour,Flour,20-10-2025,Kolhapur,16542,packages
+BF2025101304,Jowar Flour,Flour,01-10-2025,Kolhapur,15709,packages
+BF2025101305,Jowar Flour,Flour,06-10-2025,Kolhapur,7573,packages
+BF2025101306,Haldirams,Chips,04-10-2025,Pune,8367,packages
+BF2025101307,Cheetos,Chips,07-10-2025,Pune,16422,packages
+BF2025101308,Balaji,Chips,18-10-2025,Pune,15823,packages
+BF2025101309,Balaji,Chips,10-10-2025,Pune,8891,packages
+BF2025101310,Mountain Dew,Beverage,02-10-2025,Pune,14367,packages
+BF2025101311,Limca,Beverage,18-10-2025,Pune,7516,packages
+BF2025101312,Mirinda,Beverage,02-10-2025,Pune,5062,packages
+BF2025101313,Pepsi,Beverage,14-10-2025,Pune,9825,packages
+BF2025101314,Coconut Oil,Oil,16-10-2025,Pune,6589,packages
+BF2025101315,Coconut Oil,Oil,01-10-2025,Pune,7798,packages
+BF2025101316,Groundnut Oil,Oil,21-10-2025,Pune,6342,packages
+BF2025101317,Olive Oil,Oil,16-10-2025,Pune,10052,packages
+BF2025101318,Rice Bran Oil,Oil,26-10-2025,Pune,12715,packages
+BF2025101319,Groundnut Oil,Oil,16-10-2025,Pune,6493,packages
+BF2025101320,Rice Bran Oil,Oil,21-10-2025,Pune,8029,packages
+BF2025101321,Rice Bran Oil,Oil,12-10-2025,Pune,11052,packages
+BF2025101322,Lux,Soap,15-10-2025,Mumbai,9313,packages
+BF2025101323,Godrej,Soap,15-10-2025,Mumbai,9315,packages
+BF2025101324,Santoor,Soap,08-10-2025,Mumbai,14244,packages
+BF2025101325,Lifebuoy,Soap,02-10-2025,Mumbai,17324,packages
+BF2025101326,Dettol,Soap,23-10-2025,Mumbai,6404,packages
+BF2025101327,Mountain Dew,Beverage,26-10-2025,Mumbai,17393,packages
+BF2025101328,Fanta,Beverage,19-10-2025,Mumbai,14070,packages
+BF2025101329,Mountain Dew,Beverage,02-10-2025,Mumbai,18408,packages
+BF2025101330,Mountain Dew,Beverage,17-10-2025,Mumbai,13773,packages
+BF2025101331,Limca,Beverage,22-10-2025,Mumbai,14383,packages
+BF2025101332,Limca,Beverage,08-10-2025,Mumbai,9896,packages
+BF2025101333,Clinic Plus,Shampoo,13-10-2025,Mumbai,13226,packages
+BF2025101334,Head & Shoulders,Shampoo,19-10-2025,Mumbai,6970,packages
+BF2025101335,Garnier,Shampoo,25-10-2025,Mumbai,7832,packages
+BF2025101336,Pantene,Shampoo,06-10-2025,Mumbai,18245,packages
+BF2025101337,Dairy Milk,Chocolate,05-10-2025,Delhi,11936,packages
+BF2025101338,Twix,Chocolate,03-10-2025,Delhi,8308,packages
+BF2025101339,Perk,Chocolate,27-10-2025,Delhi,18666,packages
+BF2025101340,Kit Kat,Chocolate,20-10-2025,Delhi,10238,packages
+BF2025101341,5 Star,Chocolate,24-10-2025,Delhi,6425,packages
+BF2025101342,Cheetos,Chips,18-10-2025,Delhi,14044,packages
+BF2025101343,Balaji,Chips,11-10-2025,Delhi,13514,packages
+BF2025101344,Lays,Chips,15-10-2025,Delhi,17886,packages
+BF2025101345,Cheetos,Chips,23-10-2025,Delhi,6843,packages
+BF2025101346,Bingo,Chips,14-10-2025,Delhi,7428,packages
+BF2025101347,Kurkure,Chips,19-10-2025,Delhi,6730,packages
+BF2025101348,Kurkure,Chips,19-10-2025,Delhi,17873,packages
+BF2025101349,Meswak,Toothpaste,28-10-2025,Delhi,19383,packages
+BF2025101350,Dabur Red,Toothpaste,14-10-2025,Delhi,11275,packages
+BF2025101351,Promise,Toothpaste,21-10-2025,Delhi,14372,packages
+BF2025101352,Promise,Toothpaste,20-10-2025,Delhi,5613,packages
+BF2025101353,Dabur Red,Toothpaste,06-10-2025,Delhi,11602,packages
+BF2025101354,Anchor,Toothpaste,05-10-2025,Delhi,5635,packages
+BF2025101355,Pears,Soap,11-10-2025,Chennai,5807,packages
+BF2025101356,Godrej,Soap,24-10-2025,Chennai,9400,packages
+BF2025101357,Lux,Soap,12-10-2025,Chennai,10535,packages
+BF2025101358,Santoor,Soap,27-10-2025,Chennai,10094,packages
+BF2025101359,Godrej,Soap,09-10-2025,Chennai,19061,packages
+BF2025101360,Dettol,Soap,23-10-2025,Chennai,19236,packages
+BF2025101361,Lifebuoy,Soap,08-10-2025,Chennai,9923,packages
+BF2025101362,Bourbon,Biscuit,25-10-2025,Chennai,9414,packages
+BF2025101363,Crack Jack,Biscuit,24-10-2025,Chennai,14911,packages
+BF2025101364,Monaco,Biscuit,21-10-2025,Chennai,8079,packages
+BF2025101365,Good Day,Biscuit,15-10-2025,Chennai,19965,packages
+BF2025101366,Crack Jack,Biscuit,27-10-2025,Chennai,17139,packages
+BF2025101367,Bourbon,Biscuit,16-10-2025,Chennai,18451,packages
+BF2025101368,Hide & Seek,Biscuit,02-10-2025,Chennai,6075,packages
+BF2025101369,Red Rice,Rice,23-10-2025,Chennai,7222,packages
+BF2025101370,Basmati,Rice,25-10-2025,Chennai,7846,packages
+BF2025101371,Jasmine Rice,Rice,07-10-2025,Chennai,18713,packages
+BF2025101372,Jasmine Rice,Rice,02-10-2025,Chennai,5541,packages
+BF2025101373,Basmati,Rice,15-10-2025,Chennai,10904,packages
+BF2025101374,Jasmine Rice,Rice,23-10-2025,Chennai,9488,packages
+BF2025101375,Garnier,Shampoo,27-10-2025,Bangalore,13275,packages
+BF2025101376,Dove,Shampoo,13-10-2025,Bangalore,16160,packages
+BF2025101377,Pantene,Shampoo,01-10-2025,Bangalore,11102,packages
+BF2025101378,Garnier,Shampoo,16-10-2025,Bangalore,7909,packages
+BF2025101379,Garnier,Shampoo,28-10-2025,Bangalore,14615,packages
+BF2025101380,Sunsilk,Shampoo,18-10-2025,Bangalore,10640,packages
+BF2025101381,Dabur Red,Toothpaste,27-10-2025,Bangalore,17270,packages
+BF2025101382,Pepsodent,Toothpaste,27-10-2025,Bangalore,9670,packages
+BF2025101383,Anchor,Toothpaste,01-10-2025,Bangalore,5813,packages
+BF2025101384,Sensodyne,Toothpaste,06-10-2025,Bangalore,19042,packages
+BF2025101385,Sensodyne,Toothpaste,08-10-2025,Bangalore,16103,packages
+BF2025101386,Rice Bran Oil,Oil,09-10-2025,Bangalore,13409,packages
+BF2025101387,Sunflower Oil,Oil,01-10-2025,Bangalore,12767,packages
+BF2025101388,Mustard Oil,Oil,05-10-2025,Bangalore,14849,packages
+BF2025101389,Sunflower Oil,Oil,26-10-2025,Bangalore,8666,packages
+BF2025101390,Groundnut Oil,Oil,09-10-2025,Bangalore,16677,packages
+BF2025101391,Red Rice,Rice,14-10-2025,Hyderabad,18952,packages
+BF2025101392,Black Rice,Rice,12-10-2025,Hyderabad,9128,packages
+BF2025101393,Black Rice,Rice,07-10-2025,Hyderabad,9950,packages
+BF2025101394,Red Rice,Rice,22-10-2025,Hyderabad,14576,packages
+BF2025101395,Basmati,Rice,04-10-2025,Hyderabad,13380,packages
+BF2025101396,Matt Rice,Rice,22-10-2025,Hyderabad,14198,packages
+BF2025101397,Ragi Flour,Flour,20-10-2025,Hyderabad,9890,packages
+BF2025101398,Rice Flour,Flour,22-10-2025,Hyderabad,12892,packages
+BF2025101399,Bajra Flour,Flour,03-10-2025,Hyderabad,9529,packages
+BF2025101400,Bajra Flour,Flour,21-10-2025,Hyderabad,19114,packages
+BF2025101401,Ragi Flour,Flour,09-10-2025,Hyderabad,15749,packages
+BF2025101402,Ragi Flour,Flour,23-10-2025,Hyderabad,8086,packages
+BF2025101403,Maida,Flour,05-10-2025,Hyderabad,19740,packages
+BF2025101404,Jowar Flour,Flour,02-10-2025,Hyderabad,15822,packages
+BF2025101405,Hide & Seek,Biscuit,22-10-2025,Hyderabad,16817,packages
+BF2025101406,Krackjack,Biscuit,01-10-2025,Hyderabad,9843,packages
+BF2025101407,Crack Jack,Biscuit,09-10-2025,Hyderabad,11628,packages
+BF2025101408,Parle-G,Biscuit,13-10-2025,Hyderabad,14552,packages
+BF2025101409,Good Day,Biscuit,23-10-2025,Hyderabad,10622,packages
+BF2025101410,Good Day,Biscuit,24-10-2025,Hyderabad,16244,packages
+BF2025101411,Promise,Toothpaste,21-10-2025,Kolkata,19852,packages
+BF2025101412,Meswak,Toothpaste,22-10-2025,Kolkata,13311,packages
+BF2025101413,Close Up,Toothpaste,10-10-2025,Kolkata,18773,packages
+BF2025101414,Close Up,Toothpaste,22-10-2025,Kolkata,9813,packages
+BF2025101415,Promise,Toothpaste,04-10-2025,Kolkata,7096,packages
+BF2025101416,Dabur Red,Toothpaste,24-10-2025,Kolkata,16881,packages
+BF2025101417,Close Up,Toothpaste,26-10-2025,Kolkata,16136,packages
+BF2025101418,Pepsodent,Toothpaste,11-10-2025,Kolkata,8641,packages
+BF2025101419,Santoor,Soap,08-10-2025,Kolkata,11889,packages
+BF2025101420,Hamam,Soap,26-10-2025,Kolkata,11089,packages
+BF2025101421,Santoor,Soap,09-10-2025,Kolkata,12598,packages
+BF2025101422,Dettol,Soap,28-10-2025,Kolkata,12709,packages
+BF2025101423,Dettol,Soap,02-10-2025,Kolkata,12736,packages
+BF2025101424,Dettol,Soap,07-10-2025,Kolkata,19213,packages
+BF2025101425,Groundnut Oil,Oil,17-10-2025,Kolkata,11768,packages
+BF2025101426,Mustard Oil,Oil,02-10-2025,Kolkata,7250,packages
+BF2025101427,Soybean Oil,Oil,07-10-2025,Kolkata,11704,packages
+BF2025101428,Palm Oil,Oil,19-10-2025,Kolkata,7346,packages
+BF2025101429,Mustard Oil,Oil,11-10-2025,Kolkata,17762,packages
+BF2025101430,Palm Oil,Oil,03-10-2025,Kolkata,10449,packages
+BF2025101431,Mustard Oil,Oil,21-10-2025,Kolkata,10134,packages
+BF2025111432,Krackjack,Biscuit,01-11-2025,Kolhapur,9481,packages
+BF2025111433,Hide & Seek,Biscuit,07-11-2025,Kolhapur,14441,packages
+BF2025111434,Hide & Seek,Biscuit,25-11-2025,Kolhapur,13021,packages
+BF2025111435,Monaco,Biscuit,26-11-2025,Kolhapur,7120,packages
+BF2025111436,Twix,Chocolate,14-11-2025,Kolhapur,11609,packages
+BF2025111437,Mars,Chocolate,14-11-2025,Kolhapur,11280,packages
+BF2025111438,Dairy Milk,Chocolate,01-11-2025,Kolhapur,13745,packages
+BF2025111439,Snickers,Chocolate,07-11-2025,Kolhapur,5230,packages
+BF2025111440,Munch,Chocolate,11-11-2025,Kolhapur,5293,packages
+BF2025111441,Dairy Milk,Chocolate,22-11-2025,Kolhapur,15267,packages
+BF2025111442,Munch,Chocolate,24-11-2025,Kolhapur,8707,packages
+BF2025111443,Snickers,Chocolate,23-11-2025,Kolhapur,10113,packages
+BF2025111444,Jowar Flour,Flour,04-11-2025,Kolhapur,13246,packages
+BF2025111445,Ragi Flour,Flour,19-11-2025,Kolhapur,7736,packages
+BF2025111446,Wheat Flour,Flour,03-11-2025,Kolhapur,9885,packages
+BF2025111447,Multigrain Flour,Flour,10-11-2025,Kolhapur,16924,packages
+BF2025111448,Bajra Flour,Flour,17-11-2025,Kolhapur,12105,packages
+BF2025111449,Uncle Chips,Chips,11-11-2025,Pune,10885,packages
+BF2025111450,Pringles,Chips,25-11-2025,Pune,7701,packages
+BF2025111451,Cheetos,Chips,26-11-2025,Pune,5313,packages
+BF2025111452,Pringles,Chips,08-11-2025,Pune,16913,packages
+BF2025111453,Pringles,Chips,05-11-2025,Pune,17027,packages
+BF2025111454,Sprite,Beverage,19-11-2025,Pune,7017,packages
+BF2025111455,Coca Cola,Beverage,12-11-2025,Pune,11147,packages
+BF2025111456,Thums Up,Beverage,21-11-2025,Pune,17636,packages
+BF2025111457,Coca Cola,Beverage,18-11-2025,Pune,14730,packages
+BF2025111458,Olive Oil,Oil,22-11-2025,Pune,15708,packages
+BF2025111459,Sunflower Oil,Oil,27-11-2025,Pune,5790,packages
+BF2025111460,Olive Oil,Oil,23-11-2025,Pune,11828,packages
+BF2025111461,Rice Bran Oil,Oil,15-11-2025,Pune,7024,packages
+BF2025111462,Godrej,Soap,09-11-2025,Mumbai,16499,packages
+BF2025111463,Pears,Soap,05-11-2025,Mumbai,16390,packages
+BF2025111464,Lux,Soap,22-11-2025,Mumbai,9933,packages
+BF2025111465,Dettol,Soap,14-11-2025,Mumbai,15854,packages
+BF2025111466,Santoor,Soap,17-11-2025,Mumbai,15203,packages
+BF2025111467,Lifebuoy,Soap,20-11-2025,Mumbai,11862,packages
+BF2025111468,Dettol,Soap,27-11-2025,Mumbai,13381,packages
+BF2025111469,Dettol,Soap,24-11-2025,Mumbai,9631,packages
+BF2025111470,Pepsi,Beverage,26-11-2025,Mumbai,13154,packages
+BF2025111471,Fanta,Beverage,07-11-2025,Mumbai,17746,packages
+BF2025111472,Fanta,Beverage,09-11-2025,Mumbai,10864,packages
+BF2025111473,Mountain Dew,Beverage,23-11-2025,Mumbai,9839,packages
+BF2025111474,Garnier,Shampoo,02-11-2025,Mumbai,19915,packages
+BF2025111475,Garnier,Shampoo,07-11-2025,Mumbai,10416,packages
+BF2025111476,Clinic Plus,Shampoo,08-11-2025,Mumbai,5208,packages
+BF2025111477,Dove,Shampoo,22-11-2025,Mumbai,19858,packages
+BF2025111478,Garnier,Shampoo,04-11-2025,Mumbai,7443,packages
+BF2025111479,5 Star,Chocolate,25-11-2025,Delhi,16854,packages
+BF2025111480,5 Star,Chocolate,24-11-2025,Delhi,19823,packages
+BF2025111481,Munch,Chocolate,09-11-2025,Delhi,12483,packages
+BF2025111482,Kit Kat,Chocolate,10-11-2025,Delhi,12606,packages
+BF2025111483,Bingo,Chips,04-11-2025,Delhi,19321,packages
+BF2025111484,Balaji,Chips,02-11-2025,Delhi,10901,packages
+BF2025111485,Haldirams,Chips,26-11-2025,Delhi,11979,packages
+BF2025111486,Kurkure,Chips,24-11-2025,Delhi,6556,packages
+BF2025111487,Close Up,Toothpaste,01-11-2025,Delhi,15868,packages
+BF2025111488,Close Up,Toothpaste,21-11-2025,Delhi,10384,packages
+BF2025111489,Promise,Toothpaste,12-11-2025,Delhi,15187,packages
+BF2025111490,Pepsodent,Toothpaste,09-11-2025,Delhi,11105,packages
+BF2025111491,Dettol,Soap,06-11-2025,Chennai,11566,packages
+BF2025111492,Godrej,Soap,13-11-2025,Chennai,9453,packages
+BF2025111493,Medimix,Soap,27-11-2025,Chennai,16303,packages
+BF2025111494,Godrej,Soap,28-11-2025,Chennai,18105,packages
+BF2025111495,Lifebuoy,Soap,14-11-2025,Chennai,6852,packages
+BF2025111496,Lux,Soap,05-11-2025,Chennai,18833,packages
+BF2025111497,Crack Jack,Biscuit,04-11-2025,Chennai,19929,packages
+BF2025111498,Krackjack,Biscuit,19-11-2025,Chennai,18144,packages
+BF2025111499,Krackjack,Biscuit,19-11-2025,Chennai,7969,packages
+BF2025111500,Crack Jack,Biscuit,20-11-2025,Chennai,17765,packages
+BF2025111501,Parle-G,Biscuit,12-11-2025,Chennai,19132,packages
+BF2025111502,Black Rice,Rice,16-11-2025,Chennai,6850,packages
+BF2025111503,Black Rice,Rice,14-11-2025,Chennai,5753,packages
+BF2025111504,Ponni Rice,Rice,03-11-2025,Chennai,15731,packages
+BF2025111505,Basmati,Rice,11-11-2025,Chennai,16543,packages
+BF2025111506,Jasmine Rice,Rice,28-11-2025,Chennai,15974,packages
+BF2025111507,Dove,Shampoo,17-11-2025,Bangalore,12091,packages
+BF2025111508,Pantene,Shampoo,22-11-2025,Bangalore,12895,packages
+BF2025111509,Tresemme,Shampoo,12-11-2025,Bangalore,7435,packages
+BF2025111510,Clinic Plus,Shampoo,27-11-2025,Bangalore,5190,packages
+BF2025111511,Head & Shoulders,Shampoo,21-11-2025,Bangalore,13283,packages
+BF2025111512,Garnier,Shampoo,28-11-2025,Bangalore,18957,packages
+BF2025111513,Close Up,Toothpaste,28-11-2025,Bangalore,6226,packages
+BF2025111514,Promise,Toothpaste,25-11-2025,Bangalore,10253,packages
+BF2025111515,Meswak,Toothpaste,08-11-2025,Bangalore,9557,packages
+BF2025111516,Sensodyne,Toothpaste,02-11-2025,Bangalore,14019,packages
+BF2025111517,Anchor,Toothpaste,21-11-2025,Bangalore,11607,packages
+BF2025111518,Sensodyne,Toothpaste,27-11-2025,Bangalore,6291,packages
+BF2025111519,Promise,Toothpaste,15-11-2025,Bangalore,18127,packages
+BF2025111520,Olive Oil,Oil,15-11-2025,Bangalore,19034,packages
+BF2025111521,Palm Oil,Oil,16-11-2025,Bangalore,10178,packages
+BF2025111522,Palm Oil,Oil,04-11-2025,Bangalore,17209,packages
+BF2025111523,Sunflower Oil,Oil,21-11-2025,Bangalore,6681,packages
+BF2025111524,Rice Bran Oil,Oil,13-11-2025,Bangalore,5587,packages
+BF2025111525,Sunflower Oil,Oil,18-11-2025,Bangalore,18531,packages
+BF2025111526,Groundnut Oil,Oil,03-11-2025,Bangalore,19583,packages
+BF2025111527,Coconut Oil,Oil,17-11-2025,Bangalore,15724,packages
+BF2025111528,Matt Rice,Rice,11-11-2025,Hyderabad,18521,packages
+BF2025111529,Jasmine Rice,Rice,02-11-2025,Hyderabad,18833,packages
+BF2025111530,Matt Rice,Rice,15-11-2025,Hyderabad,14177,packages
+BF2025111531,Black Rice,Rice,25-11-2025,Hyderabad,16741,packages
+BF2025111532,Matt Rice,Rice,22-11-2025,Hyderabad,16729,packages
+BF2025111533,Sona Masoori,Rice,15-11-2025,Hyderabad,6596,packages
+BF2025111534,Jasmine Rice,Rice,25-11-2025,Hyderabad,5035,packages
+BF2025111535,Ragi Flour,Flour,12-11-2025,Hyderabad,13973,packages
+BF2025111536,Bajra Flour,Flour,17-11-2025,Hyderabad,16503,packages
+BF2025111537,Wheat Flour,Flour,04-11-2025,Hyderabad,19694,packages
+BF2025111538,Multigrain Flour,Flour,06-11-2025,Hyderabad,7301,packages
+BF2025111539,Jowar Flour,Flour,27-11-2025,Hyderabad,6752,packages
+BF2025111540,Maida,Flour,09-11-2025,Hyderabad,8072,packages
+BF2025111541,Crack Jack,Biscuit,28-11-2025,Hyderabad,8532,packages
+BF2025111542,Good Day,Biscuit,15-11-2025,Hyderabad,16743,packages
+BF2025111543,Monaco,Biscuit,11-11-2025,Hyderabad,17405,packages
+BF2025111544,Parle-G,Biscuit,14-11-2025,Hyderabad,15375,packages
+BF2025111545,Promise,Toothpaste,04-11-2025,Kolkata,12493,packages
+BF2025111546,Close Up,Toothpaste,22-11-2025,Kolkata,13172,packages
+BF2025111547,Colgate,Toothpaste,01-11-2025,Kolkata,14064,packages
+BF2025111548,Promise,Toothpaste,14-11-2025,Kolkata,13328,packages
+BF2025111549,Close Up,Toothpaste,25-11-2025,Kolkata,16334,packages
+BF2025111550,Close Up,Toothpaste,19-11-2025,Kolkata,16968,packages
+BF2025111551,Close Up,Toothpaste,27-11-2025,Kolkata,6696,packages
+BF2025111552,Meswak,Toothpaste,13-11-2025,Kolkata,13259,packages
+BF2025111553,Pears,Soap,14-11-2025,Kolkata,9482,packages
+BF2025111554,Hamam,Soap,13-11-2025,Kolkata,9819,packages
+BF2025111555,Lifebuoy,Soap,15-11-2025,Kolkata,7263,packages
+BF2025111556,Santoor,Soap,14-11-2025,Kolkata,18812,packages
+BF2025111557,Hamam,Soap,23-11-2025,Kolkata,16663,packages
+BF2025111558,Pears,Soap,24-11-2025,Kolkata,8291,packages
+BF2025111559,Santoor,Soap,07-11-2025,Kolkata,16249,packages
+BF2025111560,Mustard Oil,Oil,22-11-2025,Kolkata,16639,packages
+BF2025111561,Mustard Oil,Oil,21-11-2025,Kolkata,13255,packages
+BF2025111562,Soybean Oil,Oil,18-11-2025,Kolkata,16638,packages
+BF2025111563,Soybean Oil,Oil,04-11-2025,Kolkata,14212,packages
+BF2025111564,Rice Bran Oil,Oil,16-11-2025,Kolkata,16046,packages
+BF2025111565,Groundnut Oil,Oil,24-11-2025,Kolkata,19376,packages
+BF2025121566,Parle-G,Biscuit,26-12-2025,Kolhapur,13564,packages
+BF2025121567,Parle-G,Biscuit,04-12-2025,Kolhapur,11240,packages
+BF2025121568,Parle-G,Biscuit,05-12-2025,Kolhapur,15981,packages
+BF2025121569,Good Day,Biscuit,02-12-2025,Kolhapur,9374,packages
+BF2025121570,Hide & Seek,Biscuit,25-12-2025,Kolhapur,9695,packages
+BF2025121571,Marie Gold,Biscuit,22-12-2025,Kolhapur,7399,packages
+BF2025121572,Parle-G,Biscuit,27-12-2025,Kolhapur,16314,packages
+BF2025121573,Dairy Milk,Chocolate,07-12-2025,Kolhapur,10876,packages
+BF2025121574,Mars,Chocolate,27-12-2025,Kolhapur,6679,packages
+BF2025121575,Munch,Chocolate,20-12-2025,Kolhapur,17163,packages
+BF2025121576,Twix,Chocolate,21-12-2025,Kolhapur,8892,packages
+BF2025121577,Kit Kat,Chocolate,17-12-2025,Kolhapur,16353,packages
+BF2025121578,Dairy Milk,Chocolate,22-12-2025,Kolhapur,11251,packages
+BF2025121579,Bajra Flour,Flour,14-12-2025,Kolhapur,14046,packages
+BF2025121580,Wheat Flour,Flour,02-12-2025,Kolhapur,17184,packages
+BF2025121581,Maida,Flour,09-12-2025,Kolhapur,15167,packages
+BF2025121582,Multigrain Flour,Flour,28-12-2025,Kolhapur,18598,packages
+BF2025121583,Bajra Flour,Flour,08-12-2025,Kolhapur,17371,packages
+BF2025121584,Maida,Flour,19-12-2025,Kolhapur,17716,packages
+BF2025121585,Maida,Flour,24-12-2025,Kolhapur,9819,packages
+BF2025121586,Kurkure,Chips,06-12-2025,Pune,8063,packages
+BF2025121587,Kurkure,Chips,06-12-2025,Pune,11180,packages
+BF2025121588,Cheetos,Chips,02-12-2025,Pune,9572,packages
+BF2025121589,Balaji,Chips,18-12-2025,Pune,7131,packages
+BF2025121590,Balaji,Chips,06-12-2025,Pune,5092,packages
+BF2025121591,Uncle Chips,Chips,11-12-2025,Pune,16627,packages
+BF2025121592,Lays,Chips,05-12-2025,Pune,7518,packages
+BF2025121593,Coca Cola,Beverage,20-12-2025,Pune,17675,packages
+BF2025121594,Thums Up,Beverage,21-12-2025,Pune,13037,packages
+BF2025121595,Mirinda,Beverage,26-12-2025,Pune,6194,packages
+BF2025121596,Mirinda,Beverage,26-12-2025,Pune,13608,packages
+BF2025121597,Sprite,Beverage,08-12-2025,Pune,13529,packages
+BF2025121598,Sprite,Beverage,03-12-2025,Pune,11814,packages
+BF2025121599,Rice Bran Oil,Oil,18-12-2025,Pune,6506,packages
+BF2025121600,Coconut Oil,Oil,12-12-2025,Pune,19473,packages
+BF2025121601,Soybean Oil,Oil,07-12-2025,Pune,10424,packages
+BF2025121602,Groundnut Oil,Oil,12-12-2025,Pune,8579,packages
+BF2025121603,Palm Oil,Oil,25-12-2025,Pune,14196,packages
+BF2025121604,Sunflower Oil,Oil,27-12-2025,Pune,6879,packages
+BF2025121605,Soybean Oil,Oil,22-12-2025,Pune,12301,packages
+BF2025121606,Coconut Oil,Oil,08-12-2025,Pune,5653,packages
+BF2025121607,Dettol,Soap,13-12-2025,Mumbai,11322,packages
+BF2025121608,Santoor,Soap,09-12-2025,Mumbai,5404,packages
+BF2025121609,Hamam,Soap,17-12-2025,Mumbai,13426,packages
+BF2025121610,Godrej,Soap,26-12-2025,Mumbai,12975,packages
+BF2025121611,Santoor,Soap,02-12-2025,Mumbai,19717,packages
+BF2025121612,Pears,Soap,21-12-2025,Mumbai,10248,packages
+BF2025121613,Pepsi,Beverage,03-12-2025,Mumbai,7742,packages
+BF2025121614,Coca Cola,Beverage,25-12-2025,Mumbai,15271,packages
+BF2025121615,Fanta,Beverage,03-12-2025,Mumbai,15982,packages
+BF2025121616,Fanta,Beverage,21-12-2025,Mumbai,19171,packages
+BF2025121617,Mountain Dew,Beverage,22-12-2025,Mumbai,18691,packages
+BF2025121618,Fanta,Beverage,04-12-2025,Mumbai,13810,packages
+BF2025121619,Mountain Dew,Beverage,27-12-2025,Mumbai,15593,packages
+BF2025121620,Pepsi,Beverage,27-12-2025,Mumbai,17237,packages
+BF2025121621,Garnier,Shampoo,01-12-2025,Mumbai,16745,packages
+BF2025121622,Clinic Plus,Shampoo,11-12-2025,Mumbai,6433,packages
+BF2025121623,Clinic Plus,Shampoo,03-12-2025,Mumbai,7916,packages
+BF2025121624,Loreal,Shampoo,26-12-2025,Mumbai,14143,packages
+BF2025121625,Pantene,Shampoo,03-12-2025,Mumbai,19925,packages
+BF2025121626,Twix,Chocolate,14-12-2025,Delhi,12391,packages
+BF2025121627,Twix,Chocolate,21-12-2025,Delhi,12094,packages
+BF2025121628,Dairy Milk,Chocolate,11-12-2025,Delhi,11381,packages
+BF2025121629,5 Star,Chocolate,22-12-2025,Delhi,13762,packages
+BF2025121630,5 Star,Chocolate,01-12-2025,Delhi,17385,packages
+BF2025121631,Dairy Milk,Chocolate,24-12-2025,Delhi,16483,packages
+BF2025121632,Kurkure,Chips,12-12-2025,Delhi,9748,packages
+BF2025121633,Balaji,Chips,26-12-2025,Delhi,14937,packages
+BF2025121634,Balaji,Chips,03-12-2025,Delhi,17538,packages
+BF2025121635,Cheetos,Chips,15-12-2025,Delhi,11473,packages
+BF2025121636,Close Up,Toothpaste,16-12-2025,Delhi,13740,packages
+BF2025121637,Close Up,Toothpaste,08-12-2025,Delhi,17234,packages
+BF2025121638,Dabur Red,Toothpaste,13-12-2025,Delhi,15388,packages
+BF2025121639,Dabur Red,Toothpaste,05-12-2025,Delhi,16096,packages
+BF2025121640,Lifebuoy,Soap,01-12-2025,Chennai,7019,packages
+BF2025121641,Lux,Soap,02-12-2025,Chennai,14383,packages
+BF2025121642,Medimix,Soap,20-12-2025,Chennai,13800,packages
+BF2025121643,Dettol,Soap,18-12-2025,Chennai,9992,packages
+BF2025121644,Hamam,Soap,07-12-2025,Chennai,8469,packages
+BF2025121645,Lifebuoy,Soap,14-12-2025,Chennai,7637,packages
+BF2025121646,Marie Gold,Biscuit,08-12-2025,Chennai,8183,packages
+BF2025121647,Hide & Seek,Biscuit,04-12-2025,Chennai,15993,packages
+BF2025121648,Parle-G,Biscuit,26-12-2025,Chennai,18949,packages
+BF2025121649,Krackjack,Biscuit,25-12-2025,Chennai,15562,packages
+BF2025121650,Monaco,Biscuit,18-12-2025,Chennai,9762,packages
+BF2025121651,Sona Masoori,Rice,09-12-2025,Chennai,8234,packages
+BF2025121652,Black Rice,Rice,24-12-2025,Chennai,10420,packages
+BF2025121653,Brown Rice,Rice,12-12-2025,Chennai,15998,packages
+BF2025121654,Jasmine Rice,Rice,21-12-2025,Chennai,6639,packages
+BF2025121655,Dove,Shampoo,20-12-2025,Bangalore,19747,packages
+BF2025121656,Sunsilk,Shampoo,07-12-2025,Bangalore,12960,packages
+BF2025121657,Sunsilk,Shampoo,15-12-2025,Bangalore,15098,packages
+BF2025121658,Loreal,Shampoo,22-12-2025,Bangalore,16361,packages
+BF2025121659,Head & Shoulders,Shampoo,19-12-2025,Bangalore,14266,packages
+BF2025121660,Sunsilk,Shampoo,19-12-2025,Bangalore,18233,packages
+BF2025121661,Close Up,Toothpaste,14-12-2025,Bangalore,5079,packages
+BF2025121662,Sensodyne,Toothpaste,11-12-2025,Bangalore,17872,packages
+BF2025121663,Anchor,Toothpaste,08-12-2025,Bangalore,9533,packages
+BF2025121664,Meswak,Toothpaste,27-12-2025,Bangalore,7200,packages
+BF2025121665,Meswak,Toothpaste,22-12-2025,Bangalore,19383,packages
+BF2025121666,Promise,Toothpaste,16-12-2025,Bangalore,12296,packages
+BF2025121667,Groundnut Oil,Oil,25-12-2025,Bangalore,12978,packages
+BF2025121668,Olive Oil,Oil,18-12-2025,Bangalore,7879,packages
+BF2025121669,Olive Oil,Oil,21-12-2025,Bangalore,18791,packages
+BF2025121670,Mustard Oil,Oil,09-12-2025,Bangalore,19603,packages
+BF2025121671,Coconut Oil,Oil,18-12-2025,Bangalore,9312,packages
+BF2025121672,Olive Oil,Oil,24-12-2025,Bangalore,16918,packages
+BF2025121673,Basmati,Rice,01-12-2025,Hyderabad,18314,packages
+BF2025121674,Red Rice,Rice,19-12-2025,Hyderabad,17602,packages
+BF2025121675,Jasmine Rice,Rice,19-12-2025,Hyderabad,19848,packages
+BF2025121676,Ponni Rice,Rice,02-12-2025,Hyderabad,13904,packages
+BF2025121677,Besan,Flour,16-12-2025,Hyderabad,10993,packages
+BF2025121678,Maida,Flour,13-12-2025,Hyderabad,19605,packages
+BF2025121679,Ragi Flour,Flour,25-12-2025,Hyderabad,7193,packages
+BF2025121680,Rice Flour,Flour,15-12-2025,Hyderabad,11500,packages
+BF2025121681,Wheat Flour,Flour,12-12-2025,Hyderabad,15857,packages
+BF2025121682,Besan,Flour,08-12-2025,Hyderabad,17406,packages
+BF2025121683,Besan,Flour,17-12-2025,Hyderabad,12310,packages
+BF2025121684,Besan,Flour,06-12-2025,Hyderabad,14279,packages
+BF2025121685,Hide & Seek,Biscuit,22-12-2025,Hyderabad,17057,packages
+BF2025121686,Krackjack,Biscuit,24-12-2025,Hyderabad,10878,packages
+BF2025121687,Good Day,Biscuit,02-12-2025,Hyderabad,17475,packages
+BF2025121688,Good Day,Biscuit,16-12-2025,Hyderabad,6029,packages
+BF2025121689,Bourbon,Biscuit,09-12-2025,Hyderabad,8834,packages
+BF2025121690,Good Day,Biscuit,02-12-2025,Hyderabad,13485,packages
+BF2025121691,Bourbon,Biscuit,26-12-2025,Hyderabad,11358,packages
+BF2025121692,Krackjack,Biscuit,16-12-2025,Hyderabad,19443,packages
+BF2025121693,Meswak,Toothpaste,02-12-2025,Kolkata,6691,packages
+BF2025121694,Dabur Red,Toothpaste,23-12-2025,Kolkata,18678,packages
+BF2025121695,Dabur Red,Toothpaste,24-12-2025,Kolkata,14480,packages
+BF2025121696,Close Up,Toothpaste,18-12-2025,Kolkata,11171,packages
+BF2025121697,Dettol,Soap,12-12-2025,Kolkata,13465,packages
+BF2025121698,Medimix,Soap,09-12-2025,Kolkata,19864,packages
+BF2025121699,Medimix,Soap,08-12-2025,Kolkata,10781,packages
+BF2025121700,Hamam,Soap,27-12-2025,Kolkata,12976,packages
+BF2025121701,Godrej,Soap,26-12-2025,Kolkata,19535,packages
+BF2025121702,Lux,Soap,20-12-2025,Kolkata,13222,packages
+BF2025121703,Godrej,Soap,05-12-2025,Kolkata,7713,packages
+BF2025121704,Groundnut Oil,Oil,03-12-2025,Kolkata,8465,packages
+BF2025121705,Mustard Oil,Oil,05-12-2025,Kolkata,7578,packages
+BF2025121706,Olive Oil,Oil,12-12-2025,Kolkata,15831,packages
+BF2025121707,Rice Bran Oil,Oil,08-12-2025,Kolkata,18290,packages
+BF2025121708,Olive Oil,Oil,11-12-2025,Kolkata,12889,packages

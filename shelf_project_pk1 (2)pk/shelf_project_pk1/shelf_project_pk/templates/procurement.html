@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Procurement AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    <style>
+        body { background-color: #f1f5f9; font-family: 'Segoe UI', sans-serif; }
+        .sidebar { width: 250px; height: 100vh; position: fixed; background: #0f172a; color: white; padding: 20px; z-index: 100; overflow-y: auto; }
+        .main-content { margin-left: 250px; padding: 30px; }
+        .nav-link { color: #94a3b8; padding: 12px; margin-bottom: 5px; border-radius: 8px; display: block; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { background: #1e293b; color: white; }
+        
+        /* Analysis Cards */
+        .step-card {
+            background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px;
+            border-left: 5px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s;
+        }
+        .step-card:hover { transform: translateX(5px); }
+        .step-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; }
+        
+        .step-1 { border-color: #4f46e5; } .step-1 .step-icon { background: #e0e7ff; color: #4f46e5; }
+        .step-2 { border-color: #0ea5e9; } .step-2 .step-icon { background: #e0f2fe; color: #0ea5e9; }
+        .step-3 { border-color: #f59e0b; } .step-3 .step-icon { background: #fef3c7; color: #f59e0b; }
+        .step-5 { border-color: #10b981; } .step-5 .step-icon { background: #d1fae5; color: #10b981; }
+        .step-lock { border-color: #6366f1; } .step-lock .step-icon { background: #e0e7ff; color: #6366f1; }
+        .step-alloc { border-color: #db2777; }
+        .step-dist { border-color: #8b5cf6; }
+        .step-ret { border-color: #f97316; }
+        .step-shelf { border-color: #ef4444; }
+        
+        .final-decision-box {
+            background: linear-gradient(135deg, #1e293b 0%, #111827 100%); color: white; border-radius: 12px;
+            padding: 30px; margin-top: 30px; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .decision-highlight { color: #4ade80; font-weight: 800; font-size: 2rem; }
+        
+        .key-event { font-size: 0.8rem; color: #64748b; margin-bottom: 2px; }
+        .btn-view-data { font-size: 0.75rem; text-transform: uppercase; font-weight: 600; color: #4f46e5; background: #e0e7ff; border: none; padding: 4px 10px; border-radius: 4px; }
+        
+        .qa-container { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 15px; margin-top: 20px; }
+        .qa-item { margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .qa-q { font-weight: 700; color: #38bdf8; font-size: 0.9rem; margin-bottom: 4px; }
+        .qa-a { color: #cbd5e1; font-size: 0.85rem; line-height: 1.4; }
+
+        .simulation-box {
+            background: #ffffff; border: 2px dashed #6366f1; border-radius: 12px; padding: 20px; margin-top: 30px;
+        }
+        .slider-label { font-size: 0.85rem; font-weight: 600; color: #4b5563; }
+        .sim-result-badge { font-size: 0.8rem; background: #e0e7ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        .comparison-row { font-size: 0.9rem; border-bottom: 1px solid #f3f4f6; padding: 8px 0; }
+        
+        /* Progress Steps */
+        .meter-container { display: flex; justify-content: space-between; position: relative; margin-top: 20px; margin-bottom: 10px; }
+        .meter-line { position: absolute; top: 10px; left: 0; right: 0; height: 3px; background: #e2e8f0; z-index: 1; }
+        .meter-step { position: relative; z-index: 2; text-align: center; }
+        .meter-dot { width: 24px; height: 24px; background: white; border: 3px solid #cbd5e1; border-radius: 50%; margin: 0 auto 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; color: transparent; }
+        .meter-dot.active { border-color: #ef4444; background: #fecaca; color: #ef4444; }
+        .meter-label { font-size: 0.75rem; color: #64748b; font-weight: 600; }
+        .meter-pct { font-size: 0.7rem; color: #ef4444; font-weight: 700; display: block; }
+        
+        /* Tables */
+        .alloc-table th { font-size: 0.75rem; text-transform: uppercase; background: #fdf2f8; color: #db2777; }
+        .dist-table th { font-size: 0.75rem; text-transform: uppercase; background: #f5f3ff; color: #7c3aed; }
+        .ret-table th { font-size: 0.75rem; text-transform: uppercase; background: #ffedd5; color: #c2410c; }
+        .fresh-table th { font-size: 0.75rem; text-transform: uppercase; background: #ecfdf5; color: #047857; }
+        td { font-size: 0.85rem; vertical-align: middle; }
+
+        /* Floating Chat Styles */
+        .floating-chat-btn {
+            position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+            border-radius: 50%; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+            color: white; border: none; font-size: 28px; z-index: 1000;
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .floating-chat-btn:hover { transform: scale(1.1); }
+        
+        .chat-window {
+            position: fixed; 
+            bottom: 110px; 
+            right: 30px; 
+            width: 500px; 
+            height: 700px; 
+            background: white; 
+            border-radius: 16px; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            z-index: 999; 
+            display: none; 
+            flex-direction: column; 
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .chat-header { 
+            background: #1e293b; 
+            color: white; 
+            padding: 20px; 
+            font-weight: 600; 
+            font-size: 1.1rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .chat-body { 
+            flex: 1; 
+            padding: 20px; 
+            overflow-y: auto; 
+            background: #f8fafc; 
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative; 
+        }
+        
+        /* Custom Scrollbar for Chat Body */
+        .chat-body::-webkit-scrollbar { width: 8px; }
+        .chat-body::-webkit-scrollbar-track { background: #f1f5f9; }
+        .chat-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .chat-body::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Scroll Controls */
+        .chat-scroll-controls {
+            position: absolute;
+            right: 20px;
+            bottom: 100px; /* Above input area */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2000; /* Ensure high z-index to stay on top */
+            pointer-events: auto; /* Ensure clickable */
+        }
+        
+        .chat-scroll-btn {
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.2s;
+            opacity: 0.9;
+        }
+        .chat-scroll-btn:hover {
+            background: #f1f5f9;
+            color: #4f46e5;
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .chat-scroll-btn:active {
+            transform: scale(0.95);
+            background: #e0e7ff;
+        }
+
+        .chat-input-area { 
+            padding: 20px; 
+            background: white; 
+            border-top: 1px solid #e2e8f0; 
+        }
+        
+        .msg { 
+            padding: 12px 16px; 
+            border-radius: 12px; 
+            font-size: 0.95rem; 
+            max-width: 85%; 
+            line-height: 1.5;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .msg-user { 
+            background: #4f46e5; 
+            color: white; 
+            align-self: flex-end; 
+            margin-left: auto; 
+            border-bottom-right-radius: 2px; 
+        }
+        
+        .msg-ai { 
+            background: white; 
+            border: 1px solid #e2e8f0; 
+            color: #334155; 
+            align-self: flex-start; 
+            border-bottom-left-radius: 2px; 
+        }
+        
+        .typing-indicator { 
+            font-size: 0.85rem; 
+            color: #64748b; 
+            font-style: italic; 
+            margin-left: 10px; 
+            display: none; 
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="d-flex align-items-center mb-5 px-2">
+        <i class="fas fa-brain fa-2x text-primary me-3"></i>
+        <h4 class="mb-0 fw-bold">ProcureAI</h4>
+    </div>
+    <nav>
+        <a href="/results" class="nav-link"><i class="fas fa-chart-line me-3"></i>Dashboard</a>
+        <a href="/procurement" class="nav-link active"><i class="fas fa-dolly me-3"></i>Procurement</a>
+        <a href="/map" class="nav-link"><i class="fas fa-map-marked-alt me-3"></i>Geo Map</a>
+        <a href="/anomalies" class="nav-link"><i class="fas fa-exclamation-triangle me-3"></i>Anomalies</a>
+        <a href="/" class="nav-link mt-5"><i class="fas fa-cog me-3"></i>Config</a>
+    </nav>
+</div>
+
+<div class="main-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold text-dark mb-1">Strategic Procurement Engine</h3>
+            <p class="text-muted">Multi-Stage Analysis | City & Retailer Allocation</p>
+        </div>
+        <div class="w-25">
+             <select class="form-select" id="batchSelect">
+                <option value="">Loading Batch IDs...</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="loader" style="display:none; text-align:center; padding: 50px;">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-3 text-muted">Analyzing Supply Chain Logistics...</p>
+    </div>
+
+    <div id="resultsPanel" style="display: none;">
+        
+        <!-- BATCH HEADER -->
+        <div class="card border-0 shadow-sm p-3 mb-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div><span class="badge bg-primary mb-1">Batch ID</span><h4 class="fw-bold mb-0" id="summBatch">--</h4></div>
+                <div class="text-end"><div class="text-muted small">Product</div><div class="fw-bold" id="summProd">--</div></div>
+                <div class="text-end"><div class="text-muted small">Total Qty</div><div class="fw-bold" id="summQty">--</div></div>
+                <div class="text-end"><div class="text-muted small">Date</div><div class="fw-bold" id="summDate">--</div></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                
+                <!-- ALLOCATION STATUS -->
+                <div class="step-card step-lock">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold text-primary mb-0" style="color: #6366f1!important;"><i class="fas fa-lock me-2"></i>Allocation & Lock Status</h6>
+                        <span class="badge bg-secondary" id="lblLockStatus">Checking...</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><small class="text-muted d-block fw-bold">LOCK DATE</small><span class="fs-5 fw-bold text-dark" id="valLockDate">--</span></div>
+                        <div class="col-6"><small class="text-muted d-block fw-bold">LEAD TIME</small><span class="fs-5 fw-bold text-dark" id="valTotalLead">-- Days</span></div>
+                    </div>
+                    <div class="small text-muted mt-2"><i class="fas fa-info-circle me-1"></i> Allocation locks automatically at 20% of lead time.</div>
+                </div>
+
+                <!-- SHELF LIFE CONSUMPTION METER (NEW) -->
+                <div class="step-card step-shelf">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold text-danger mb-0"><i class="fas fa-hourglass-half me-2"></i>Shelf-Life Consumption</h6>
+                        <small class="text-muted">Lifecycle Analysis (270 Days)</small>
+                    </div>
+                    
+                    <div class="meter-container" id="shelfLifeMeter">
+                        <div class="meter-line"></div>
+                        <!-- Steps injected by JS -->
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-success small fw-bold mb-2"><i class="fas fa-leaf me-1"></i>Remaining Sellable Days per City (At Arrival)</h6>
+                        <div class="table-responsive" style="max-height: 150px; overflow-y: auto;">
+                            <table class="table table-sm fresh-table mb-0">
+                                <thead style="position: sticky; top: 0;"><tr><th>City</th><th>Status</th><th>Avg Remaining Days</th></tr></thead>
+                                <tbody id="freshTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CITY ALLOCATION -->
+                <div class="step-card step-alloc">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold text-danger mb-0" style="color:#db2777!important"><i class="fas fa-map-marked-alt me-2"></i>City-Wise Strategic Allocation</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm alloc-table mb-0">
+                            <thead><tr><th>City</th><th>Holding (Avg)</th><th>Risk Band</th><th>Alloc. Qty</th></tr></thead>
+                            <tbody id="allocTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="mt-2 small text-muted" id="cityInsight"></div>
+                </div>
+                
+                <!-- RETAILER ALLOCATION -->
+                <div class="step-card step-ret">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold text-warning mb-0" style="color:#f97316!important"><i class="fas fa-store me-2"></i>Retailer-Wise Insights</h6>
+                        <small class="text-muted">Performance Based</small>
+                    </div>
+                    <div class="table-responsive" style="max-height: 250px; overflow-y: auto;">
+                        <table class="table table-sm ret-table mb-0">
+                            <thead style="position: sticky; top: 0;"><tr><th>Retailer</th><th>Velocity</th><th>Band</th><th>Allocated</th></tr></thead>
+                            <tbody id="retTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- DEALER DISTRIBUTION PLAN -->
+                <div class="step-card step-dist">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold text-primary mb-0" style="color:#8b5cf6!important"><i class="fas fa-truck-loading me-2"></i>Dealer Distribution Breakdown</h6>
+                    </div>
+                    <div class="table-responsive" style="max-height: 200px; overflow-y: auto;">
+                        <table class="table table-sm dist-table mb-0">
+                            <thead style="position: sticky; top: 0;"><tr><th>City</th><th>Dealer</th><th>Retailer Link</th><th>Share %</th><th>Qty</th></tr></thead>
+                            <tbody id="distTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- FACTORY & TRANSIT -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="step-card step-1">
+                            <h6 class="fw-bold text-primary mb-2"><i class="fas fa-industry me-2"></i>Factory</h6>
+                            <div class="d-flex justify-content-between">
+                                <div><small class="d-block text-muted">DISPATCH</small><span class="fw-bold" id="valDisp">--</span></div>
+                                <div><small class="d-block text-muted">REMAIN</small><span class="fw-bold text-danger" id="valRem">--</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="step-card step-2">
+                            <h6 class="fw-bold text-info mb-2"><i class="fas fa-truck me-2"></i>Transit</h6>
+                            <div class="d-flex justify-content-between">
+                                <div><small class="d-block text-muted">AVG DAYS</small><span class="fw-bold" id="valTransit">--</span></div>
+                                <div><small class="d-block text-muted">RISK</small><span class="fw-bold" id="valRiskComm">--</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DECISION & SIMULATION -->
+            <div class="col-md-5">
+                <div class="final-decision-box">
+                    <h5 class="text-uppercase fw-bold text-light mb-4"><i class="fas fa-robot me-2"></i>Procurement Decision</h5>
+                    <div class="mb-4 text-center">
+                        <div class="text-uppercase text-secondary small fw-bold mb-1">New Production?</div>
+                        <div class="decision-highlight" id="decReq">--</div>
+                    </div>
+                    <div class="row text-center mb-4">
+                        <div class="col-6 border-end border-secondary">
+                            <div class="text-muted small">Qty to Produce</div><div class="fs-3 fw-bold text-white" id="decQty">--</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-muted small">Start Date</div><div class="fs-4 fw-bold text-warning" id="decStart">--</div>
+                        </div>
+                    </div>
+                    <div class="bg-dark bg-opacity-50 p-3 rounded mb-3">
+                        <h6 class="fw-bold text-info small">AI Explanation</h6>
+                        <p class="mb-0 small text-light opacity-75" id="decReason">--</p>
+                    </div>
+                    <h6 class="fw-bold text-secondary small mt-4 mb-2">PROCUREMENT INSIGHTS (Q&A)</h6>
+                    <div class="qa-container" id="qaContainer"></div>
+                </div>
+
+                <!-- SIMULATION -->
+                <div class="simulation-box">
+                    <h5 class="fw-bold text-primary mb-3"><i class="fas fa-flask me-2"></i>Constraint-Based Simulation</h5>
+                    <label class="slider-label">Demand Change: <span id="lblDemand" class="text-primary">0%</span></label>
+                    <input type="range" class="form-range" id="rangeDemand" min="-50" max="50" step="5" value="0" oninput="$('#lblDemand').text(this.value + '%')">
+                    <label class="slider-label mt-2">Transit Delay: <span id="lblLead" class="text-primary">0 Days</span></label>
+                    <input type="range" class="form-range" id="rangeLead" min="-10" max="30" step="1" value="0" oninput="$('#lblLead').text(this.value + ' Days')">
+                    
+                    <div class="d-flex justify-content-between mt-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="chkSlow">
+                            <label class="form-check-label slider-label" for="chkSlow">Remove Slow</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="chkConstraint">
+                            <label class="form-check-label slider-label" for="chkConstraint">Enforce Constraints</label>
+                        </div>
+                    </div>
+                    <small class="text-muted d-block mb-3">(Applies MOQ: 500, Cap: 20k)</small>
+
+                    <button class="btn btn-primary w-100 mt-2" onclick="runSimulation()"><i class="fas fa-play me-2"></i>Run Simulation</button>
+                    
+                    <div id="simResults" class="mt-3" style="display:none;">
+                        <h6 class="fw-bold text-dark small border-bottom pb-2">RESULTS</h6>
+                        <div class="comparison-row d-flex justify-content-between"><span>Rec. Qty</span><div><s class="text-muted small me-2" id="simOrigQty"></s><span class="fw-bold text-success" id="simNewQty"></span></div></div>
+                        <div class="comparison-row d-flex justify-content-between align-items-center"><span>Risk</span><span id="simNewRisk" class="sim-result-badge"></span></div>
+                         <div class="comparison-row d-flex justify-content-between align-items-center bg-light p-1 mt-2 rounded" id="rowImprovement" style="display:none;">
+                            <span class="small text-muted"><i class="fas fa-info-circle me-1"></i>Constraint</span>
+                            <span class="fw-bold text-primary" id="simConstraintMsg"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Chat Button -->
+<button class="floating-chat-btn" onclick="$('.chat-window').toggle()">
+    <i class="fas fa-comment-dots"></i>
+</button>
+
+<!-- Chat Window -->
+<div class="chat-window">
+    <div class="chat-header">
+        <span><i class="fas fa-brain me-2 text-info"></i>AI Assistant</span>
+        <button class="btn btn-sm text-white" onclick="$('.chat-window').hide()"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+        <div class="msg msg-ai">Hello! I'm analyzing the loaded batch data. Ask me anything about allocations, risks, or expiry.</div>
+    </div>
+
+    <!-- Scroll Controls - Updated with Direct OnClick Handlers -->
+    <div class="chat-scroll-controls">
+        <button class="chat-scroll-btn" type="button" onclick="scrollChat('up')"><i class="fas fa-chevron-up"></i></button>
+        <button class="chat-scroll-btn" type="button" onclick="scrollChat('down')"><i class="fas fa-chevron-down"></i></button>
+    </div>
+
+    <div class="chat-input-area d-flex">
+        <input type="text" id="chatInput" class="form-control me-2" placeholder="Ask a question..." onkeypress="handleChatEnter(event)">
+        <button class="btn btn-primary" onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="dataModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fw-bold" id="modalTitle">Raw Data</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="table-responsive"><table class="table table-striped table-hover modal-table" id="modalTable"><thead></thead><tbody></tbody></table></div></div></div></div></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $('#batchSelect').select2({ theme: "bootstrap-5", placeholder: "Select Batch ID", width: '100%' });
+    let currentData={}, currentBatchId="", originalMetrics={}, fullContext={};
+
+    $.get('/get_column_values/factory_manufacturing/Batch_ID', function(data) {
+        let opts = '<option value="">Select Batch ID</option>';
+        if (data.values) data.values.sort().reverse().forEach(v => opts += `<option value="${v}">${v}</option>`);
+        $('#batchSelect').html(opts);
+    });
+
+    $('#batchSelect').change(function() {
+        if(!$(this).val()) return;
+        currentBatchId = $(this).val();
+        $('#simResults').hide();
+        loadAnalysis(currentBatchId);
+    });
+
+    function loadAnalysis(batchId, simParams = null) {
+        if(!simParams) { $('#resultsPanel').hide(); $('#loader').fadeIn(); }
+        let payload = { batch_id: batchId };
+        if(simParams) payload.batch_id = batchId + "||" + JSON.stringify(simParams);
+
+        $.ajax({
+            url: '/api/procurement/analyze',
+            type: 'POST', contentType: 'application/json', data: JSON.stringify(payload),
+            success: function(res) {
+                if(!simParams) {
+                    fullContext = res; // Store for chat
+                    currentData = res.stage_data || {};
+                    originalMetrics = {
+                        demand: res.stage_insights.retailer_demand.next_15_day_demand_projection,
+                        qty: res.final_procurement_recommendation.recommended_production_quantity
+                    };
+                    renderAnalysis(res);
+                    $('#loader').hide(); $('#resultsPanel').fadeIn();
+                } else { renderSimulation(res); }
+            }
+        });
+    }
+
+    function runSimulation() {
+        if(!currentBatchId) return;
+        const params = {
+            demand_change: $('#rangeDemand').val(), lead_time_change: $('#rangeLead').val(),
+            remove_slow_dealers: $('#chkSlow').is(':checked'),
+            use_constraints: $('#chkConstraint').is(':checked')
+        };
+        const btn = $('button[onclick="runSimulation()"]');
+        btn.prop('disabled', true).html('Calculating...');
+        loadAnalysis(currentBatchId, params);
+        setTimeout(() => btn.prop('disabled', false).html('<i class="fas fa-play me-2"></i>Run Simulation'), 1000);
+    }
+
+    function renderSimulation(res) {
+        const sim = res.simulation_results;
+        if(!sim) return;
+        $('#simOrigQty').text(originalMetrics.qty.toLocaleString());
+        $('#simNewQty').text(sim.sim_rec_qty.toLocaleString());
+        $('#simNewRisk').text(sim.sim_risk).removeClass('bg-danger bg-warning bg-success')
+            .addClass(sim.sim_risk === 'HIGH' ? 'bg-danger text-white' : (sim.sim_risk === 'MEDIUM' ? 'bg-warning text-dark' : 'bg-success text-white'));
+        
+        if(sim.constraint_msg && sim.constraint_msg !== "None") {
+            $('#simConstraintMsg').text(sim.constraint_msg);
+            $('#rowImprovement').show();
+        } else if(sim.sim_holding_improvement > 0) {
+            $('#simConstraintMsg').text(`Gain: -${sim.sim_holding_improvement} Days`);
+            $('#rowImprovement').show();
+        } else { $('#rowImprovement').hide(); }
+        $('#simResults').slideDown();
+    }
+
+    function renderAnalysis(res) {
+        const b = res.batch_summary;
+        const s = res.stage_insights;
+        const f = res.final_procurement_recommendation;
+
+        $('#summBatch').text(b.batch_id); $('#summProd').text(b.product_name);
+        $('#summQty').text(b.manufactured_quantity.toLocaleString()); $('#summDate').text(b.production_date);
+
+        // Locks
+        const alloc = s.allocation_status;
+        $('#lblLockStatus').text(alloc.is_locked ? "LOCKED" : "OPEN")
+            .removeClass('bg-secondary bg-danger bg-success')
+            .addClass(alloc.is_locked ? 'bg-danger' : 'bg-success');
+        $('#valLockDate').text(alloc.lock_date);
+        $('#valTotalLead').text(alloc.lead_time + " Days");
+
+        $('#valDisp').text(s.factory_dispatch.total_dispatched.toLocaleString());
+        $('#valRem').text(s.factory_dispatch.factory_remaining_stock.toLocaleString());
+        $('#valTransit').text(s.transit_analysis.avg_factory_to_dealer_transit_days.toFixed(1));
+        $('#valRiskComm').text(s.transit_analysis.transit_risk_comment);
+
+        // SHELF LIFE METER (NEW)
+        const meterDiv = $('#shelfLifeMeter').empty().append('<div class="meter-line"></div>');
+        const shelfData = s.shelf_life_meter.consumption || [];
+        shelfData.forEach(step => {
+            let active = step.pct_consumed > 0 ? 'active' : '';
+            meterDiv.append(`
+                <div class="meter-step">
+                    <div class="meter-dot ${active}">${step.pct_consumed > 0 ? '●' : ''}</div>
+                    <div class="meter-label">${step.stage}</div>
+                    <span class="meter-pct">${step.pct_consumed}%</span>
+                </div>
+            `);
+        });
+
+        const freshBody = $('#freshTableBody').empty();
+        const cityFresh = s.shelf_life_meter.city_freshness || [];
+        if(cityFresh.length > 0) {
+             cityFresh.forEach(c => {
+                 let badge = c.status === 'Critical' ? 'bg-danger' : (c.status === 'Warning' ? 'bg-warning text-dark' : 'bg-success');
+                 freshBody.append(`<tr>
+                    <td class="fw-bold">${c.city}</td>
+                    <td><span class="badge ${badge} rounded-pill">${c.status}</span></td>
+                    <td class="fw-bold text-dark">${c.avg_remaining_days} Days</td>
+                 </tr>`);
+             });
+        } else { freshBody.append('<tr><td colspan="3" class="text-center text-muted">No freshness data available</td></tr>'); }
+
+        // City Table
+        const allocBody = $('#allocTableBody').empty();
+        const cityAlloc = f.city_allocation_breakdown || [];
+        if(cityAlloc.length > 0) {
+            cityAlloc.slice(0, 5).forEach(c => {
+                let badge = c.band.includes('High Shelf-Life Risk') ? 'text-danger fw-bold' : (c.band.includes('High Velocity') ? 'text-success' : 'text-muted');
+                allocBody.append(`<tr>
+                    <td class="fw-bold">${c.city}</td>
+                    <td>${c.holding_days || '-'} d</td>
+                    <td class="small ${badge}">${c.band}</td>
+                    <td class="fw-bold text-primary">${c.allocation_qty}</td>
+                </tr>`);
+            });
+            $('#cityInsight').html(`<i class="fas fa-lightbulb text-warning me-1"></i> ${cityAlloc[0].insight || 'Review top performing cities.'}`);
+        } else { allocBody.append('<tr><td colspan="4" class="text-center text-muted">No allocation data available</td></tr>'); }
+
+        // Retailer Table
+        const retBody = $('#retTableBody').empty();
+        const retAlloc = f.retailer_allocations || [];
+        if(retAlloc.length > 0) {
+            retAlloc.forEach(r => {
+                let badge = r.band.includes('Low Perf') ? 'text-danger' : (r.band.includes('High Perf') ? 'text-success' : 'text-muted');
+                retBody.append(`<tr>
+                    <td class="fw-bold">${r.retailer}</td>
+                    <td>${r.velocity}</td>
+                    <td class="small ${badge}">${r.band}</td>
+                    <td class="fw-bold text-dark">${r.allocation_qty}</td>
+                </tr>`);
+            });
+        } else { retBody.append('<tr><td colspan="4" class="text-center text-muted">No retailer data available</td></tr>'); }
+
+        // Dealer Dist Table
+        const distBody = $('#distTableBody').empty();
+        const distPlan = f.distribution_breakdown || [];
+        if(distPlan.length > 0) {
+            distPlan.forEach(d => {
+                distBody.append(`<tr>
+                    <td>${d.city}</td>
+                    <td class="fw-bold text-dark small">${d.dealer}</td>
+                    <td class="small">${d.retailer}</td>
+                    <td class="text-muted small">${d.share_pct}%</td>
+                    <td class="fw-bold text-primary">${d.allocated_qty}</td>
+                </tr>`);
+            });
+        } else { distBody.append('<tr><td colspan="5" class="text-center text-muted">No breakdown available</td></tr>'); }
+
+        $('#decReq').text(f.procurement_required ? "YES" : "NO").css('color', f.procurement_required ? '#4ade80' : '#f87171');
+        $('#decQty').text(f.recommended_production_quantity.toLocaleString());
+        $('#decStart').text(f.production_start_date);
+        $('#decReason').text(f.ai_reasoning);
+
+        const qaContainer = $('#qaContainer').empty();
+        if(f.qa_list) f.qa_list.forEach(item => qaContainer.append(`<div class="qa-item"><div class="qa-q"><i class="fas fa-caret-right me-2"></i>${item.q}</div><div class="qa-a">${item.a}</div></div>`));
+    }
+
+    function showData(stageKey) {
+        const data = currentData[stageKey] || [];
+        const tableHead = $('#modalTable thead').empty();
+        const tableBody = $('#modalTable tbody').empty();
+        $('#modalTitle').text(stageKey.replace('_', ' ').toUpperCase() + " DATA");
+        if (data.length === 0) { tableBody.html('<tr><td class="text-center">No data available</td></tr>'); } 
+        else {
+            const cols = Object.keys(data[0]);
+            let headerRow = '<tr>'; cols.forEach(c => headerRow += `<th>${c.replace(/_/g, ' ')}</th>`); headerRow += '</tr>';
+            tableHead.html(headerRow);
+            data.forEach(row => {
+                let tr = '<tr>'; cols.forEach(c => tr += `<td>${row[c]}</td>`); tr += '</tr>';
+                tableBody.append(tr);
+            });
+        }
+        new bootstrap.Modal(document.getElementById('dataModal')).show();
+    }
+
+    // --- CHAT LOGIC ---
+    function handleChatEnter(e) {
+        if(e.key === 'Enter') sendChat();
+    }
+
+    function sendChat() {
+        const inp = $('#chatInput');
+        const q = inp.val().trim();
+        if(!q) return;
+        
+        // Append User Msg
+        $('#chatBody').append(`<div class="msg msg-user">${q}</div>`);
+        inp.val('');
+        
+        // Show Typing
+        const typing = $(`<div class="typing-indicator">AI is thinking...</div>`);
+        $('#chatBody').append(typing);
+        
+        // Scroll to bottom immediately on send
+        scrollToBottom();
+
+        // IMPORTANT: Strip heavy raw data to prevent payload timeout/413
+        let contextToSend = { ...fullContext };
+        delete contextToSend.stage_data;
+
+        $.ajax({
+            url: '/api/procurement/chat',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ query: q, context: contextToSend }),
+            success: function(res) {
+                typing.remove();
+                $('#chatBody').append(`<div class="msg msg-ai">${res.response}</div>`);
+                scrollToBottom(); // Scroll to bottom on response
+            },
+            error: function(xhr) {
+                typing.remove();
+                let errMsg = "Error connecting to AI.";
+                if(xhr.status === 404) errMsg = "Backend Route Missing (/api/procurement/chat). Update app.py.";
+                if(xhr.status === 500) errMsg = "Server Error (500). Check terminal logs.";
+                if(xhr.status === 401) errMsg = "Unauthorized (401). Check API Key.";
+                $('#chatBody').append(`<div class="msg msg-ai text-danger">${errMsg}</div>`);
+                scrollToBottom();
+            }
+        });
+    }
+
+    // UPDATED: Global Scroll Function - Direct jQuery access
+    window.scrollChat = function(direction) {
+        var $c = $('#chatBody');
+        var current = $c.scrollTop();
+        var step = 200;
+        
+        if(direction === 'up') {
+            $c.stop().animate({scrollTop: current - step}, 200);
+        } else {
+            $c.stop().animate({scrollTop: current + step}, 200);
+        }
+    };
+
+    function scrollToBottom() {
+        var $c = $('#chatBody');
+        $c.stop().animate({ scrollTop: $c[0].scrollHeight }, 300);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Data Connector</title>
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #818cf8;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #1f2937;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-section h1 {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .connection-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+
+        .card-header-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 24px;
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-section {
+            padding: 30px;
+        }
+
+        .path-input-group {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.2s;
+        }
+
+        .path-input-group:focus-within {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+
+        .dataset-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background-color: #e0e7ff;
+            color: #4338ca;
+            margin-right: 8px;
+        }
+
+        .btn-connect {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-connect:hover {
+            background-color: #4338ca;
+            transform: translateY(-1px);
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .status-badge {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container main-container">
+    <div class="header-section">
+        <h1><i class="fas fa-network-wired me-3 text-primary"></i>Supply Chain Nexus</h1>
+        <p class="text-muted lead">High-Performance Data Link for Massive Datasets (39GB+)</p>
+    </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show shadow-sm rounded-3 mb-4" role="alert">
+                    <i class="fas {{ 'fa-exclamation-circle' if category == 'error' else 'fa-check-circle' }} me-2"></i>
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="connection-card">
+        <div class="card-header-custom">
+            <h4 class="mb-0"><i class="fas fa-link me-2"></i>Dataset Configuration</h4>
+            <p class="mb-0 opacity-75 small">Enter the absolute local paths to your CSV files.</p>
+        </div>
+        
+        <div class="form-section">
+            <div class="info-box">
+                <div class="d-flex">
+                    <div class="me-3"><i class="fas fa-lightbulb text-primary fa-lg"></i></div>
+                    <div>
+                        <h6 class="fw-bold text-primary mb-1">Performance Mode Active</h6>
+                        <p class="mb-0 text-secondary small">
+                            Direct file linking is enabled. This bypasses browser upload limits, allowing instantaneous connection to datasets of any size (TB+). 
+                            <strong>Do not move files after linking.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="{{ url_for('preload_datasets') }}" method="POST">
+                <div class="row g-4">
+                    <!-- Left Column -->
+                    <div class="col-md-6">
+                        <div class="path-input-group">
+                            <label class="form-label">
+                                <span class="dataset-badge">Stage 1</span>Factory Manufacturing
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-muted"><i class="fas fa-industry"></i></span>
+                                <input type="text" class="form-control" name="factory_manufacturing_path" 
+                                       placeholder="C:/Data/Factory_Manufacturing.csv" required>
+                            </div>
+                        </div>
+
+                        <div class="path-input-group">
+                            <label class="form-label">
+                                <span class="dataset-badge">Stage 2</span>Factory Dispatch
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-muted"><i class="fas fa-shipping-fast"></i></span>
+                                <input type="text" class="form-control" name="factory_dispatch_path" 
+                                       placeholder="C:/Data/Factory_Dispatch.csv" required>
+                            </div>
+                        </div>
+
+                        <div class="path-input-group">
+                            <label class="form-label">
+                                <span class="dataset-badge">Stage 3</span>Dealer Receipt
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-muted"><i class="fas fa-file-invoice"></i></span>
+                                <input type="text" class="form-control" name="dealer_receipt_path" 
+                                       placeholder="C:/Data/Dealer_Receipt.csv" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-md-6">
+                        <div class="path-input-group">
+                            <label class="form-label">
+                                <span class="dataset-badge">Stage 4</span>Dealer Dispatch
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-muted"><i class="fas fa-truck-loading"></i></span>
+                                <input type="text" class="form-control" name="dealer_dispatch_path" 
+                                       placeholder="C:/Data/Dealer_Dispatch.csv" required>
+                            </div>
+                        </div>
+
+                        <div class="path-input-group">
+                            <label class="form-label">
+                                <span class="dataset-badge">Stage 5</span>Retailer Receipt
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-muted"><i class="fas fa-store"></i></span>
+                                <input type="text" class="form-control" name="retailer_receipt_path" 
+                                       placeholder="C:/Data/Retailer_Receipt.csv" required>
+                            </div>
+                        </div>
+
+                        <div class="path-input-group">
+                            <label class="form-label">
+                                <span class="dataset-badge">Stage 6</span>Retailer Stock
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-muted"><i class="fas fa-boxes"></i></span>
+                                <input type="text" class="form-control" name="retailer_stock_path" 
+                                       placeholder="C:/Data/Retailer_Stock.csv" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mt-5">
+                    <button type="submit" class="btn btn-primary btn-lg btn-connect shadow-sm">
+                        <i class="fas fa-bolt me-2"></i>Link Datasets & Initialize System
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="text-center mt-4">
+        <a href="{{ url_for('results') }}" class="text-decoration-none text-muted small me-3">
+            <i class="fas fa-chart-bar me-1"></i>Skip to Dashboard
+        </a>
+        <a href="{{ url_for('anomalies_view') }}" class="text-decoration-none text-muted small">
+            <i class="fas fa-bug me-1"></i>Diagnostics
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
