@@ -8,7 +8,7 @@ An end-to-end, AI-powered supply chain management and shelf-life tracking system
 
 * **End-to-End Batch Traceability:** Tracks product batches across 6 critical stages: `Factory Manufacturing` ➡️ `Factory Dispatch` ➡️ `Dealer Receipt` ➡️ `Dealer Dispatch` ➡️ `Retailer Receipt` ➡️ `Retailer Stock`.
 * **Dynamic Shelf-Life Monitoring:** Automatically calculates product expiration based on product categories (e.g., milk, biscuits, chocolates). Flags inventory statuses as *Fresh*, *Moderate*, *Critical*, or *Expired*.
-* **AI-Powered Insights (Gemini 2.0):** Generates strategic recommendations for transit bottlenecks, inventory holding costs, and anomaly resolutions. Includes an interactive Supply Chain Chatbot for custom queries.
+* **AI-Powered Insights :** Generates strategic recommendations for transit bottlenecks, inventory holding costs, and anomaly resolutions. Includes an interactive Supply Chain Chatbot for custom queries.
 * **Advanced Demand Forecasting:** Uses **Holt-Winters Exponential Smoothing** and **Linear Regression** to predict future dealer and retailer demand, analyzing seasonality and historical sales trends.
 * **Automated Anomaly Detection:** Identifies transit-time delays, expired/stagnant stock (e.g., shelf life > 30 days), and data consistencies across the pipeline.
 * **Live Tracking:** Integrates with **Traccar** for live telemetry of shipments via WebSockets.
