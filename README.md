@@ -2,7 +2,7 @@
 
 # 🥫 Food & Beverage Supply Chain & Shelf-Life Analytics Platform
 
-An end-to-end, AI-powered supply chain management and shelf-life tracking system. This platform provides real-time visibility into the lifecycle of perishable goods (Food & Beverage), tracking batches from factory manufacturing to retailer stock. It leverages Machine Learning for demand forecasting and LLMs (Google Gemini 2.0) for strategic anomaly resolution and supply chain insights.
+An end-to-end, AI-powered supply chain management and shelf-life tracking system. This platform provides real-time visibility into the lifecycle of perishable goods (Food & Beverage), tracking batches from factory manufacturing to retailer stock. It leverages Machine Learning for demand forecasting  for strategic anomaly resolution and supply chain insights.
 
 ## ✨ Key Features
 
